@@ -1657,7 +1657,7 @@ const varieties = [
   },
   {
     id: 109,
-    name: "Кленовый Листок",
+    name: "Расти",
     color: "Белый",
     category: "decor",
     type: "Декоративный",
@@ -1668,9 +1668,9 @@ const varieties = [
     productivity: "Средняя",
     storage: "Средняя",
     tasteProfile: "",
-    desc: "Листья пурпурного оттенка, форма сердца или листа клена.",
+    desc: "Листья пурпурного оттенка, форма — сердце с зазубринками.",
     yield: "На тестировании",
-    img: "klenoviy-listok.webp",
+    img: "rusty.webp",
     price: "—",
     advantages: [],
     patent: false
