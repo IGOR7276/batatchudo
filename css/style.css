@@ -22,7 +22,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 img { max-width: 100%; height: auto; }
 
@@ -1327,6 +1327,7 @@ body {
       align-items: center;
       overflow: hidden;
     }
+
     .pl-hero-bg {
       position: absolute; inset: 0;
       background: url('img/pl-g1.webp') center / cover no-repeat;
@@ -1432,6 +1433,7 @@ body {
 
     /* ───── Section shared ───── */
     .pl-section {
+      position: relative;
       padding: 80px 0;
       overflow: hidden;
     }
