@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прайс-лист 2026 — саженцы и клубни батата | Batatchudo.com</title>
+  <meta name="description" content="Актуальные цены на посадочный материал батата и экзотических растений. Клубни, черенки, семена. Доставка по всей России.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://batatchudo.com/price.html">
+  <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:title" content="Прайс-лист на клубни батата и саженцы | Batatchudo.com">
+  <meta property="og:description" content="Актуальные цены на клубни батата и саженцы экзотических растений. Доставка по всей России.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/price.html">
+  <style>
+    .price-hero {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 50%, var(--green-500) 100%);
+      color: white;
+      padding: 180px 0 80px;
+      text-align: center;
+    }
+    .price-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; }
+    .price-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .price-hero .season-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .price-nav {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      padding: 14px 24px;
+      z-index: 998;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: white;
+      border-bottom: 1px solid var(--green-100);
+    }
+    .price-nav a {
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--green-900);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .price-nav a:hover {
+      background: var(--green-100);
+      color: var(--green-700);
+    }
+    .price-nav a.active {
+      background: var(--green-700);
+      color: white;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-700), var(--green-500));
+      z-index: 999;
+      transition: width 0.1s ease;
+    }
+
+    .price-note {
+      background: var(--green-50, #f0fdf4);
+      border-left: 4px solid var(--green-500);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .price-note h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-900);
+      margin-bottom: 16px;
+    }
+    .price-note ul {
+      list-style: none;
+      padding: 0;
+    }
+    .price-note li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .price-note li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-500);
+    }
+
+    .price-section { margin-bottom: 56px; }
+    .price-section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--green-100);
+    }
+    .price-section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--green-900);
+    }
+    .price-section-header .count {
+      background: var(--green-100);
+      color: var(--green-700);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .price-table thead th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      border-bottom: 2px solid var(--green-100);
+    }
+    .price-table thead th:last-child { text-align: right; }
+    .price-table tbody tr {
+      border-bottom: 1px solid #e8f5e9;
+      transition: var(--transition);
+    }
+    .price-table tbody tr:hover { 
+      background: #e8f5e9;
+      transform: translateX(4px);
+    }
+    .price-table tbody td {
+      padding: 14px 16px;
+      font-size: 0.95rem;
+    }
+    .price-table tbody td:last-child {
+      text-align: right;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .price-table .item-name { color: var(--text); }
+    .price-table .item-name a {
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .price-table .item-name a:hover { color: var(--green-700); }
+    .price-table .price-available { color: var(--green-700); }
+    .price-table .price-unavailable {
+      color: var(--text-light);
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .cta-full {
+      background: linear-gradient(135deg, var(--green-700), var(--green-500));
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-full h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-full p { opacity: 0.9; margin-bottom: 28px; font-size: 1.05rem; }
+
+    @media (max-width: 768px) {
+      .price-hero h1 { font-size: 2rem; }
+    .price-nav {
+        gap: 6px; 
+        padding: 12px 16px;
+        top: 72px;
+      }
+      .price-nav a { 
+        padding: 8px 16px; 
+        font-size: 0.8rem; 
+      }
+      .price-table tbody td { padding: 12px 10px; font-size: 0.85rem; }
+      .price-section-header h2 { font-size: 1.2rem; }
+      .container[style*="padding-top"] { padding-top: 40px !important; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Прайс-лист",
+  "description": "Актуальные цены на посадочный материал батата и экзотических растений. Клубни, черенки, семена. Доставка по всей России.",
+  "url": "https://batatchudo.com/price.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  }
+}
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html">Растения</a>
+      <a href="price.html" class="active">Прайс</a>
+      <a href="recepty.html">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="price-hero">
+  <div class="container">
+    <div class="season-badge">Сезон 2025-2026</div>
+    <h1>Прайс-лист</h1>
+    <p>Полный каталог растений, семян и сортов батата с актуальными ценами. Цены указаны за 1 клубень или упаковку семян.</p>
+  </div>
+</section>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="price-nav" id="priceNav">
+  <a href="#batat">Батат</a>
+  <a href="#avtorskie">Авторские</a>
+  <a href="#decor">Декоративные</a>
+  <a href="#semena">Семена</a>
+  <a href="#sazhentsy">Саженцы</a>
+  <a href="#chufa">Чуфа</a>
+</nav>
+
+<div class="container" style="padding-top: 40px;">
+  <div class="price-note">
+    <h3>Важная информация</h3>
+    <ul>
+      <li>Продаём семена от 1 упаковки, саженцы от 1 шт</li>
+      <li>Отправка ростков с 20 апреля при устойчивой температуре +15°C</li>
+      <li>Продажа сортовых клубней с 20 сентября до 1 апреля при условии ночных температур не ниже -2...-5°C</li>
+      <li>Отправка саженцев с 20 апреля по 1 сентября</li>
+      <li>Услуги по доставке за счёт получателя</li>
+      <li>Цены на батат указаны за 1 клубень</li>
+    </ul>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom: 0;">
+
+  <section class="price-section" id="batat">
+    <div class="price-section-header">
+      <h2>Батат</h2>
+      <span class="count">54 сорта</span>
+    </div>
+    <table class="price-table">
+      <thead><tr><th>Наименование</th><th>Цена</th></tr></thead>
+      <tbody>
+        <tr><td class="item-name">Анно Имо</td><td class="price-available">6000 руб</td></tr>
+        <tr><td class="item-name"><a href="amerikanskiy-bezhevyy.html">Американский Бежевый</a></td><td class="price-available">300 руб</td></tr>
+        <tr><td class="item-name"><a href="afganskiy.html">Афганский</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name">Аякомачи</td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="bali.html">Бали</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="la-bayu-bell.html">Баю Белл (Ла)</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name"><a href="belyy-nbs.html">Белый НБС (Сухумский Белый)</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name">Белый Корикогане</td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="belvu.html">Бельву</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="beniharuka.html">Бенихарука</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name"><a href="bogatyr.html">Богатырь</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name"><a href="boregard.html">Борегард</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name"><a href="brazilskiy.html">Бразильский</a></td><td class="price-available">300 руб</td></tr>
+        <tr><td class="item-name"><a href="bonita.html">Бонита</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="burgundi.html">Бургунди</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="vardaman.html">Вардаман</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="venesuelskiy-fioletovyy.html">Венесуэльский Фиолетовый</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="vetnamskiy.html">Вьетнамский</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="vinnitskiy-rozovyy.html">Винницкий розовый (Редголд, Тэккен)</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="goldean.html">Голден</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="dzhevel.html">Джевэл</a></td><td class="price-available">550 руб</td></tr>
+        <tr><td class="item-name"><a href="dzhersi.html">Джерси</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="dobrynya.html">Добрыня</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="dzhuno.html">Джуно</a></td><td class="price-available">550 руб</td></tr>
+        <tr><td class="item-name"><a href="elisey.html">Елисей</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name"><a href="karamelnyy.html">Карамельный</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="kovington.html">Ковингтон</a></td><td class="price-available">550 руб</td></tr>
+        <tr><td class="item-name"><a href="kumara.html">Кумара</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="kumara-red.html">Кумара Рэд</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="kumara-white.html">Кумара White</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="manchzhurskiy.html">Манчжурский</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name"><a href="manchzhurskiy-uluchshennyy.html">Манчжурский улучшенный</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name"><a href="meksikanskiy.html">Мексиканский</a></td><td class="price-available">300 руб</td></tr>
+        <tr><td class="item-name"><a href="moskovskiy.html">Московский</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="mohan.html">Мохан</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="ogenri.html">О'Генри</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="okinavskiy.html">Окинавский</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="orleanskiy.html">Орлеанский</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="pobeda-100.html">Победа 100</a></td><td class="price-available">300 руб</td></tr>
+        <tr><td class="item-name"><a href="porto-amarello.html">Порто-Амарелло</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="portu-baterraba.html">Порту-Батерраба</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="purpl-1.html">Пурпл №1</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="purpl-2.html">Пурпл №2</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="roshfor.html">Рошфор</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name"><a href="rubin-karoliny.html">Рубин Каролины</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name">Сакура</td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name"><a href="sladkiy-1.html">Сладкий №1</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name"><a href="slivochnyy-shandunskiy.html">Сливочный Шаньдунский</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="spartak.html">Спартак</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name"><a href="tainung-t65.html">Тайнунг – Т65</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="tata-koto.html">Тата Кото</a></td><td class="price-available">1000 руб</td></tr>
+        <tr><td class="item-name"><a href="chelentano.html">Челентано</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name">Чилимбу</td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name">Эрато пурпурный</td><td class="price-available">1000 руб</td></tr>
+        <tr><td class="item-name"><a href="yaponskiy.html">Японский (Murasaki)</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="yaponskiy-fioletovyy.html">Японский Фиолетовый</a></td><td class="price-available">1000 руб</td></tr>
+        <tr><td class="item-name"><a href="cara-gold.html">CaraGold</a></td><td class="price-available">550 руб</td></tr>
+        <tr><td class="item-name"><a href="stoletie.html">Centennial (Столетие)</a></td><td class="price-available">400 руб</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="price-section" id="avtorskie">
+    <div class="price-section-header">
+      <h2>Батат — Авторские сорта</h2>
+      <span class="count">селекция Луцан</span>
+    </div>
+    <table class="price-table">
+      <thead><tr><th>Наименование</th><th>Цена</th></tr></thead>
+      <tbody>
+        <tr><td class="item-name"><a href="baunti.html">Баунти</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="belosnezhka.html">Белоснежка</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="berezka.html">Березка</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name">Буратино</td><td class="price-available">300 руб</td></tr>
+        <tr><td class="item-name"><a href="blik-1.html">БЛИК 1</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name"><a href="blik-2.html">БЛИК 2</a></td><td class="price-available">700 руб</td></tr>
+        <tr><td class="item-name"><a href="grushevyy-dzhem.html">Грушевый джем</a></td><td class="price-available">1000 руб</td></tr>
+        <tr><td class="item-name"><a href="iskushenie.html">Искушение</a></td><td class="price-available">1500 руб</td></tr>
+        <tr><td class="item-name"><a href="karat.html">Карат</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="krasnodarskiy.html">Краснодарский</a></td><td class="price-available">550 руб</td></tr>
+        <tr><td class="item-name"><a href="kuban.html">Кубань</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name">Кэнди</td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name"><a href="lucian.html">Луциан</a></td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name">Манго</td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name"><a href="medovoe-chudo.html">Медовое чудо</a></td><td class="price-available">3000 руб</td></tr>
+        <tr><td class="item-name">Млечный Путь</td><td class="price-available">1500 руб</td></tr>
+        <tr><td class="item-name"><a href="napoleon.html">Наполеон</a></td><td class="price-available">750 руб</td></tr>
+        <tr><td class="item-name">Ника</td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name">Ночная фурия</td><td class="price-available">1000 руб</td></tr>
+        <tr><td class="item-name"><a href="ovitaliy.html">О'Виталий</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="onatali.html">О'Натали</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="ralf.html">Ральф</a></td><td class="price-available">800 руб</td></tr>
+        <tr><td class="item-name">Рубиновый</td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name">Санрайз</td><td class="price-available">1000 руб</td></tr>
+        <tr><td class="item-name"><a href="chilipsi.html">Чилипси</a></td><td class="price-available">550 руб</td></tr>
+        <tr><td class="item-name">Эластик</td><td class="price-available">1000 руб</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="price-section" id="decor">
+    <div class="price-section-header">
+      <h2>Декоративные сорта батата</h2>
+      <span class="count">19 сортов</span>
+    </div>
+    <table class="price-table">
+      <thead><tr><th>Наименование</th><th>Цена</th></tr></thead>
+      <tbody>
+        <tr><td class="item-name">Валенсия</td><td></td></tr>
+        <tr><td class="item-name">Индийский</td><td></td></tr>
+        <tr><td class="item-name"><a href="illyuziya.html">Иллюзия</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="karolina-1.html">Каролина 1</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="kelly-ray.html">Келли Рей</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="caroline-sweetheart-red.html">Кэролайн милая красная</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="lik-angela.html">Лик Ангела</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="margarita.html">Маргарита (зелёное сердце)</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="meduza.html">Медуза (Семипалый)</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="psevdo-rasti.html">Псевдо Rusty</a></td><td></td></tr>
+        <tr><td class="item-name">Rusty Maple Leaf</td><td></td></tr>
+        <tr><td class="item-name"><a href="sweet-caroline-sweetheart.html">Свит Каролайн «Сладкое Сердце»</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="sweet-caroline-bronze.html">Свит Каролайн Бронза</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="sweet-caroline-copper.html">Sweet Caroline «Медь»</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="sweet-caroline-light-green.html">Свит Каролайн Лайт Грин</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="sweet-caroline-purple.html">Свит Каролайн Пурпл</a></td><td></td></tr>
+        <tr><td class="item-name">Sweet Caroline Light Green (Корона)</td><td></td></tr>
+        <tr><td class="item-name"><a href="tricolor.html">Триколор — Pink Frost</a></td><td></td></tr>
+        <tr><td class="item-name">Цветик Семицветик</td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="price-section" id="semena">
+    <div class="price-section-header">
+      <h2>Семена растений</h2>
+      <span class="count">35 позиций</span>
+    </div>
+    <table class="price-table">
+      <thead><tr><th>Наименование</th><th>Цена</th></tr></thead>
+      <tbody>
+        <tr><td class="item-name"><a href="anguriya-siriyskaya.html">Ангурия Сирийская (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Ашваганда (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="bamiya.html">Бамия (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Вигна кустовая фасоль (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="vodnyy-kashtan.html">Водный каштан (1 шт)</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="dzhikama.html">Джикама, ямсовая фасоль (1 шт)</a></td><td class="price-available">60 руб</td></tr>
+        <tr><td class="item-name"><a href="karipenze.html">Карипензе (10 шт)</a></td><td class="price-unavailable">закончился</td></tr>
+        <tr><td class="item-name">Кардиоспермум (5 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="kivano.html">Кивано (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="kislica.html">Кислица (1 шт)</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name">Клитория (10 шт)</td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name">Лагенария Буше (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="lichi-tomat.html">Личи томат (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="lyuffa.html">Люффа (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Люффа остроребристая (10 шт)</td><td class="price-available">200 руб</td></tr>
+        <tr><td class="item-name">Малабарский шпинат, Базелла (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="melotriya-shershavaya.html">Мелотрия Левис (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="melotriya-shershavaya.html">Мелотрия шершавая (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Мимоза стыдливая (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="momordika.html">Момордика (10 шт)</a></td><td class="price-unavailable">закончилась</td></tr>
+        <tr><td class="item-name"><a href="naranhilla.html">Наранхилла (Луло) (10 шт)</a></td><td class="price-available">150 руб</td></tr>
+        <tr><td class="item-name">Перец сл. Яблоч Онта (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Просвирник (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Сахарный тростник (15 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="sikana.html">Сикана (Кассабанана) (10 шт)</a></td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name"><a href="spilantes.html">Спилантес Пикабу (порция)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Томарило зимостойкий (5 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Томат Японские черри (5 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="topinambur.html">Топинамбур круглый (5 шт)</a></td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="trihozant.html">Трихозант (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="beninkaza-voskovaya-tykva.html">Тыква Бенинказа (10 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Тыква фиголистная (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Физалис К. Малинал (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Физалис Перуанский (10 шт)</td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name">Циклантера (10 шт)</td><td class="price-unavailable">закончилась</td></tr>
+        <tr><td class="item-name"><a href="yavanskiy-redis.html">Яванский редис стручковый (15 шт)</a></td><td class="price-available">100 руб</td></tr>
+        <tr><td class="item-name"><a href="yams.html">Ямс китайский верх. клубеньки (1 шт)</a></td><td class="price-unavailable">нет</td></tr>
+        <tr><td class="item-name">Ямс Бульбифера верх. клуб. (1 шт)</td><td class="price-unavailable">нет</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="price-section" id="sazhentsy">
+    <div class="price-section-header">
+      <h2>Саженцы</h2>
+      <span class="count">20 позиций</span>
+    </div>
+    <table class="price-table">
+      <thead><tr><th>Наименование</th><th>Цена</th></tr></thead>
+      <tbody>
+        <tr><td class="item-name"><a href="bazilik-kiprskiy.html">Базилик Кипрский</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name">Базилик Магик Азуре</td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name">Бругмансия три юбочки</td><td class="price-available">1500 руб</td></tr>
+        <tr><td class="item-name">Гинностема</td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name">Готу кола</td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="dzhinura.html">Джинура</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="dekorativnyy-batat.html">Саженцы декоративного батата</a></td><td></td></tr>
+        <tr><td class="item-name">Кислый гибискус</td><td class="price-available">600 руб</td></tr>
+        <tr><td class="item-name">Кирказон</td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name">Кока Кола полынь</td><td class="price-available">500 руб</td></tr>
+        <tr><td class="item-name"><a href="kolokaziya.html">Колоказия</a></td><td class="price-available">от 500 руб</td></tr>
+        <tr><td class="item-name">Кофе</td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name">Кубинский Тростник</td><td class="price-available">1500 руб</td></tr>
+        <tr><td class="item-name"><a href="lippiya.html">Липпия Сладкая</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name"><a href="lemongrass.html">Лемонграсс</a></td><td class="price-available">400 руб</td></tr>
+        <tr><td class="item-name">Суринамская вишня</td><td class="price-available">2000 руб</td></tr>
+        <tr><td class="item-name"><a href="yakon.html">Якон белый</a></td><td class="price-unavailable">нет</td></tr>
+        <tr><td class="item-name">Якон Снежный Лотос</td><td class="price-available">800 руб</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="price-section" id="chufa">
+    <div class="price-section-header">
+      <h2>Чуфа (Земляной миндаль)</h2>
+      <span class="count">10 сортов</span>
+    </div>
+    <table class="price-table">
+      <thead><tr><th>Наименование</th><th>Цена</th></tr></thead>
+      <tbody>
+        <tr><td class="item-name"><a href="chufa.html">African Long Tigernut</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">African Super</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Big Round Tigernut</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Black Tigers Tigernut</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Egyptian Round</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Gigantos Valensia</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Large Black Tigernut</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Moroccan Round</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Raisen aus Ghana</a></td><td></td></tr>
+        <tr><td class="item-name"><a href="chufa.html">Round Lex Tigernut</a></td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<section class="cta-full">
+  <div class="container">
+    <h2>Остались вопросы?</h2>
+    <p>Свяжитесь с нами для заказа и консультации по выбору сортов</p>
+    <div class="hero-buttons" style="justify-content:center;">
+      <a href="kontakty.html" class="btn btn-primary" style="background:white;color:var(--green-700);">Связаться с нами</a>
+      <a href="tel:+79183913327" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white;">+7 (918) 391-33-27</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
+      <div><h4>Разделы</h4><a href="opisanie-sortov-batata.html">Сорта батата</a><a href="vyrashchivanie-batata.html">Выращивание</a><a href="rasteniya.html">Растения</a><a href="price.html">Прайс</a><a href="recepty.html">Рецепты</a><a href="o-nas.html">О нас</a><a href="kontakty.html">Контакты</a></div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  // Scroll progress bar
+  const scrollProgress = document.getElementById('scrollProgress');
+  const sections = document.querySelectorAll('.price-section');
+  const navLinks = document.querySelectorAll('.price-nav a');
+  const priceNav = document.getElementById('priceNav');
+  
+  // Handle nav link clicks
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        const navHeight = priceNav.offsetHeight + 72; // nav + header
+        const targetPosition = targetSection.offsetTop - navHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  window.addEventListener('scroll', () => {
+    // Update progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
+    
+    // Update active nav link
+    let current = '';
+    const navHeight = priceNav.offsetHeight + 72;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - navHeight - 20;
+      if (scrollTop >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>

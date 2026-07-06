@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рецепты из батата — простые и вкусные блюда | Batatchudo.com</title>
+  <meta name="description" content="Проверенные рецепты блюд из батата: запечённый батат, лодочки, чипсы, цукаты, хлеб и фаршированный батат. Пошаговые инструкции с фото.">
+  <meta property="og:title" content="Рецепты из батата | Batatchudo.com">
+  <meta property="og:description" content="Проверенные рецепты блюд из батата с пошаговыми инструкциями и фото.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/recepty.html">
+  <link rel="canonical" href="https://batatchudo.com/recepty.html">
+  <meta property="og:image" content="https://batatchudo.com/img/recepty/zapechennyy-batat-s-krolikom.webp">
+  <meta property="og:image:type" content="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    .pl-recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .pl-recipe-card {
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.06);
+      transition: all .4s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .pl-recipe-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.12);
+      background: rgba(255,255,255,.9);
+    }
+    .pl-recipe-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: #e8f5e9;
+    }
+    .pl-recipe-body {
+      padding: 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .pl-recipe-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 600;
+      background: #d8f3dc;
+      color: #2d6a4f;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .pl-recipe-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a3c2e;
+      margin-bottom: 8px;
+    }
+    .pl-recipe-desc {
+      font-size: .9rem;
+      color: #555;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 14px;
+    }
+    .pl-recipe-meta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: .78rem;
+      color: #777;
+      padding-top: 14px;
+      border-top: 1px solid #d8f3dc;
+    }
+    .pl-recipe-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Рецепты из батата",
+  "description": "Проверенные рецепты блюд из батата: запечённый батат, лодочки, чипсы, цукаты, хлеб и фаршированный батат. Пошаговые инструкции с фото.",
+  "url": "https://batatchudo.com/recepty.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {"@type": "ImageObject", "url": "https://batatchudo.com/img/logo.png"},
+    "url": "https://batatchudo.com/"
+  }
+}
+  </script>
+</head>
+<body class="pl-page">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html">Растения</a>
+      <a href="price.html">Прайс</a>
+      <a href="recepty.html" class="active">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pl-hero">
+  <div class="pl-hero-bg" style="background: url('img/recepty/zapechennyy-batat-s-krolikom.webp') center / cover no-repeat;"></div>
+  <div class="pl-hero-overlay"></div>
+  <div class="pl-hero-content">
+    <div class="container">
+      <div class="pl-hero-grid">
+        <div>
+          <a href="index.html" class="pl-hero-back">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            На главную
+          </a>
+          <h1 class="pl-hero-title">Рецепты из батата</h1>
+          <p class="pl-hero-desc">Проверенные блюда из сладкого картофеля — от запечённого батата и чипсов до цукатов и хлеба. Пошаговые инструкции с фотографиями.</p>
+          <div class="pl-hero-badges">
+            <span class="pl-hero-badge">6 рецептов</span>
+            <span class="pl-hero-badge">Пошаговые инструкции</span>
+            <span class="pl-hero-badge">Фото блюд</span>
+          </div>
+          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="#recipes" class="btn btn-primary" style="background:#fff;color:#1a3c2e;border:none;">Смотреть рецепты</a>
+            <a href="opisanie-sortov-batata.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Каталог сортов</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pl-section" id="recipes">
+  <div class="pl-deco" style="width:400px;height:400px;background:radial-gradient(circle,#52b788,transparent);top:-100px;right:-100px;"></div>
+  <div class="container">
+    <h2 class="pl-section-title">Проверенные рецепты</h2>
+    <p class="pl-section-sub">Простые и вкусные блюда из батата — от закусок до десертов.</p>
+    <div class="pl-recipe-grid">
+
+      <a href="recepty/zapechennyy-batat-s-krolikom/" class="pl-recipe-card">
+        <img src="img/recepty/zapechennyy-batat-s-krolikom.webp" alt="Запечённый батат с кроликом" loading="lazy" width="400" height="300">
+        <div class="pl-recipe-body">
+          <span class="pl-recipe-tag">Запечённое блюдо</span>
+          <h3>Запечённый батат с кроликом</h3>
+          <p class="pl-recipe-desc">Сочное мясо кролика с кусочками батата под сырной корочкой. Сытное блюдо на каждый день — пальчики оближешь.</p>
+          <div class="pl-recipe-meta">
+            <span>⏱ 2 часа</span>
+            <span>🔥 190°C</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="recepty/lodochki-iz-batata/" class="pl-recipe-card">
+        <img src="img/recepty/lodochki-iz-batata.webp" alt="Лодочки из батата" loading="lazy" width="400" height="300">
+        <div class="pl-recipe-body">
+          <span class="pl-recipe-tag">Фаршированное блюдо</span>
+          <h3>Лодочки из батата</h3>
+          <p class="pl-recipe-desc">Запечённые половинки батата с начинкой из куриной грудки, лука и маринованных огурцов под сырной корочкой.</p>
+          <div class="pl-recipe-meta">
+            <span>⏱ 1 час</span>
+            <span>🍽 4 порции</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="recepty/farshirovannyy-batat-po-meksikanski/" class="pl-recipe-card">
+        <img src="img/recepty/farshirovannyy-batat-po-meksikanski.webp" alt="Фаршированный батат по-мексикански" loading="lazy" width="400" height="300">
+        <div class="pl-recipe-body">
+          <span class="pl-recipe-tag">Вегетарианское</span>
+          <h3>Фаршированный батат по-мексикански</h3>
+          <p class="pl-recipe-desc">Пикантная начинка из фасоли, кукурузы и овощей с сыром тофу. Подаётся с лёгким соусом из авокадо.</p>
+          <div class="pl-recipe-meta">
+            <span>⏱ 1 час</span>
+            <span>🌱 Вегетарианское</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="recepty/hleb-iz-batata/" class="pl-recipe-card">
+        <img src="img/recepty/hleb-iz-batata-1.webp" alt="Хлеб из батата" loading="lazy" width="400" height="300">
+        <div class="pl-recipe-body">
+          <span class="pl-recipe-tag">Выпечка</span>
+          <h3>Хлеб и булочки из батата</h3>
+          <p class="pl-recipe-desc">Мягкое дрожжевое тесто с пюре или тёртым бататом. Можно добавить варенье, кунжут, мак или орехи.</p>
+          <div class="pl-recipe-meta">
+            <span>⏱ 1,5 часа</span>
+            <span>🔥 200°C</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="recepty/cukaty-iz-batata/" class="pl-recipe-card">
+        <img src="img/recepty/cukaty-iz-batata.webp" alt="Цукаты из батата" loading="lazy" width="400" height="300">
+        <div class="pl-recipe-body">
+          <span class="pl-recipe-tag">Десерт</span>
+          <h3>Цукаты из батата</h3>
+          <p class="pl-recipe-desc">Полезное лакомство, заменяющее конфеты. Сладкие кусочки батата для выпечки, салатов и самостоятельного перекуса.</p>
+          <div class="pl-recipe-meta">
+            <span>⏱ 2 часа</span>
+            <span>🍯 Десерт</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="recepty/chipsy-iz-batata/" class="pl-recipe-card">
+        <img src="img/recepty/chipsy-iz-batata.webp" alt="Чипсы из батата" loading="lazy" width="400" height="300">
+        <div class="pl-recipe-body">
+          <span class="pl-recipe-tag">Закуска</span>
+          <h3>Чипсы из батата в духовке</h3>
+          <p class="pl-recipe-desc">Хрустящие тонкие чипсы без фритюра и лишнего масла. Готовятся из пюре с любимыми специями за 10 минут.</p>
+          <div class="pl-recipe-meta">
+            <span>⏱ 30 мин</span>
+            <span>🔥 180°C</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="pl-cta">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2>Вырасти свой батат для этих рецептов</h2>
+    <p>Подберите сорт в каталоге и свяжитесь с нами по вопросам наличия посадочного материала.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="opisanie-sortov-batata.html" class="btn btn-primary" style="background:#fff;color:#1a3c2e;">Каталог сортов</a>
+      <a href="price.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Прайс-лист</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

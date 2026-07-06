@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batatchudo — Центр развития батата Луцан | 150+ сортов</title>
+  <meta name="description" content="Уникальная коллекция саженцев и клубней батата от селекционеров Луцан. Более 150 авторских и редких сортов с описанием. Доставка по всей России.">
+  <meta property="og:title" content="Batatchudo — Центр развития батата Луцан">
+  <meta property="og:description" content="Уникальная коллекция саженцев и клубней батата от селекционеров Луцан. Более 150 авторских сортов.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/">
+  <link rel="canonical" href="https://batatchudo.com/">
+  <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:type" content="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* ───── Hero с фоновым фото + collage ───── */
+    .home-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #0f241d;
+      min-height: 70vh;
+    }
+    .home-hero-bg {
+      position: absolute; inset: 0;
+      background: url('img/batat-assortiment-g1.webp') center 30% / cover no-repeat;
+    }
+    .home-hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(12,24,20,.78) 0%, rgba(15,36,29,.48) 52%, rgba(15,36,29,.12) 100%);
+    }
+    .home-hero-content { position: relative; z-index: 2; width: 100%; padding: 120px 0 60px; }
+    .home-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+    .home-hero h1 { font-size: clamp(2.2rem,4.5vw,3.5rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 12px; letter-spacing: -.02em; }
+    .home-hero h1 span { color: #52b788; }
+    .home-hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.82); line-height: 1.7; max-width: 520px; margin-bottom: 24px; }
+    .home-hero-stats { display: flex; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+    .home-hero-stat-num { font-size: 1.6rem; font-weight: 800; color: #52b788; }
+    .home-hero-stat-label { color: rgba(255,255,255,.65); font-size: .8rem; margin-top: 2px; }
+    .home-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .home-hero-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .home-hero-collage img { width: 100%; height: 100%; border-radius: 16px; aspect-ratio: 1; object-fit: cover; }
+    .home-hero-collage img:first-child { grid-row: span 2; aspect-ratio: 1; }
+
+    /* ───── Секции главной ───── */
+    .home-section { padding: 56px 0; }
+    .home-section-head { text-align: center; margin-bottom: 36px; }
+    .home-section-title { font-size: 2rem; font-weight: 800; color: var(--green-900); margin-bottom: 8px; letter-spacing: -.01em; }
+    .home-section-sub { color: var(--text-light); font-size: 1rem; max-width: 580px; margin: 0 auto; }
+    .home-section-link {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .btn-shuffle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: #fff;
+      color: var(--green-700);
+      border: 2px solid var(--green-100);
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: .95rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-shuffle:hover {
+      border-color: var(--green-500);
+      background: var(--green-100);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(82,183,136,.18);
+    }
+    .btn-shuffle:active { transform: translateY(0); }
+    .btn-shuffle svg {
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .btn-shuffle:hover svg {
+      transform: rotate(180deg);
+    }
+
+    /* ───── Карточки сортов (стиль каталога st-card) ───── */
+    .home-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); gap: 20px; }
+    .st-card {
+      background: linear-gradient(180deg,#fff 0%,#fffdf8 100%); border-radius: 24px; overflow: hidden; box-shadow: 0 12px 34px rgba(26,60,46,.08);
+      transition: all .3s ease; display: flex; flex-direction: column;
+      border: 1px solid rgba(45,106,79,.09); position: relative;
+    }
+    .st-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(26,60,46,.16); border-color: rgba(82,183,136,.32); }
+    .st-card-img-wrap { position: relative; overflow: hidden; background: #d8f3dc; }
+    .st-card-img-wrap::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(180deg, transparent, rgba(16,37,29,.36)); pointer-events: none; }
+    .st-card-img { width: 100%; aspect-ratio: 6/5; object-fit: cover; background: #d8f3dc; display: block; transition: transform .5s ease; }
+    .st-card:hover .st-card-img { transform: scale(1.07); }
+    .st-card-overlay { position: absolute; top: 10px; left: 10px; z-index: 2; display: flex; flex-direction: column; gap: 5px; }
+    .st-card-overlay-badge {
+      display: inline-flex; align-items: center; width: max-content; padding: 4px 9px; border-radius: 999px; font-size: .64rem; font-weight: 800;
+      white-space: nowrap; text-transform: uppercase; box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    }
+    .st-card-overlay-badge.new { background: #059669; color: #fff; }
+    .st-card-overlay-badge.popular { background: #dc2626; color: #fff; }
+    .st-card-overlay-badge.japanese { background: #7c3aed; color: #fff; }
+    .st-card-overlay-badge.decor { background: #ec4899; color: #fff; }
+    .st-card-overlay-badge.beginner { background: #eab308; color: #1a1a1a; }
+    .st-card-overlay-badge.patented { background: #3b82f6; color: #fff; }
+    .st-card-overlay-badge.raw { background: #16a34a; color: #fff; }
+    .st-card-overlay-badge.archive { background: #6b7280; color: #fff; }
+    .st-card-fallback { width: 100%; aspect-ratio: 6/5; background: linear-gradient(135deg,#d8f3dc,#b7e4c7); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: #2d6a4f; }
+    .st-card-body { padding: 15px 16px 8px; flex: 1; }
+    .st-card-name { font-size: 1.05rem; font-weight: 850; color: #1a3c2e; margin-bottom: 4px; letter-spacing: -.01em; }
+    .st-card-color { font-size: .74rem; color: #68756d; margin-bottom: 8px; font-weight: 650; }
+    .st-card-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+    .st-card-badge { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: .62rem; font-weight: 800; background: #f0fdf4; color: #2d6a4f; }
+    .st-card-badge.orange { background: #fef3c7; color: #92400e; }
+    .st-card-badge.purple { background: #f3e8ff; color: #6b21a8; }
+    .st-card-badge.blue { background: #dbeafe; color: #1e40af; }
+    .st-card-badge.pink { background: #fce7f3; color: #9d174d; }
+    .st-card-badge.red { background: #fee2e2; color: #991b1b; }
+    .st-card-badge.green { background: #dcfce7; color: #166534; }
+    .st-card-badge.teal { background: #ccfbf1; color: #115e59; }
+    .st-card-badge.yellow { background: #fef9c3; color: #854d0e; }
+    .st-card-badge.gray { background: #f3f4f6; color: #374151; }
+    .st-card-quick { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+    .st-card-quick-chip { display: inline-flex; align-items: center; gap: 4px; padding: 5px 9px; border-radius: 999px; background: #f8faf6; border: 1px solid rgba(45,106,79,.1); color: #24533f; font-size: .69rem; font-weight: 800; }
+    .st-card-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; padding: 10px 16px 14px; border-top: 1px solid rgba(45,106,79,.08); background: rgba(248,250,246,.72); }
+    .st-card-detail {
+      font-size: .72rem; font-weight: 800; text-decoration: none;
+      padding: 7px 13px; border-radius: 999px; border: 1px solid #2d6a4f; transition: all .2s;
+      color: #fff; background: #2d6a4f; text-align: center;
+    }
+    .st-card-detail:hover { border-color: #1a3c2e; background: #1a3c2e; }
+
+    /* ───── Карточки растений ───── */
+    .home-plant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); gap: 20px; }
+    .home-plant-card {
+      background: linear-gradient(180deg,#fff 0%,#fffdf8 100%); border-radius: 24px; overflow: hidden; box-shadow: 0 12px 34px rgba(26,60,46,.08);
+      transition: all .3s ease; display: flex; flex-direction: column;
+      border: 1px solid rgba(45,106,79,.09); position: relative; text-decoration: none; color: inherit;
+    }
+    .home-plant-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(26,60,46,.16); border-color: rgba(82,183,136,.32); }
+    .home-plant-card .st-card-img { transition: transform .5s ease; }
+    .home-plant-card:hover .st-card-img { transform: scale(1.07); }
+    .home-plant-badge { position: absolute; top: 10px; left: 10px; padding: 4px 9px; border-radius: 999px; font-size: .64rem; font-weight: 800; text-transform: uppercase; box-shadow: 0 8px 20px rgba(0,0,0,.18); z-index: 2; }
+    .home-plant-badge.popular { background: #dc2626; color: #fff; }
+    .home-plant-badge.recommend { background: #059669; color: #fff; }
+    .home-plant-badge.new { background: #7c3aed; color: #fff; }
+    .home-plant-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+    .home-plant-tag { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: .62rem; font-weight: 800; background: #f0fdf4; color: #2d6a4f; }
+    .home-plant-tag.easy { background: #d1fae5; color: #065f46; }
+    .home-plant-tag.edible { background: #fce7f3; color: #9d174d; }
+    .home-plant-tag.south { background: #fef3c7; color: #92400e; }
+    .home-plant-tag.greenhouse { background: #dbeafe; color: #1e40af; }
+    .home-plant-tag.winter { background: #ccfbf1; color: #115e59; }
+
+    /* ───── Госреестр блок ───── */
+    .registry-image {
+      width: 100%; border-radius: var(--radius); aspect-ratio: 4/3; object-fit: cover;
+      box-shadow: var(--shadow); display: block;
+    }
+
+    /* ───── Цветовые индикаторы ───── */
+    .color-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .color-dot.orange { background: #f59e0b; }
+    .color-dot.purple { background: #8b5cf6; }
+    .color-dot.white { background: #e5e7eb; border: 1px solid #d1d5db; }
+    .color-dot.yellow { background: #facc15; }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .trust-shot {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      border: 1px solid rgba(0,0,0,.05);
+    }
+    .trust-shot img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+    .recognition-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .recognition-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.05);
+    }
+    .recognition-card img {
+      width: 100%;
+      aspect-ratio: auto;
+      max-height: 350px;
+      object-fit: contain;
+      background: #fff;
+      display: block;
+      cursor: pointer;
+    }
+    .patent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .patent-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      border: 1px solid rgba(0,0,0,.05);
+      transition: var(--transition);
+    }
+    .patent-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .patent-card img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    /* ───── Адаптив ───── */
+    @media (max-width: 768px) {
+      .home-hero { min-height: auto; }
+      .home-hero-content { padding: 96px 0 40px; }
+      .home-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+      .home-hero-collage { display: none; }
+      .home-hero h1 { font-size: 2rem; }
+      .home-hero-sub { font-size: .95rem; margin-bottom: 20px; }
+      .home-hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+      .home-hero-stat-num { font-size: 1.35rem; }
+      .home-hero-stat-label { font-size: .72rem; }
+      .home-hero-btns .btn { width: 100%; text-align: center; }
+      .home-section { padding: 40px 0; }
+      .home-section-title { font-size: 1.6rem; }
+      .collections-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+      .collection-chip { flex-shrink: 0; }
+      .trust-grid, .patent-grid { grid-template-columns: 1fr 1fr; }
+      .recognition-card img { max-height: none; }
+    }
+    @media (max-width: 480px) {
+      .home-hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .home-hero-content { padding: 88px 0 32px; }
+      .trust-grid, .patent-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Центр развития батата Луцан",
+  "alternateName": "Batatchudo",
+  "url": "https://batatchudo.com/",
+  "logo": "https://batatchudo.com/img/logo.png",
+  "email": "batatchudo@yandex.ru",
+  "telephone": "+7-918-391-33-27",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RU",
+    "addressRegion": "Краснодарский край",
+    "addressLocality": "Туапсинский р-н, с. Индюк"
+  },
+  "sameAs": [
+    "https://vk.com/batatchudo",
+    "https://t.me/batatchudo",
+    "https://www.youtube.com/@batatchudo",
+    "https://ok.ru/profile/469895106256",
+    "https://instagram.com/batatchudo",
+    "https://rutube.ru/channel/53855676",
+    "https://dzen.ru/id/5ad6f8be256d5cc40e428b83",
+    "https://www.avito.ru/brands/0eb0aea5b5ea2f52696e95a1a6640f26"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Batatchudo",
+  "url": "https://batatchudo.com/",
+  "description": "Центр развития батата Луцан. 150+ сортов батата и редкие растения.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Центр развития батата Луцан"
+  }
+}
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="index.html" class="active">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html">Растения</a>
+      <a href="price.html">Прайс</a>
+      <a href="recepty.html">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="home-hero">
+  <div class="home-hero-bg"></div>
+  <div class="home-hero-content">
+    <div class="container">
+      <div class="home-hero-grid">
+        <div>
+          <h1>Центр развития батата<br><span>150+ сортов · селекция Луцан</span></h1>
+          <p class="home-hero-sub">Селекция, профессиональные адаптированные сорта батата для России и мир экзотических растений. От сверхсладких авторских до декоративных — с фильтрами по вкусу, сроку и неприхотливости.</p>
+          <div class="home-hero-stats">
+            <div><div class="home-hero-stat-num">150+</div><div class="home-hero-stat-label">сортов батата</div></div>
+            <div><div class="home-hero-stat-num">30+</div><div class="home-hero-stat-label">видов растений</div></div>
+            <div><div class="home-hero-stat-num">2025</div><div class="home-hero-stat-label">Госреестр РФ</div></div>
+            <div><div class="home-hero-stat-num">Вся РФ</div><div class="home-hero-stat-label">доставка</div></div>
+          </div>
+          <div class="home-hero-btns">
+            <a href="opisanie-sortov-batata.html" class="btn btn-primary">Смотреть каталог сортов</a>
+            <a href="rasteniya.html" class="btn btn-outline">Редкие растения</a>
+          </div>
+        </div>
+        <div class="home-hero-collage">
+          <img src="img/boregard.webp" alt="Борегард" loading="lazy" width="1200" height="1600">
+          <img src="img/pobeda-100.webp" alt="Победа 100" loading="lazy" width="1200" height="1600">
+          <img src="img/napoleon.webp" alt="Наполеон" loading="lazy" width="959" height="1278">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <div class="home-section-head">
+      <h2 class="home-section-title">Лучшие сорта батата</h2>
+      <p class="home-section-sub">Отобранные сорта с высокой сладостью, ранним сроком и проверенной урожайностью. Все адаптированы для российского климата.</p>
+    </div>
+    <div class="home-grid" id="homeVarieties"></div>
+    <div class="home-section-link">
+      <a href="opisanie-sortov-batata.html" class="btn btn-primary">Весь каталог (150+ сортов)</a>
+      <button type="button" class="btn btn-shuffle" onclick="shuffleHomeAll()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20l5-5"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+        Перемешать
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="home-section" style="background: #fff;">
+  <div class="container">
+    <div class="home-section-head">
+      <h2 class="home-section-title">Редкие растения</h2>
+      <p class="home-section-sub">Экзотические культуры, адаптированные для России: ямс, чайот, кивано, чуфа и другие. Результат многолетней интродукции.</p>
+    </div>
+    <div class="home-plant-grid" id="homePlants"></div>
+    <div class="home-section-link">
+      <a href="rasteniya.html" class="btn btn-outline" style="color:var(--green-700);border-color:var(--green-100);">Все растения (30+)</a>
+      <button type="button" class="btn btn-shuffle" onclick="shuffleHomeAll()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20l5-5"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+        Перемешать
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <div class="home-section-head">
+      <h2 class="home-section-title">Отзывы Садоводов</h2>
+      <p class="home-section-sub">Реальные отклики, урожаи и впечатления садоводов, которые уже выращивают наши сорта и растения.</p>
+    </div>
+    <div class="trust-grid pl-gallery-grid">
+      <figure class="trust-shot">
+        <img src="img/otzyv-1.webp" alt="Отзыв покупателя Batatchudo" loading="lazy">
+      </figure>
+      <figure class="trust-shot">
+        <img src="img/otzyv-2.webp" alt="Отзыв о сортах батата" loading="lazy">
+      </figure>
+      <figure class="trust-shot">
+        <img src="img/otzyv-3.webp" alt="Отзыв о выращивании батата" loading="lazy">
+      </figure>
+      <figure class="trust-shot">
+        <img src="img/otzyv-4.webp" alt="Отзыв клиента Batatchudo" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title text-center">Почему именно батат?</h2>
+    <p class="section-subtitle text-center mx-auto">Батат — это самостоятельный, уникальный овощ, который вносит разнообразие и пользу в ваш рацион.</p>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h3>Неприхотливость</h3>
+        <p>Батат не требователен к почве — культура бедных земель. Любит солнечные места и калийно-фосфорные удобрения.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>География выращивания</h3>
+        <p>Жизнестойкая культура успешно растет от Краснодарского края до Сибири, Урала и Дальнего Востока.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🍠</div>
+        <h3>Не заменитель, а дополнение</h3>
+        <p>Батат — не просто «сладкий картофель». Это самостоятельный продукт с уникальным вкусом и пользой.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Декоративная ценность</h3>
+        <p>Ажурные плети до 5 метров. Листья разных форм и цветов — от зеленого до темно-сиреневого.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: white;">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="recognition-stack pl-gallery-grid">
+          <figure class="recognition-card">
+            <img src="img/napoleon-selektsionnoe-dostizhenie.webp" alt="Селекционное достижение Наполеон" loading="lazy">
+          </figure>
+          <figure class="recognition-card">
+            <img src="img/medovoe-chudo-selektsionnoe-dostizhenie.webp" alt="Селекционное достижение Медовое чудо" loading="lazy">
+          </figure>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2>Официальное признание 2025</h2>
+        <p>В 2025 году мы достигли значимого успеха: наши сорта батата, разработанные селекционерами Виталием и Натальей Луцан, были официально включены в Государственный реестр селекционных достижений России.</p>
+        <p>Помимо батата, мы занимаемся интродукцией редких, полезных и декоративных культур, адаптируя их к российскому климату.</p>
+        <a href="https://gossortrf.ru/registry/gosudarstvennyy-reestr-selektsionnykh-dostizheniy-dopushchennykh-k-ispolzovaniyu-tom-1-sorta-rasteni/" target="_blank" class="btn btn-secondary" style="margin-top: 16px;">Подробнее о Госреестре</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-section" style="background:#fff;">
+  <div class="container">
+    <div class="home-section-head">
+      <h2 class="home-section-title">Патенты И Авторские Сорта</h2>
+      <p class="home-section-sub">Часть селекционной работы уже защищена патентами. Это отдельное подтверждение уникальности и многолетней работы с сортами.</p>
+    </div>
+    <div class="patent-grid pl-gallery-grid">
+      <article class="patent-card">
+        <img src="img/napoleon-patent.webp" alt="Патент сорта Наполеон" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/medovoe-chudo-patent.webp" alt="Патент сорта Медовое чудо" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/ralf-patent.webp" alt="Патент сорта Ральф" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/blik-patent.webp" alt="Патент сорта Блик" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/blik-1-patent.webp" alt="Патент сорта Блик-1" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/blik-2-patent.webp" alt="Патент сорта Блик-2" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/lucian-patent.webp" alt="Патент сорта Луциан" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/karat-patent.webp" alt="Патент сорта Карат" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/mlechnyy-put-patent.webp" alt="Патент сорта Млечный путь" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/nika-patent.webp" alt="Патент сорта Ника" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/ovitaliy-patent.webp" alt="Патент сорта Овиталий" loading="lazy">
+      </article>
+      <article class="patent-card">
+        <img src="img/chilipsi-patent.webp" alt="Патент сорта Чилипси" loading="lazy">
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Готовы к собственному урожаю?</h2>
+    <p>Ознакомьтесь с актуальным прайс-листом на клубни батата и экзотических растений. По вопросам наличия и отправки свяжитесь с нами удобным способом.</p>
+    <div class="hero-buttons" style="justify-content: center;">
+      <a href="price.html" class="btn btn-primary">Прайс-лист</a>
+      <a href="kontakty.html" class="btn btn-outline">Связаться с нами</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Batatchudo</h4>
+        <p>Центр развития батата Луцан. Селекция, профессиональные адаптированные сорта батата для России, мир экзотических и полезных растений.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div>
+        <h4>Присоединяйся</h4>
+        <a href="https://vk.com/batatchudo" target="_blank">VK</a>
+        <a href="https://t.me/batatchudo" target="_blank">Telegram</a>
+        <a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a>
+        <a href="https://ok.ru/profile/469895106256" target="_blank">OK</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+79183913327">+7 (918) 391-33-27</a>
+        <a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a>
+        <p style="margin-top: 8px; color: rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк, Россия</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span>
+      <span>Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/plants-data.js"></script>
+<script src="js/app.js"></script>
+<script>
+const FAVORITES = ['Борегард','Победа 100','Белый НБС','Ковингтон','Бенихарука','Порто-Амарелло','Медовое Чудо','Карамельный','Сладкий №1'];
+
+function badgeClassFor(text) {
+  const t = (text || '').toLowerCase();
+  if (/ранний/.test(t)) return 'orange';
+  if (/авторский/.test(t)) return 'pink';
+  if (/патентован/.test(t)) return 'blue';
+  if (/урожай/.test(t)) return 'green';
+  if (/хранит|лежк/.test(t)) return 'blue';
+  if (/популяр/.test(t)) return 'red';
+  if (/декоратив/.test(t)) return 'purple';
+  if (/новинк/.test(t)) return 'teal';
+  if (/нович/.test(t)) return 'yellow';
+  if (/сыроед/.test(t)) return 'green';
+  if (/архив/.test(t)) return 'gray';
+  if (/японская коллекция/.test(t)) return 'purple';
+  return '';
+}
+
+function getBadges(v) {
+  const original = Array.isArray(v.advantages) ? v.advantages : [];
+  let list = original.filter(x => x !== 'Популярный');
+  // Promote "Популярный" to the front if variety is popular
+  const isPopular = original.includes('Популярный') || FAVORITES.includes(v.name);
+  if (isPopular) list.unshift('Популярный');
+  // Remove "Ранний" — уже показан в quick-chip "⏱ Ранний (80-90)" с конкретными днями
+  if (v.term) list = list.filter(x => x !== 'Ранний');
+  // Mark decorative variety even if not in advantages array
+  if ((v.category === 'decor' || v.type === 'Декоративный') && !list.includes('Декоративный')) list.push('Декоративный');
+  return list.slice(0, 3).map(text => ({ text, cls: badgeClassFor(text) }));
+}
+
+function getQuickChips(v) {
+  const chips = [];
+  const adv = Array.isArray(v.advantages) ? v.advantages : [];
+  // Term chip — unique info (конкретные дни), не дублирует бейдж "Ранний"
+  if (v.term) chips.push('⏱ ' + v.term);
+  // Sweetness chip
+  if (v.category === 'food' && v.sweetness) chips.push('Сладость ' + v.sweetness + '/10');
+  // Status — берём только то, чего ещё нет в бейджах
+  const knownStatus = ['Ранний', 'Авторский', 'Патентованный', 'Для новичков', 'Для сыроедения', 'Архивный', 'Популярный', 'Новинка', 'Высокая урожайность', 'Декоративный', 'Столовый', 'Отлично хранится', 'Японская коллекция'];
+  const status = adv.find(a => !knownStatus.includes(a) && !FAVORITES.includes(a));
+  if (status) chips.push(status);
+  return chips.slice(0, 4);
+}
+
+function getOtherStatus(v) {
+  const known = ['Ранний', 'Авторский', 'Патентованный', 'Для новичков', 'Для сыроедения', 'Архивный', 'Популярный', 'Новинка', 'Высокая урожайность', 'Декоративный', 'Столовый', 'Отлично хранится', 'Японская коллекция'];
+  if (!Array.isArray(v.advantages)) return '';
+  return v.advantages.filter(a => !known.includes(a) && !FAVORITES.includes(a)).join(', ');
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function renderVarietyCard(v) {
+  const imgPath = v.img ? 'img/' + v.img : '';
+  const pageUrl = v.img ? v.img.replace('.webp', '.html') : '';
+  const overlays = [];
+  if ((Array.isArray(v.advantages) && v.advantages.includes('Популярный')) || FAVORITES.includes(v.name)) overlays.push('<span class="st-card-overlay-badge popular">Популярный</span>');
+  if (v.type === 'Японская коллекция') overlays.push('<span class="st-card-overlay-badge japanese">Японская коллекция</span>');
+  if (Array.isArray(v.advantages) && v.advantages.includes('Новинка')) overlays.push('<span class="st-card-overlay-badge new">Новинка</span>');
+  if (v.category === 'decor' || v.type === 'Декоративный') overlays.push('<span class="st-card-overlay-badge decor">Декоративный</span>');
+  if (Array.isArray(v.advantages) && v.advantages.includes('Для новичков')) overlays.push('<span class="st-card-overlay-badge beginner">Для новичков</span>');
+  if (Array.isArray(v.advantages) && v.advantages.includes('Патентованный')) overlays.push('<span class="st-card-overlay-badge patented">Патентованный</span>');
+  if (Array.isArray(v.advantages) && v.advantages.includes('Для сыроедения')) overlays.push('<span class="st-card-overlay-badge raw">Для сыроедения</span>');
+  if (Array.isArray(v.advantages) && v.advantages.includes('Архивный')) overlays.push('<span class="st-card-overlay-badge archive">Архивный</span>');
+  const overlayHtml = overlays.length ? '<div class="st-card-overlay">' + overlays.join('') + '</div>' : '';
+  const imgHtml = imgPath
+    ? '<div class="st-card-img-wrap">' + overlayHtml + '<img class="st-card-img" src="' + imgPath + '" alt="' + v.name + '" width="400" height="300" loading="lazy" onerror="this.outerHTML=\'<div class=st-card-fallback>' + v.name.charAt(0) + '</div>\'"></div>'
+    : '<div class="st-card-img-wrap">' + overlayHtml + '<div class="st-card-fallback">' + v.name.charAt(0) + '</div></div>';
+  const quickChips = getQuickChips(v);
+  const status = getOtherStatus(v);
+  if (status) quickChips.push(status);
+  const quickHtml = quickChips.length ? '<div class="st-card-quick">' + quickChips.map(text => '<span class="st-card-quick-chip">' + text + '</span>').join('') + '</div>' : '';
+  return '<div class="st-card" data-id="' + v.id + '">'
+    + imgHtml
+    + '<div class="st-card-body">'
+    + '<div class="st-card-name">' + v.name + '</div>'
+    + '<div class="st-card-color"><span class="color-dot ' + getColorClass(v.color) + '"></span> ' + colorLabel(v.color) + ' мякоть</div>'
+    + quickHtml
+    + '</div>'
+    + '<div class="st-card-footer">'
+    + '<a href="' + (pageUrl || 'opisanie-sortov-batata.html') + '" class="st-card-detail" style="grid-column:1/-1;">Подробнее</a>'
+    + '</div>'
+    + '</div>';
+}
+
+function getVarietiesWithImages() {
+  return (typeof varieties !== 'undefined' ? varieties : []).filter(v => v.img && v.img.trim());
+}
+
+function renderHomeVarieties() {
+  const container = document.getElementById('homeVarieties');
+  if (!container) return;
+  const available = getVarietiesWithImages();
+  if (!available.length) return;
+  const picks = shuffle(available).slice(0, 6);
+  container.innerHTML = picks.map(renderVarietyCard).join('');
+}
+
+const PLANT_TAG_LABELS = { easy: '🌱 Новичкам', edible: '🍴 Съедобное', south: '☀ Южные', greenhouse: '🏠 Теплица', winter: '❄ Зимует' };
+const PLANT_BADGE_LABELS = { popular: '🔥 Популяр', recommend: '🏆 Рекомендуем', new: '⭐ Новинка' };
+
+function renderPlantCard(p) {
+  const imgPath = p.img ? 'img/' + p.img : '';
+  const pageUrl = p.page ? p.slug + '.html' : 'rasteniya.html';
+  const badgeHtml = p.badge ? '<div class="home-plant-badge ' + p.badge + '">' + (PLANT_BADGE_LABELS[p.badge] || '') + '</div>' : '';
+  const imgHtml = imgPath
+    ? '<div class="st-card-img-wrap">' + badgeHtml + '<img class="st-card-img" src="' + imgPath + '" alt="' + p.name + '" width="400" height="300" loading="lazy" onerror="this.outerHTML=\'<div class=st-card-fallback>' + p.name.charAt(0) + '</div>\'"></div>'
+    : '<div class="st-card-img-wrap">' + badgeHtml + '<div class="st-card-fallback">' + p.name.charAt(0) + '</div></div>';
+  const tagsHtml = (p.tags || []).slice(0, 2).map(t => '<span class="home-plant-tag ' + t + '">' + (PLANT_TAG_LABELS[t] || t) + '</span>').join('');
+  return '<div class="home-plant-card" data-slug="' + p.slug + '">'
+    + imgHtml
+    + '<div class="st-card-body">'
+    + '<div class="st-card-name">' + p.name + '</div>'
+    + '<div class="st-card-color">' + (p.height ? '📏 ' + p.height : 'Экзотическая культура') + '</div>'
+    + (tagsHtml ? '<div class="home-plant-tags">' + tagsHtml + '</div>' : '')
+    + '</div>'
+    + '<div class="st-card-footer">'
+    + '<a href="' + pageUrl + '" class="st-card-detail" style="grid-column:1/-1;">Подробнее</a>'
+    + '</div>'
+    + '</div>';
+}
+
+function renderHomePlants() {
+  const container = document.getElementById('homePlants');
+  if (!container) return;
+  const plants = Array.isArray(window.plantsCatalog) ? window.plantsCatalog.filter(p => p.img && p.img.trim()) : [];
+  if (!plants.length) return;
+  const picks = shuffle(plants).slice(0, 6);
+  container.innerHTML = picks.map(renderPlantCard).join('');
+}
+
+function shuffleHomeAll() {
+  renderHomeVarieties();
+  renderHomePlants();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHomeVarieties();
+  if (Array.isArray(window.plantsCatalog)) renderHomePlants();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог редких и экзотических растений для сада | Batatchudo.com</title>
+  <meta name="description" content="Вырастите экзотику на своем участке! Саженцы и клубни редких растений, адаптированных для России: ямс, чайот, момордика, кивано и другие. Уникальная коллекция от питомника Batatchudo.com. Доставка по РФ.">
+  <meta property="og:title" content="Каталог редких и экзотических растений | Batatchudo.com">
+  <meta property="og:description" content="Вырастите экзотику на своем участке! Редкие растения, адаптированные для России.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/rasteniya.html">
+  <link rel="canonical" href="https://batatchudo.com/rasteniya.html">
+  <meta property="og:image" content="https://batatchudo.com/img/yams-6.webp">
+  <meta property="og:image:type" content="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .rt-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #0f241d;
+      min-height: 65vh;
+    }
+    .rt-hero-bg {
+      position: absolute; inset: 0;
+      background: url('img/batat-assortiment-g1.webp') center 30% / cover no-repeat;
+    }
+    .rt-hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(12,24,20,.78) 0%, rgba(15,36,29,.48) 52%, rgba(15,36,29,.12) 100%);
+    }
+    .rt-hero-content { position: relative; z-index: 2; width: 100%; padding: 120px 0 60px; }
+    .rt-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+    .rt-hero h1 { font-size: clamp(2.2rem,4.5vw,3.5rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 12px; letter-spacing: -.02em; }
+    .rt-hero h1 span { color: #52b788; }
+    .rt-hero-sub { font-size: 1rem; color: rgba(255,255,255,.8); line-height: 1.7; max-width: 520px; margin-bottom: 24px; }
+    .rt-hero-stats { display: flex; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; }
+    .rt-hero-stat-num { font-size: 1.5rem; font-weight: 800; color: #52b788; }
+    .rt-hero-stat-label { color: rgba(255,255,255,.65); font-size: .8rem; margin-top: 2px; }
+    .rt-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .rt-hero-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .rt-hero-collage img { width: 100%; border-radius: 16px; aspect-ratio: 1; object-fit: cover; }
+    .rt-hero-collage img:first-child { grid-row: span 2; aspect-ratio: auto; }
+
+    .rt-toolbar {
+      padding: 20px 0 16px;
+      position: sticky; top: 72px; z-index: 10;
+      background: #f8faf6;
+      border-bottom: 1px solid rgba(0,0,0,.04);
+    }
+    .rt-toolbar-inner { display: flex; flex-direction: column; gap: 12px; }
+    .rt-search { flex: 1; min-width: 200px; position: relative; }
+    .rt-search input {
+      width: 100%; padding: 12px 16px 12px 44px; border: 2px solid #d8f3dc; border-radius: 100px;
+      font-size: .9rem; font-family: inherit; background: #fff; transition: border-color .3s; outline: none;
+    }
+    .rt-search input:focus { border-color: #52b788; }
+    .rt-search-icon {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      color: #999; font-size: .9rem; pointer-events: none;
+    }
+    .rt-pills { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .rt-pill {
+      padding: 7px 16px; border-radius: 999px; border: 2px solid #d8f3dc; background: transparent;
+      color: #2d6a4f; font-weight: 600; font-size: .8rem; cursor: pointer; transition: all .2s; font-family: inherit;
+      white-space: nowrap;
+    }
+    .rt-pill:hover { border-color: #52b788; background: rgba(82,183,136,.08); }
+    .rt-pill.active { background: #2d6a4f; border-color: #2d6a4f; color: #fff; }
+    .rt-result-count { font-size: .82rem; color: #999; white-space: nowrap; margin-left: auto; }
+
+    .rt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 20px; padding: 28px 0 60px; }
+    .rt-card {
+      background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      transition: all .4s cubic-bezier(.4,0,.2,1); text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      border: 1px solid rgba(0,0,0,.04); position: relative;
+      opacity: 0; transform: translateY(16px); animation: rtFadeUp .45s ease forwards;
+    }
+    @keyframes rtFadeUp { to { opacity: 1; transform: translateY(0); } }
+    .rt-card:nth-child(1) { animation-delay: 0ms; }
+    .rt-card:nth-child(2) { animation-delay: 40ms; }
+    .rt-card:nth-child(3) { animation-delay: 80ms; }
+    .rt-card:nth-child(4) { animation-delay: 120ms; }
+    .rt-card:nth-child(5) { animation-delay: 160ms; }
+    .rt-card:nth-child(6) { animation-delay: 200ms; }
+    .rt-card:nth-child(7) { animation-delay: 240ms; }
+    .rt-card:nth-child(8) { animation-delay: 280ms; }
+    .rt-card:nth-child(9) { animation-delay: 320ms; }
+    .rt-card:nth-child(10) { animation-delay: 360ms; }
+    .rt-card:nth-child(11) { animation-delay: 400ms; }
+    .rt-card:nth-child(12) { animation-delay: 440ms; }
+    .rt-card:nth-child(13) { animation-delay: 480ms; }
+    .rt-card:nth-child(14) { animation-delay: 520ms; }
+    .rt-card:nth-child(15) { animation-delay: 560ms; }
+    .rt-card:nth-child(16) { animation-delay: 600ms; }
+    .rt-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.1); }
+    .rt-card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #d8f3dc; display: block; transition: transform .5s; }
+    .rt-card:hover .rt-card-img { transform: scale(1.05); }
+    .rt-card-badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      padding: 4px 12px; border-radius: 999px; font-size: .7rem; font-weight: 700; text-transform: uppercase;
+    }
+    .rt-card-badge.popular { background: #fee2e2; color: #991b1b; }
+    .rt-card-badge.new { background: #dbeafe; color: #1e40af; }
+    .rt-card-badge.recommend { background: #d1fae5; color: #065f46; }
+    .rt-card-fallback {
+      width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg,#d8f3dc,#b7e4c7);
+      display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #2d6a4f;
+    }
+    .rt-card-body { padding: 16px 20px 16px; flex: 1; display: flex; flex-direction: column; }
+    .rt-card-name { font-size: 1.05rem; font-weight: 700; color: #1a3c2e; margin-bottom: 6px; }
+    .rt-card-desc { font-size: .85rem; color: #666; line-height: 1.6; flex: 1; margin-bottom: 10px; }
+    .rt-card-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .rt-card-meta-item { font-size: .78rem; color: #777; display: flex; align-items: center; gap: 4px; }
+    .rt-card-meta-item strong { color: #1a3c2e; font-weight: 600; }
+    .rt-card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+    .rt-card-tag {
+      display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .68rem; font-weight: 600;
+    }
+    .rt-card-tag.easy { background: #d1fae5; color: #065f46; }
+    .rt-card-tag.south { background: #fef3c7; color: #92400e; }
+    .rt-card-tag.greenhouse { background: #e0e7ff; color: #3730a3; }
+    .rt-card-tag.winter { background: #e0f2fe; color: #075985; }
+    .rt-card-tag.edible { background: #fce7f3; color: #9d174d; }
+
+    .rt-card-actions {
+      display: flex; gap: 8px; align-items: center;
+      padding: 12px 20px; border-top: 1px solid #f0f0f0; background: #fafcfa;
+    }
+    .rt-card-action {
+      font-size: .82rem; font-weight: 600; text-decoration: none;
+      padding: 6px 14px; border-radius: 999px; transition: all .2s;
+    }
+    .rt-card-action-detail {
+      color: #2d6a4f; background: transparent; border: 2px solid #d8f3dc;
+    }
+    .rt-card-action-detail:hover { border-color: #52b788; background: rgba(82,183,136,.08); }
+    .rt-card.hidden { display: none; }
+
+    .rt-empty {
+      text-align: center; padding: 60px 20px; color: #999; display: none;
+    }
+    .rt-empty.show { display: block; }
+    .rt-empty-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .rt-empty p { font-size: 1rem; margin-bottom: 4px; }
+
+    .rt-social { padding: 60px 0; text-align: center; background: linear-gradient(180deg,#f8faf6,#eef7f0); }
+    .rt-social-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 24px; max-width: 720px; margin: 32px auto 0; }
+    .rt-social-num { font-size: 2.4rem; font-weight: 800; color: #2d6a4f; }
+    .rt-social-label { color: #666; font-size: .9rem; margin-top: 4px; }
+
+    .rt-cta { background: linear-gradient(135deg,#1a3c2e,#2d6a4f,#40916c); color: #fff; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+    .rt-cta::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,.03); top: -200px; right: -150px; }
+    .rt-cta::after { content: ''; position: absolute; width: 350px; height: 350px; border-radius: 50%; background: rgba(255,255,255,.03); bottom: -120px; left: -100px; }
+    .rt-cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; position: relative; z-index: 1; }
+    .rt-cta p { opacity: .85; margin-bottom: 6px; font-size: 1rem; position: relative; z-index: 1; }
+    .rt-cta .btn { position: relative; z-index: 1; }
+    .rt-cta-features { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin: 20px 0 28px; position: relative; z-index: 1; }
+    .rt-cta-feature { background: rgba(255,255,255,.08); padding: 10px 20px; border-radius: 100px; font-size: .9rem; backdrop-filter: blur(4px); }
+
+    .rt-modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 9999;
+      justify-content: center; align-items: center; backdrop-filter: blur(4px);
+    }
+    .rt-modal-overlay.open { display: flex; }
+    .rt-modal { background: #fff; border-radius: 24px; padding: 32px; max-width: 480px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .rt-modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; }
+    .rt-modal img { width: 100%; border-radius: 12px; aspect-ratio: 3/4; object-fit: cover; margin-bottom: 16px; background: #d8f3dc; }
+    .rt-modal h2 { font-size: 1.3rem; font-weight: 700; color: #1a3c2e; margin-bottom: 8px; }
+    .rt-modal p { font-size: .9rem; color: #666; line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .rt-hero { min-height: auto; }
+      .rt-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .rt-hero-collage { display: none; }
+      .rt-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+      .rt-grid { grid-template-columns: 1fr; }
+      .rt-cta-features { flex-direction: column; align-items: center; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Более 37 редких растений для сада и огорода",
+  "description": "Вырастите экзотику на своем участке! Саженцы и клубни редких растений, адаптированных для России: ямс, чайот, момордика, кивано и другие. Уникальная коллекция от питомника Batatchudo.com. Доставка по РФ.",
+  "url": "https://batatchudo.com/rasteniya.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  }
+}
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html" class="active">Растения</a>
+      <a href="price.html">Прайс</a>
+      <a href="recepty.html">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="rt-hero">
+  <div class="rt-hero-bg"></div>
+  <div class="rt-hero-content">
+    <div class="container">
+      <div class="rt-hero-grid">
+        <div>
+          <h1>Более <span>37 редких растений</span> для сада и огорода</h1>
+          <p class="rt-hero-sub">Ямс, чайот, момордика, кивано и другие культуры, адаптированные для климата России. Коллекция Batatchudo — результат многолетней селекции.</p>
+          <div class="rt-hero-stats">
+            <div><div class="rt-hero-stat-num">37</div><div class="rt-hero-stat-label">видов растений</div></div>
+            <div><div class="rt-hero-stat-num">15 лет</div><div class="rt-hero-stat-label">опыта</div></div>
+            <div><div class="rt-hero-stat-num">1000+</div><div class="rt-hero-stat-label">садоводов доверяют</div></div>
+          </div>
+          <div class="rt-hero-btns">
+            <a href="#" class="btn" id="rtHeroBtn" style="background:#fff;color:#1a3c2e;border:none;">Смотреть растения</a>
+            <a href="price.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Смотреть прайс</a>
+          </div>
+        </div>
+        <div class="rt-hero-collage">
+          <img src="img/yams-6.webp" alt="Ямс" loading="lazy" width="715" height="720">
+          <img src="img/chayot-g1.webp" alt="Чайот" loading="lazy" width="960" height="1280">
+          <img src="img/kivano-g1.webp" alt="Кивано" loading="lazy" width="704" height="700">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rt-toolbar" id="rtToolbar">
+  <div class="container">
+    <div class="rt-toolbar-inner">
+      <div class="rt-search">
+        <span class="rt-search-icon">&#128269;</span>
+        <input type="text" id="rtSearch" placeholder="Найти растение..." autocomplete="off">
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <div class="rt-pills" id="rtFilters">
+          <button class="rt-pill active" data-filter="all">Все</button>
+          <button class="rt-pill" data-filter="tuber">🥔 Клубневые</button>
+          <button class="rt-pill" data-filter="annual">🌿 Однолетние</button>
+          <button class="rt-pill" data-filter="perennial">🌳 Многолетние</button>
+          <button class="rt-pill" data-tag="edible">🍴 Съедобные</button>
+          <button class="rt-pill" data-tag="easy">🌱 Новичкам</button>
+          <button class="rt-pill" data-tag="south">☀ Теплолюбивые</button>
+          <button class="rt-pill" data-tag="greenhouse">🏠 Для теплицы</button>
+          <button class="rt-pill" data-tag="winter">❄ Зимостойкие</button>
+        </div>
+        <span class="rt-result-count" id="rtCount"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="rtCatalogAnchor">
+  <div class="rt-grid" id="rtGrid"></div>
+  <div class="rt-empty" id="rtEmpty">
+    <div class="rt-empty-icon">🔍</div>
+    <p>Ничего не найдено</p>
+    <p style="font-size:.85rem;">Попробуйте изменить фильтр или поисковый запрос</p>
+  </div>
+</div>
+
+<section class="rt-social">
+  <div class="container">
+    <h2 style="font-size:1.6rem;font-weight:800;color:#1a3c2e;">Нам доверяют более 1000 садоводов</h2>
+    <p style="color:#666;margin-top:8px;">Садоводы из разных регионов России выращивают наши растения</p>
+    <div class="rt-social-grid">
+      <div class="rt-social-item"><div class="rt-social-num">1000+</div><div class="rt-social-label">довольных садоводов</div></div>
+      <div class="rt-social-item"><div class="rt-social-num">37</div><div class="rt-social-label">видов растений</div></div>
+      <div class="rt-social-item"><div class="rt-social-num">15 лет</div><div class="rt-social-label">опыта</div></div>
+      <div class="rt-social-item"><div class="rt-social-num">РФ</div><div class="rt-social-label">доставка по всей России</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rt-cta">
+  <div class="container">
+    <h2>Хотите попробовать вырастить экзотику?</h2>
+    <p>Поможем подобрать растения под ваш регион</p>
+    <p>Подскажем сроки посадки и отправим по всей России</p>
+    <div class="rt-cta-features">
+      <span class="rt-cta-feature">&#10003; Индивидуальный подбор</span>
+      <span class="rt-cta-feature">&#10003; Советы по посадке</span>
+      <span class="rt-cta-feature">&#10003; Доставка по РФ</span>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="kontakty.html" class="btn" style="background:#fff;color:#1a3c2e;border:none;">Получить консультацию</a>
+      <a href="opisanie-sortov-batata.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Сорта батата</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
+  </div>
+</section>
+
+<div class="rt-modal-overlay" id="rtModal">
+  <div class="rt-modal">
+    <button class="rt-modal-close" onclick="document.getElementById('rtModal').classList.remove('open')">&times;</button>
+    <div id="rtModalContent"></div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/plants-data.js"></script>
+<script>
+const tagLabels = { easy:'🌱 Для новичков', south:'☀ Южные регионы', greenhouse:'🏠 Для теплицы', winter:'❄ Условно зимует', edible:'🍴 Съедобное' };
+const tagClasses = { easy:'easy', south:'south', greenhouse:'greenhouse', winter:'winter', edible:'edible' };
+const badgeLabels = { popular:'🔥 Популярное', new:'⭐ Новинка', recommend:'🏆 Рекомендуем' };
+const diffLabels = { 1:'🟢 Легко', 2:'🟡 Средне', 3:'🔴 Сложно' };
+
+let plants = [];
+
+function getImg(p) {
+  return p.img ? 'img/' + p.img : '';
+}
+
+function renderPlants(list) {
+  const container = document.getElementById('rtGrid');
+  const empty = document.getElementById('rtEmpty');
+  container.innerHTML = list.map(p => {
+    const imgPath = getImg(p);
+    const badgeHtml = p.badge ? `<div class="rt-card-badge ${p.badge}">${badgeLabels[p.badge]}</div>` : '';
+    const tagsHtml = p.tags.map(t => `<span class="rt-card-tag ${tagClasses[t]}">${tagLabels[t]}</span>`).join('');
+    const pageUrl = p.page ? p.slug + '.html' : '';
+    const imgHtml = imgPath
+      ? `<img class="rt-card-img" src="${imgPath}" alt="${p.name}" width="400" height="300" loading="lazy" onerror="this.outerHTML='<div class=rt-card-fallback>${p.name.charAt(0)}</div>'">`
+      : `<div class="rt-card-fallback">${p.name.charAt(0)}</div>`;
+    return `<div class="rt-card">
+      ${badgeHtml}
+      ${imgHtml}
+      <div class="rt-card-body">
+        <div class="rt-card-name">${p.name}</div>
+        <div class="rt-card-desc">${p.desc}</div>
+        <div class="rt-card-meta">
+          <span class="rt-card-meta-item"><strong>Сложность:</strong> ${diffLabels[p.diff] || '—'}</span>
+          ${p.height !== '—' ? `<span class="rt-card-meta-item"><strong>Высота:</strong> ${p.height}</span>` : ''}
+          ${p.term !== '—' ? `<span class="rt-card-meta-item"><strong>Срок:</strong> ${p.term}</span>` : ''}
+        </div>
+        <div class="rt-card-tags">${tagsHtml}</div>
+      </div>
+      <div class="rt-card-actions">
+        <a href="${pageUrl}" class="rt-card-action rt-card-action-detail" ${pageUrl ? '' : `onclick="openRtModal('${p.slug}'); return false;"`}>Подробнее →</a>
+      </div>
+    </div>`;
+  }).join('');
+  const count = document.getElementById('rtCount');
+  if (count) count.textContent = list.length + ' растений';
+  if (empty) {
+    empty.classList.toggle('show', list.length === 0);
+  }
+}
+
+function openRtModal(slug) {
+  const p = plants.find(x => x.slug === slug);
+  if (!p) return;
+  const overlay = document.getElementById('rtModal');
+  const imgPath = getImg(p);
+  document.getElementById('rtModalContent').innerHTML = `
+    ${imgPath ? `<img src="${imgPath}" alt="${p.name}" width="300" height="400" style="width:100%;border-radius:12px;aspect-ratio:3/4;object-fit:cover;margin-bottom:16px;">` : `<div style="width:100%;border-radius:12px;aspect-ratio:3/4;background:linear-gradient(135deg,#d8f3dc,#b7e4c7);display:flex;align-items:center;justify-content:center;font-size:3rem;margin-bottom:16px;">${p.name.charAt(0)}</div>`}
+    <h2>${p.name}</h2>
+    <p>${p.desc}</p>
+    <p style="margin-top:12px;font-size:.85rem;color:#999;">Скоро добавим подробное описание.</p>`;
+  overlay.classList.add('open');
+}
+
+function initRasteniya() {
+  const grid = document.getElementById('rtGrid');
+  if (!grid) return;
+
+  const searchInput = document.getElementById('rtSearch');
+  const pills = document.querySelectorAll('#rtFilters .rt-pill');
+  const heroBtn = document.getElementById('rtHeroBtn');
+
+  if (heroBtn) {
+    heroBtn.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('rtToolbar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  function getActivePill() {
+    return Array.from(pills).find(p => p.classList.contains('active'));
+  }
+
+  function filter() {
+    const q = searchInput.value.toLowerCase().trim();
+    const active = getActivePill();
+    let items = plants;
+
+    if (active) {
+      const f = active.dataset.filter;
+      const t = active.dataset.tag;
+      if (f && f !== 'all') items = items.filter(p => p.cat === f);
+      if (t && t !== 'all') items = items.filter(p => p.tags.includes(t));
+    }
+
+    if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+    renderPlants(items);
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      filter();
+    });
+  });
+
+  searchInput.addEventListener('input', filter);
+  filter();
+
+  plants = Array.isArray(window.plantsCatalog) ? window.plantsCatalog : [];
+  filter();
+}
+
+document.addEventListener('DOMContentLoaded', initRasteniya);
+</script>
+</body>
+</html>

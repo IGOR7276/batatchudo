@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог сортов батата: 150+ видов с фото и описанием | Batatchudo.com</title>
+  <meta name="description" content="Все сорта батата в одном каталоге! Более 150 видов с подробными описаниями, фото, характеристиками. Фильтры по цвету мякоти и сроку созревания.">
+  <meta property="og:title" content="Каталог сортов батата: 150+ видов | Batatchudo.com">
+  <meta property="og:description" content="Все сорта батата с описаниями и фото. Фильтры по цвету мякоти. Найдите свой идеальный сорт!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/opisanie-sortov-batata.html">
+  <link rel="canonical" href="https://batatchudo.com/opisanie-sortov-batata.html">
+  <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:type" content="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .st-hero {
+      position: relative; overflow: hidden; isolation: isolate;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(245,158,11,.34), transparent 30%),
+        radial-gradient(circle at 82% 10%, rgba(82,183,136,.36), transparent 28%),
+        linear-gradient(135deg,#10251d 0%,#1a3c2e 43%,#3c2418 100%);
+      color: #fff; padding: 112px 0 34px; text-align: center;
+    }
+    .st-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: -2;
+      background: url('img/batat-assortiment-g1.webp') center 42% / cover no-repeat;
+      opacity: .16; filter: saturate(1.1);
+    }
+    .st-hero::after {
+      content: ''; position: absolute; inset: auto -8% -42px; height: 90px; z-index: -1;
+      background: #f8faf6; border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+    .st-hero h1 { font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 800; margin-bottom: 10px; line-height: 1.08; letter-spacing: -.04em; }
+    .st-hero h1 span { color: #ffd166; font-weight: 700; font-size: clamp(1rem, 1.9vw, 1.28rem); display: block; margin-top: 8px; letter-spacing: 0; }
+    .hero-subtitle { font-size: 1rem; color: rgba(255,255,255,.84); max-width: 660px; margin: 0 auto 6px; line-height: 1.65; }
+    .st-search-wrap { max-width: 560px; margin: 22px auto 0; position: relative; }
+    .st-search-wrap input {
+      width: 100%; padding: 15px 18px 15px 48px; border: 1px solid rgba(255,255,255,.25); border-radius: 100px;
+      font-size: .98rem; font-family: inherit; outline: none; background: rgba(255,255,255,.16);
+      color: #fff; backdrop-filter: blur(14px); transition: background .3s, border-color .3s, box-shadow .3s;
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+    }
+    .st-search-wrap input::placeholder { color: rgba(255,255,255,.6); }
+    .st-search-wrap input:focus { background: rgba(255,255,255,.24); border-color: rgba(255,209,102,.65); box-shadow: 0 18px 50px rgba(0,0,0,.22), 0 0 0 4px rgba(255,209,102,.12); }
+    .st-search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 1rem; opacity: .78; pointer-events: none; }
+
+    .st-stats { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .st-stat {
+      background: rgba(255,255,255,.13); backdrop-filter: blur(12px); border-radius: 16px;
+      padding: 10px 16px; min-width: 104px; text-align: center; border: 1px solid rgba(255,255,255,.16);
+    }
+    .st-stat-num { font-size: 1.25rem; font-weight: 800; color: #fff; line-height: 1; }
+    .st-stat-label { font-size: .68rem; color: rgba(255,255,255,.8); margin-top: 3px; }
+
+    .st-collections { display: none; }
+    .st-collections-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .st-collection {
+      padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(45,106,79,.12); background: #fff;
+      color: #2d6a4f; font-weight: 800; font-size: .84rem; cursor: pointer; transition: all .2s; font-family: inherit;
+      white-space: nowrap; box-shadow: 0 8px 26px rgba(26,60,46,.07);
+    }
+    .st-collection:hover { border-color: #52b788; background: #fffaf0; transform: translateY(-2px); }
+    .st-collection.active { background: linear-gradient(135deg,#2d6a4f,#40916c); border-color: #2d6a4f; color: #fff; box-shadow: 0 12px 30px rgba(45,106,79,.2); }
+
+    .st-pills-wrap {
+      padding: 14px 0 12px; position: sticky; top: 72px; z-index: 10;
+      background: rgba(248,250,246,.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(45,106,79,.08); transition: box-shadow .3s;
+    }
+    .st-pills-wrap.scrolled { box-shadow: 0 12px 32px rgba(26,60,46,.1); }
+    .st-pills-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .st-pills-row + .st-pills-row { margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(45,106,79,.13); }
+    .st-filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 4px; border-radius: 16px; background: rgba(255,255,255,.58); }
+    .st-filter-label { font-size: .7rem; color: #6b7c71; font-weight: 800; margin-right: 2px; white-space: nowrap; padding-left: 4px; text-transform: uppercase; letter-spacing: .04em; }
+    .st-pill {
+      padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(45,106,79,.14); background: #fff;
+      color: #2d6a4f; font-weight: 750; font-size: .78rem; cursor: pointer; transition: all .2s; font-family: inherit;
+      white-space: nowrap; box-shadow: 0 4px 16px rgba(26,60,46,.04);
+    }
+    .st-pill:hover { border-color: #52b788; background: #f0fdf4; transform: translateY(-1px); }
+    .st-pill.active { background: #1a3c2e; border-color: #1a3c2e; color: #fff; box-shadow: 0 10px 22px rgba(26,60,46,.16); }
+    .st-pill.st-clear { border-color: #fecaca; color: #b91c1c; }
+    .st-pill.st-clear:hover { background: #fee2e2; }
+    .st-count { font-size: .8rem; color: #999; white-space: nowrap; margin-left: 12px; }
+    .st-view-toggle { display: flex; gap: 6px; margin-left: auto; padding: 4px; border-radius: 14px; background: #fff; box-shadow: 0 4px 18px rgba(26,60,46,.06); }
+    .st-view-btn {
+      padding: 7px 11px; border-radius: 10px; border: 1px solid #d8f3dc; background: transparent;
+      color: #2d6a4f; font-size: .8rem; cursor: pointer; font-family: inherit; transition: all .2s; line-height: 1;
+    }
+    .st-view-btn:hover { border-color: #52b788; }
+    .st-view-btn.active { background: #2d6a4f; border-color: #2d6a4f; color: #fff; }
+
+    .st-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); gap: 20px; padding: 26px 0 72px; }
+    .st-card {
+      background: linear-gradient(180deg,#fff 0%,#fffdf8 100%); border-radius: 24px; overflow: hidden; box-shadow: 0 12px 34px rgba(26,60,46,.08);
+      transition: all .3s ease; display: flex; flex-direction: column;
+      border: 1px solid rgba(45,106,79,.09); position: relative;
+      opacity: 0; transform: translateY(12px); animation: stFadeIn .4s ease forwards;
+    }
+    .st-card::before { content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: 24px; box-shadow: inset 0 1px 0 rgba(255,255,255,.85); z-index: 3; }
+    @keyframes stFadeIn { to { opacity: 1; transform: translateY(0); } }
+    .st-card:nth-child(1) { animation-delay: 0ms; }
+    .st-card:nth-child(2) { animation-delay: 30ms; }
+    .st-card:nth-child(3) { animation-delay: 60ms; }
+    .st-card:nth-child(4) { animation-delay: 90ms; }
+    .st-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(26,60,46,.16); border-color: rgba(82,183,136,.32); }
+    .st-card-img-wrap { position: relative; overflow: hidden; background: #d8f3dc; }
+    .st-card-img-wrap::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(180deg, transparent, rgba(16,37,29,.36)); pointer-events: none; }
+    .st-card-img { width: 100%; aspect-ratio: 6/5; object-fit: cover; background: #d8f3dc; display: block; transition: transform .5s ease; }
+    .st-card:hover .st-card-img { transform: scale(1.07); }
+    .st-card-overlay {
+      position: absolute; top: 10px; left: 10px; z-index: 2; display: flex; flex-direction: column; gap: 5px;
+    }
+    .st-card-overlay-badge {
+      display: inline-flex; align-items: center; width: max-content; max-width: none; padding: 4px 9px; border-radius: 999px; font-size: .64rem; font-weight: 800;
+      white-space: nowrap;
+      letter-spacing: .02em; text-transform: uppercase; line-height: 1.4;
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    }
+    .st-card-overlay-badge.new { background: #059669; color: #fff; }
+    .st-card-overlay-badge.popular { background: #dc2626; color: #fff; }
+    .st-card-overlay-badge.japanese { background: #7c3aed; color: #fff; }
+    .st-card-overlay-badge.decor { background: #ec4899; color: #fff; }
+    .st-card-overlay-badge.beginner { background: #eab308; color: #1a1a1a; }
+    .st-card-overlay-badge.patented { background: #3b82f6; color: #fff; }
+    .st-card-overlay-badge.raw { background: #16a34a; color: #fff; }
+    .st-card-overlay-badge.archive { background: #6b7280; color: #fff; }
+    .st-card-fallback {
+      width: 100%; aspect-ratio: 6/5; background: linear-gradient(135deg,#d8f3dc,#b7e4c7);
+      display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: #2d6a4f;
+    }
+    .st-card-body { padding: 15px 16px 8px; flex: 1; }
+    .st-card-name { font-size: 1.05rem; font-weight: 850; color: #1a3c2e; margin-bottom: 4px; letter-spacing: -.01em; }
+    .st-card-color { font-size: .74rem; color: #68756d; margin-bottom: 8px; font-weight: 650; }
+    .st-card-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+    .st-card-badge {
+      display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: .62rem; font-weight: 800;
+      background: #f0fdf4; color: #2d6a4f;
+    }
+    .st-card-badge.orange { background: #fef3c7; color: #92400e; }
+    .st-card-badge.purple { background: #f3e8ff; color: #6b21a8; }
+    .st-card-badge.blue { background: #dbeafe; color: #1e40af; }
+    .st-card-badge.pink { background: #fce7f3; color: #9d174d; }
+    .st-card-badge.red { background: #fee2e2; color: #991b1b; }
+    .st-card-badge.green { background: #dcfce7; color: #166534; }
+    .st-card-badge.teal { background: #ccfbf1; color: #115e59; }
+    .st-card-badge.yellow { background: #fef9c3; color: #854d0e; }
+    .st-card-badge.gray { background: #f3f4f6; color: #374151; }
+    .st-card-quick { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+    .st-card-quick-chip {
+      display: inline-flex; align-items: center; gap: 4px; max-width: 100%; padding: 5px 9px;
+      border-radius: 999px; background: #f8faf6; border: 1px solid rgba(45,106,79,.1);
+      color: #24533f; font-size: .69rem; font-weight: 800; line-height: 1.2;
+    }
+    .st-card-spec-toggle {
+      font-size: .72rem; font-weight: 600; cursor: pointer; padding: 4px 10px; border-radius: 999px;
+      border: 2px solid #d8f3dc; background: transparent; color: #2d6a4f; font-family: inherit; transition: all .2s;
+    }
+    .st-card-spec-toggle:hover, .st-card-spec-toggle.is-open { border-color: #52b788; background: rgba(82,183,136,.08); }
+    .st-card-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; padding: 10px 16px 14px; border-top: 1px solid rgba(45,106,79,.08); background: rgba(248,250,246,.72); }
+    .st-card-compare {
+      font-size: .72rem; font-weight: 800; cursor: pointer; padding: 7px 10px;
+      border-radius: 999px; border: 1px solid #d8f3dc; background: #fff; font-family: inherit; transition: all .2s;
+      color: #2d6a4f;
+    }
+    .st-card-compare, .st-card-spec-toggle, .st-card-detail { text-align: center; justify-content: center; min-width: 0; }
+    .st-card-compare:hover { border-color: #52b788; background: rgba(82,183,136,.08); }
+    .st-card-compare.in-compare { background: #d1fae5; border-color: #2d6a4f; }
+    .st-card-detail {
+      margin-left: 0; font-size: .72rem; font-weight: 800; text-decoration: none;
+      padding: 7px 13px; border-radius: 999px; border: 1px solid #2d6a4f; transition: all .2s;
+      color: #fff; background: #2d6a4f;
+    }
+    .st-card-detail:hover { border-color: #1a3c2e; background: #1a3c2e; }
+
+    .st-empty { text-align: center; padding: 60px 20px; color: #999; grid-column: 1 / -1; }
+    .st-empty-icon { font-size: 2.5rem; margin-bottom: 8px; }
+    .st-empty-hint { margin-top: 6px; font-size: .8rem; color: #bbb; }
+
+    .st-compare-panel {
+      display: none; position: fixed; bottom: 18px; left: 50%; right: auto; z-index: 999;
+      width: min(1040px, calc(100% - 32px)); transform: translateX(-50%);
+      background: rgba(255,255,255,.94); backdrop-filter: blur(18px); border: 1px solid rgba(45,106,79,.12);
+      border-radius: 24px; padding: 14px 18px 16px; box-shadow: 0 22px 60px rgba(26,60,46,.22);
+      animation: stSlideUp .3s ease; max-height: 44vh; overflow-y: auto;
+    }
+    @keyframes stSlideUp { from { transform: translate(-50%, 120%); } to { transform: translate(-50%, 0); } }
+    .st-compare-panel.open { display: block; }
+    .st-compare-panel-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+    .st-compare-panel-top span { font-size: .85rem; color: #555; font-weight: 600; }
+    .st-compare-items { display: flex; gap: 8px; flex-wrap: wrap; }
+    .st-compare-item {
+      display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px 6px 12px;
+      border-radius: 999px; background: #d1fae5; font-size: .78rem; font-weight: 800; color: #065f46;
+    }
+    .st-compare-item .remove {
+      cursor: pointer; font-size: 1rem; line-height: 1; color: #065f46; opacity: .6;
+      background: none; border: none; padding: 0 2px; font-family: inherit;
+    }
+    .st-compare-item .remove:hover { opacity: 1; }
+    .st-compare-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .st-compare-btn {
+      padding: 6px 18px; border-radius: 999px; background: #2d6a4f; color: #fff;
+      border: none; font-weight: 600; font-size: .82rem; cursor: pointer; font-family: inherit;
+    }
+    .st-compare-btn:hover { background: #1a3c2e; }
+    .st-compare-share {
+      padding: 6px 18px; border-radius: 999px; background: #fff; color: #2d6a4f;
+      border: 2px solid #d8f3dc; font-weight: 600; font-size: .82rem; cursor: pointer; font-family: inherit;
+    }
+    .st-compare-share:hover { border-color: #52b788; background: rgba(82,183,136,.08); }
+    .st-compare-clear {
+      padding: 6px 18px; border-radius: 999px; background: transparent; color: #999;
+      border: 2px solid #e5e7eb; font-weight: 600; font-size: .82rem; cursor: pointer; font-family: inherit;
+    }
+    .st-compare-clear:hover { border-color: #ccc; color: #666; }
+
+    .st-compare-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(4px); padding: 20px; }
+    .st-compare-modal.open { display: flex; }
+    .st-compare-inner { background: #fff; border-radius: 24px; padding: 28px; max-width: 940px; width: 100%; max-height: 82vh; overflow: auto; position: relative; box-shadow: 0 28px 70px rgba(0,0,0,.22); }
+    .st-compare-inner h3 { font-size: 1.1rem; font-weight: 700; color: #1a3c2e; margin-bottom: 4px; }
+    .st-compare-hint { font-size: .75rem; color: #888; margin-bottom: 14px; }
+    .st-compare-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .st-compare-table th, .st-compare-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+    .st-compare-table th { font-weight: 700; color: #1a3c2e; background: #f8faf6; white-space: nowrap; }
+    .st-compare-table td.best { background: #dcfce7; color: #166534; font-weight: 700; }
+    .st-compare-table td.best::after { content: none; }
+    .st-compare-close { position: absolute; top: 12px; right: 20px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #999; }
+    .st-compare-table-wrap { overflow-x: auto; }
+
+    .st-toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 10000;
+      background: #1a3c2e; color: #fff; padding: 10px 20px; border-radius: 999px; font-size: .85rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2); animation: stToastIn .25s ease;
+    }
+    @keyframes stToastIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+    @media (max-width: 768px) {
+      .st-hero { padding: 88px 0 26px; }
+      .st-hero h1 { font-size: 1.7rem; }
+      .st-hero h1 span { font-size: .85rem; }
+      .st-stat { min-width: 78px; padding: 6px 10px; }
+      .st-stat-num { font-size: 1.05rem; }
+      .st-pills-wrap { position: static; padding: 8px 0; }
+      .st-collections-row, .st-pills-row { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      .st-collections-row::-webkit-scrollbar, .st-pills-row::-webkit-scrollbar { display: none; }
+      .st-pills-row + .st-pills-row { border-top: none; padding-top: 4px; margin-top: 4px; }
+      .st-filter-group { flex-wrap: nowrap; }
+      .st-pill { padding: 5px 12px; font-size: .72rem; }
+      .st-filter-group { background: transparent; padding: 0; }
+      .st-card-footer { flex-wrap: wrap; }
+      .st-card-detail { margin-left: 0; }
+      .st-compare-panel { bottom: 10px; width: calc(100% - 20px); padding: 12px; border-radius: 18px; }
+      .st-count { display: none; }
+      .st-view-toggle { display: none; }
+    }
+
+    .st-pill-sort.active .sort-arrow { display: inline-block; }
+    .st-pill-sort .sort-arrow { font-size: .7rem; margin-left: 2px; }
+    .st-pill-sort.active.sort-asc .sort-arrow::before { content: '▲'; }
+    .st-pill-sort.active.sort-desc .sort-arrow::before { content: '▼'; }
+    .st-pill-sort.active.sort-asc .sort-arrow, .st-pill-sort.active.sort-desc .sort-arrow { font-size: 0; }
+    .st-pill-sort.active.sort-asc .sort-arrow::before, .st-pill-sort.active.sort-desc .sort-arrow::before { font-size: .7rem; }
+
+    .st-table-wrap { overflow-x: auto; padding: 20px 0 40px; display: none; }
+    .st-grid.table-view { display: none; }
+    .st-grid.table-view + .st-table-wrap { display: block; }
+    .st-table { width: 100%; border-collapse: collapse; font-size: .78rem; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.05); }
+    .st-table thead { background: #f8faf6; }
+    .st-table th { padding: 10px 8px; text-align: left; font-weight: 700; color: #1a3c2e; border-bottom: 2px solid #d8f3dc; white-space: nowrap; cursor: pointer; user-select: none; }
+    .st-table th:hover { color: #2d6a4f; }
+    .st-table th .th-sort { font-size: .6rem; color: #bbb; margin-left: 3px; }
+    .st-table th.active-sort .th-sort { color: #2d6a4f; }
+    .st-table td { padding: 7px 8px; border-bottom: 1px solid #f0f0f0; color: #333; }
+    .st-table tbody tr:hover { background: #f0fdf4; }
+    .st-table .td-center { text-align: center; }
+    .st-table .td-sweet { font-weight: 700; color: #e67e22; }
+    .st-table .td-name { font-weight: 600; color: #1a3c2e; }
+    .st-table .td-badge { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: .65rem; font-weight: 600; background: #f0fdf4; color: #2d6a4f; }
+    .st-table .td-badge.yes { background: #d1fae5; color: #065f46; }
+    .st-table .td-badge.patent { background: #dbeafe; color: #1e40af; }
+    .st-table .td-badge.popular { background: #fee2e2; color: #991b1b; }
+    .st-table .td-badge.new { background: #fef3c7; color: #92400e; }
+    .st-table .td-other { font-size: .68rem; color: #888; }
+    .st-table .color-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .color-dot.orange { background: #f59e0b; }
+    .color-dot.purple { background: #8b5cf6; }
+    .color-dot.white { background: #e5e7eb; border: 1px solid #d1d5db; }
+    .color-dot.yellow { background: #facc15; }
+
+    .st-table .td-link { color: #2d6a4f; text-decoration: none; font-weight: 500; }
+    .st-table .td-link:hover { text-decoration: underline; }
+
+    .st-sort-group { margin-right: auto; }
+    .st-sort-btn {
+      padding: 8px 13px; border-radius: 999px; border: 1px solid rgba(45,106,79,.14); background: #fff;
+      color: #2d6a4f; font: inherit; font-size: .78rem; font-weight: 800; cursor: pointer; transition: all .2s;
+      box-shadow: 0 4px 16px rgba(26,60,46,.04);
+    }
+    .st-sort-btn:hover { border-color: #52b788; background: #f0fdf4; transform: translateY(-1px); }
+    .st-sort-btn.active { background: #1a3c2e; border-color: #1a3c2e; color: #fff; box-shadow: 0 10px 22px rgba(26,60,46,.16); }
+
+    .st-spec-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.48); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(4px); padding: 20px; }
+    .st-spec-modal.open { display: flex; }
+    .st-spec-inner { background: #fff; border-radius: 24px; padding: 26px; max-width: 680px; width: 100%; max-height: 82vh; overflow: auto; position: relative; box-shadow: 0 28px 70px rgba(0,0,0,.22); }
+    .st-spec-close { position: absolute; top: 12px; right: 18px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #999; }
+    .st-spec-inner h3 { font-size: 1.2rem; font-weight: 850; color: #1a3c2e; margin-bottom: 4px; padding-right: 28px; }
+    .st-spec-sub { color: #68756d; font-size: .82rem; margin-bottom: 14px; }
+    .st-spec-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .st-spec-item { padding: 11px 12px; border-radius: 16px; background: #f8faf6; border: 1px solid rgba(45,106,79,.1); }
+    .st-spec-label { display: block; color: #7a7a7a; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
+    .st-spec-value { display: block; color: #1f2937; font-size: .86rem; font-weight: 800; line-height: 1.35; }
+    .st-spec-note { margin-top: 12px; padding: 12px 14px; border-radius: 16px; background: #fffaf0; color: #5b4636; font-size: .82rem; line-height: 1.45; }
+
+    @media (max-width: 768px) {
+      .st-grid.table-view + .st-table-wrap .st-table { font-size: .65rem; }
+      .st-grid.table-view + .st-table-wrap .st-table th,
+      .st-grid.table-view + .st-table-wrap .st-table td { padding: 4px 3px; white-space: nowrap; }
+      .st-sort-group { margin-right: 0; }
+      .st-spec-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Каталог сортов батата150+ адаптированных сортов для России",
+  "description": "Все сорта батата в одном каталоге! Более 150 видов с подробными описаниями, фото, характеристиками. Фильтры по цвету мякоти и сроку созревания.",
+  "url": "https://batatchudo.com/opisanie-sortov-batata.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  }
+}
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="opisanie-sortov-batata.html" class="active">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html">Растения</a>
+      <a href="price.html">Прайс</a>
+      <a href="recepty.html">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="st-hero">
+  <div class="container">
+    <h1>Каталог сортов батата<br><span>150+ адаптированных сортов для России</span></h1>
+    <p class="hero-subtitle">От сверхсладких авторских до декоративных. С фильтрами по вкусу, сроку и неприхотливости.</p>
+    <div class="st-search-wrap">
+      <span class="st-search-icon">&#128269;</span>
+      <input type="text" id="stSearch" placeholder="Найти сорт батата..." autocomplete="off">
+    </div>
+    <div class="st-stats" id="stStats"></div>
+  </div>
+</section>
+
+<section class="st-collections">
+  <div class="container">
+    <div class="st-collections-row" id="stCollections">
+      <button class="st-collection active" data-collection="all">🔥 Все</button>
+      <button class="st-collection" data-collection="sweetest">🍯 Самые сладкие</button>
+      <button class="st-collection" data-collection="early">🚀 Самые ранние</button>
+      <button class="st-collection" data-collection="author">🏆 Авторские</button>
+      <button class="st-collection" data-collection="new">🆕 Новинки</button>
+    </div>
+  </div>
+</section>
+
+<div class="st-pills-wrap" id="stPillsWrap">
+  <div class="container">
+    <div class="st-pills-row">
+      <button class="st-pill active" data-filter="all">Все</button>
+      <button class="st-pill" data-color="Оранжевый"><span class="color-dot orange"></span> Оранжевые</button>
+      <button class="st-pill" data-color="Фиолетовый"><span class="color-dot purple"></span> Фиолетовые</button>
+      <button class="st-pill" data-color="Белый"><span class="color-dot white"></span> Белые</button>
+      <button class="st-pill" data-color="Желтый"><span class="color-dot yellow"></span> Жёлтые</button>
+      <button class="st-pill" data-filter="decor">🎨 Декоративные</button>
+      <span class="st-count" id="stCount">0 сортов</span>
+      <div class="st-view-toggle">
+        <button class="st-view-btn active" data-view="grid">▦</button>
+        <button class="st-view-btn" data-view="table">⊞</button>
+      </div>
+    </div>
+    <div class="st-pills-row">
+      <div class="st-filter-group">
+        <span class="st-filter-label">Срок:</span>
+        <button class="st-pill" data-term="Ранний">🚀 Ранние</button>
+        <button class="st-pill" data-term="Средний">📊 Средние</button>
+        <button class="st-pill" data-term="Поздний">⏰ Поздние</button>
+      </div>
+      <div class="st-filter-group">
+        <span class="st-filter-label">Тип:</span>
+        <button class="st-pill" data-type="Авторский">🏆 Авторские</button>
+        <button class="st-pill" data-type="Японская коллекция">🗾 Японские</button>
+      </div>
+      <div class="st-filter-group">
+        <button class="st-pill" data-adv="Для сыроедения">🥗 Для сыроедения</button>
+        <button class="st-pill" data-adv="Новинка">🆕 Новинки</button>
+      </div>
+      <button class="st-pill st-clear" id="stClearFilters">✕ Сбросить</button>
+    </div>
+    <div class="st-pills-row">
+      <div class="st-filter-group st-sort-group" id="stSortButtons" aria-label="Сортировка каталога">
+        <span class="st-filter-label">Сортировать:</span>
+        <button class="st-sort-btn" data-sort="name" data-default-dir="asc" type="button">Название: А-Я</button>
+        <button class="st-sort-btn" data-sort="sweetness" data-default-dir="desc" type="button">Сладость: больше</button>
+        <button class="st-sort-btn" data-sort="term" data-default-dir="asc" type="button">Созревание: раньше</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="st-grid" id="stGrid"></div>
+</div>
+
+<div class="st-compare-panel" id="stComparePanel">
+  <div class="st-compare-panel-top">
+    <span>⚖ Сравнение сортов (<span id="stCompareCount">0</span>)</span>
+    <button class="st-compare-clear" onclick="clearCompare()">Очистить</button>
+  </div>
+  <div class="st-compare-items" id="stCompareItems"></div>
+  <div class="st-compare-actions">
+    <button class="st-compare-btn" onclick="showCompare()">Сравнить</button>
+    <button class="st-compare-share" onclick="shareCompare()">🔗 Поделиться</button>
+  </div>
+</div>
+
+<div class="st-compare-modal" id="stCompareModal">
+  <div class="st-compare-inner">
+    <button class="st-compare-close" onclick="document.getElementById('stCompareModal').classList.remove('open')">&times;</button>
+    <h3>Сравнение сортов</h3>
+    <p class="st-compare-hint">Зелёным выделены лучшие значения в каждой строке.</p>
+    <div class="st-compare-table-wrap" id="stCompareContent"></div>
+  </div>
+</div>
+
+<div class="st-spec-modal" id="stSpecModal">
+  <div class="st-spec-inner">
+    <button class="st-spec-close" onclick="document.getElementById('stSpecModal').classList.remove('open')">&times;</button>
+    <div id="stSpecContent"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="varietyModal">
+  <div class="modal modal-content"></div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/catalog-meta.js"></script>
+<script src="js/app.js"></script>
+<script>
+const FAVORITES = ['Борегард','Победа 100','Белый НБС','Ковингтон','Бенихарука','Порто-Амарелло','Медовое Чудо','Карамельный','Сладкий №1'];
+
+const COLOR_ALIASES = {
+  'белый': 'Белый',
+  'желтый': 'Желтый',
+  'жёлтый': 'Желтый',
+  'оранжевый': 'Оранжевый',
+  'фиолетовый': 'Фиолетовый'
+};
+
+function normalizeText(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function normalizeColor(value) {
+  return COLOR_ALIASES[normalizeText(value)] || value || '';
+}
+
+function parseTermDays(term) {
+  const text = String(term || '');
+  const nums = text.match(/\d+/g);
+  if (!nums || !nums.length) return null;
+  const min = Number(nums[0]);
+  const max = nums[1] ? Number(nums[1]) : (/\+$/.test(text) ? min + 30 : min);
+  return { min, max };
+}
+
+function buildMetaAdvantages(row) {
+  const advantages = [];
+  const typeText = String(row[3] || '');
+  if (/авторский/i.test(typeText)) advantages.push('Авторский');
+  if (/декоратив/i.test(typeText)) advantages.push('Декоративный');
+  if (/японская коллекция/i.test(typeText)) advantages.push('Японская коллекция');
+  if (String(row[2] || '').includes('Ранний')) advantages.push('Ранний');
+  if (row[5]) advantages.push('Для новичков');
+  if (row[6]) advantages.push('Патентованный');
+  if (row[7]) advantages.push('Для сыроедения');
+  if (row[8]) advantages.push('Архивный');
+  if (row[9]) advantages.push(row[9]);
+  return advantages;
+}
+
+function mergeCatalogMeta() {
+  const rows = Array.isArray(window.CATALOG_TABLE_ROWS) ? window.CATALOG_TABLE_ROWS : [];
+  const metaMap = new Map(rows.map(row => [normalizeText(row[0]), row]));
+  varieties.forEach(v => {
+    const row = metaMap.get(normalizeText(v.name));
+    if (!row) return;
+    const typeText = String(row[3] || '').trim();
+    const type = /японская коллекция/i.test(typeText)
+      ? 'Японская коллекция'
+      : /авторский/i.test(typeText)
+        ? 'Авторский'
+        : /декоратив/i.test(typeText)
+          ? 'Декоративный'
+          : (typeText || v.type || 'Столовый');
+    const extraAdvantages = buildMetaAdvantages(row);
+    v.color = normalizeColor(row[1]) || v.color;
+    v.term = row[2] || v.term;
+    v.termDays = parseTermDays(row[2]) || v.termDays;
+    v.type = type;
+    if (row[4] !== '' && row[4] != null) v.sweetness = Number(row[4]);
+    v.patent = Boolean(row[6]) || v.patent === true;
+    v.advantages = Array.from(new Set([].concat(v.advantages || [], extraAdvantages).filter(Boolean)));
+    v.catalogMeta = {
+      beginner: Boolean(row[5]),
+      patented: Boolean(row[6]),
+      raw: Boolean(row[7]),
+      archive: Boolean(row[8]),
+      other: row[9] || ''
+    };
+    if (/декоратив/i.test(typeText)) v.category = 'decor';
+  });
+}
+
+mergeCatalogMeta();
+
+const COLLECTIONS = {
+  sweetest: v => v.category === 'food' && (v.sweetness || 0) >= 8,
+  early: v => /Ранний/.test(v.term || ''),
+  beginner: v => Array.isArray(v.advantages) && v.advantages.includes('Для новичков'),
+  author: v => v.type === 'Авторский',
+  new: v => Array.isArray(v.advantages) && v.advantages.includes('Новинка')
+};
+
+function badgeClassFor(text) {
+  const t = (text || '').toLowerCase();
+  if (/ранний/.test(t)) return 'orange';
+  if (/авторский/.test(t)) return 'pink';
+  if (/патентован/.test(t)) return 'blue';
+  if (/урожай/.test(t)) return 'green';
+  if (/хранит|лежк/.test(t)) return 'blue';
+  if (/популяр/.test(t)) return 'red';
+  if (/декоратив/.test(t)) return 'purple';
+  if (/новинк/.test(t)) return 'teal';
+  if (/нович/.test(t)) return 'yellow';
+  if (/сыроед/.test(t)) return 'green';
+  if (/архив/.test(t)) return 'gray';
+  return '';
+}
+
+function getBadges(v) {
+  let list = Array.isArray(v.advantages) ? v.advantages.slice() : [];
+  // Mark as popular if name in FAVORITES or already tagged in advantages / catalogMeta
+  const isPopular = FAVORITES.includes(v.name) || list.includes('Популярный') || (v.catalogMeta && v.catalogMeta.other === 'Популярный');
+  if (isPopular && !list.includes('Популярный')) list.push('Популярный');
+  // Promote "Популярный" to the front so it always shows in the top 3
+  list = list.filter(x => x !== 'Популярный');
+  if (isPopular) list.unshift('Популярный');
+  // Remove "Ранний" — уже показан в quick-chip "⏱ Ранний (80-90)" с конкретными днями
+  if (v.term) list = list.filter(x => x !== 'Ранний');
+  return list.slice(0, 3).map(text => ({ text, cls: badgeClassFor(text) }));
+}
+
+function getCatalogFlags(v) {
+  const meta = v.catalogMeta || {};
+  return [
+    meta.beginner ? 'Для новичков' : '',
+    meta.patented ? 'Патентованный' : '',
+    meta.raw ? 'Для сыроедения' : '',
+    meta.archive ? 'Архивный' : ''
+  ].filter(Boolean);
+}
+
+function getOtherText(v) {
+  if (v.catalogMeta && v.catalogMeta.other) return v.catalogMeta.other;
+  if (!Array.isArray(v.advantages)) return '';
+  const known = ['Ранний', 'Авторский', 'Патентованный', 'Для новичков', 'Для сыроедения', 'Архивный', 'Популярный', 'Новинка', 'Высокая урожайность', 'Декоративный', 'Столовый', 'Отлично хранится', 'Японская коллекция'];
+  return v.advantages.filter(a => !known.includes(a)).join(', ');
+}
+
+function getSpecsData(v) {
+  const flags = getCatalogFlags(v);
+  const other = getOtherText(v);
+  const values = [
+    ['Цвет мякоти', v.color || '—', true],
+    ['Срок вегетации', v.term || '—', true],
+    ['Тип', v.type || 'Столовый', true],
+    ['Сладость', v.category === 'decor' || !v.sweetness ? '—' : `${v.sweetness}/10`, true],
+    ['Новичкам', v.catalogMeta && v.catalogMeta.beginner ? 'Да' : '—', Boolean(v.catalogMeta && v.catalogMeta.beginner)],
+    ['Патент', v.patent ? 'Да' : '—', Boolean(v.patent)],
+    ['Сыроедение', v.catalogMeta && v.catalogMeta.raw ? 'Да' : '—', Boolean(v.catalogMeta && v.catalogMeta.raw)],
+    ['Архив', v.catalogMeta && v.catalogMeta.archive ? 'Да' : '—', Boolean(v.catalogMeta && v.catalogMeta.archive)]
+  ].filter(row => row[2]).map(([label, value]) => [label, value]);
+  return { flags, other, values };
+}
+
+function getQuickChips(v) {
+  const chips = [];
+  const adv = Array.isArray(v.advantages) ? v.advantages : [];
+  // Term chip (unique — не дублирует бейдж "Ранний", потому что несёт конкретные дни)
+  if (v.term) chips.push('⏱ ' + v.term);
+  // Sweetness chip
+  if (v.category === 'food' && v.sweetness) chips.push('Сладость ' + v.sweetness + '/10');
+  // Status chip — берём только если такого текста ещё нет в бейджах
+  let status = '';
+  if (v.catalogMeta && v.catalogMeta.other && !adv.includes(v.catalogMeta.other)) {
+    status = v.catalogMeta.other;
+  } else {
+    const flags = getCatalogFlags(v);
+    status = flags.find(f => !adv.includes(f)) || '';
+  }
+  if (status) chips.push(status);
+  return chips.slice(0, 4);
+}
+
+function renderVarieties(list) {
+  const container = document.getElementById('stGrid');
+  if (!container) return;
+  const count = document.getElementById('stCount');
+  if (!list.length) {
+    container.innerHTML = '<div class="st-empty"><div class="st-empty-icon">🔍</div><div>Ничего не найдено</div><div class="st-empty-hint">Попробуйте сбросить часть фильтров</div></div>';
+    if (count) count.textContent = '0 сортов';
+    return;
+  }
+  container.innerHTML = list.map(v => {
+    const imgPath = v.img ? 'img/' + v.img : '';
+    const pageUrl = v.img ? v.img.replace('.webp', '.html') : '';
+    const overlays = [];
+    if ((Array.isArray(v.advantages) && v.advantages.includes('Популярный')) || FAVORITES.includes(v.name)) overlays.push('<span class="st-card-overlay-badge popular">Популярный</span>');
+    if (v.type === 'Японская коллекция') overlays.push('<span class="st-card-overlay-badge japanese">Японская коллекция</span>');
+    if (Array.isArray(v.advantages) && v.advantages.includes('Новинка')) overlays.push('<span class="st-card-overlay-badge new">Новинка</span>');
+    if (v.category === 'decor' || v.type === 'Декоративный') overlays.push('<span class="st-card-overlay-badge decor">Декоративный</span>');
+    if (Array.isArray(v.advantages) && v.advantages.includes('Для новичков')) overlays.push('<span class="st-card-overlay-badge beginner">Для новичков</span>');
+    if (Array.isArray(v.advantages) && v.advantages.includes('Патентованный')) overlays.push('<span class="st-card-overlay-badge patented">Патентованный</span>');
+    if (Array.isArray(v.advantages) && v.advantages.includes('Для сыроедения')) overlays.push('<span class="st-card-overlay-badge raw">Для сыроедения</span>');
+    if (Array.isArray(v.advantages) && v.advantages.includes('Архивный')) overlays.push('<span class="st-card-overlay-badge archive">Архивный</span>');
+    const overlayHtml = overlays.length ? `<div class="st-card-overlay">${overlays.join('')}</div>` : '';
+    const imgHtml = imgPath
+      ? `<div class="st-card-img-wrap">${overlayHtml}<img class="st-card-img" src="${imgPath}" alt="${v.name}" width="400" height="300" loading="lazy" onerror="this.outerHTML='<div class=st-card-fallback>${v.name.charAt(0)}</div>'"></div>`
+      : `<div class="st-card-img-wrap">${overlayHtml}<div class="st-card-fallback">${v.name.charAt(0)}</div></div>`;
+    const quickChips = getQuickChips(v);
+    const isInCompare = compareIds.includes(v.id);
+    return `<div class="st-card" data-id="${v.id}">
+      ${imgHtml}
+      <div class="st-card-body">
+        <div class="st-card-name">${v.name}</div>
+        <div class="st-card-color"><span class="color-dot ${getColorClass(v.color)}"></span> ${colorLabel(v.color)} мякоть</div>
+        ${quickChips.length ? '<div class="st-card-quick">' + quickChips.map(text => '<span class="st-card-quick-chip">' + text + '</span>').join('') + '</div>' : ''}
+      </div>
+      <div class="st-card-footer">
+        <button class="st-card-compare ${isInCompare ? 'in-compare' : ''}" onclick="toggleCompare(this, ${v.id})">В сравнение</button>
+        <a href="${pageUrl}" class="st-card-detail" ${!pageUrl ? `onclick="openModal(${v.id}); return false;"` : ''}>Подробнее</a>
+      </div>
+    </div>`;
+  }).join('');
+  if (count) count.textContent = list.length + ' сортов';
+}
+
+let compareIds = [];
+let catalogSortField = null;
+let catalogSortDir = 'asc';
+
+function showSpecs(id) {
+  const v = varieties.find(x => x.id === id);
+  const modal = document.getElementById('stSpecModal');
+  const content = document.getElementById('stSpecContent');
+  if (!v || !modal || !content) return;
+  const specs = getSpecsData(v);
+  content.innerHTML = `
+    <h3>${v.name}</h3>
+    <div class="st-spec-sub"><span class="color-dot ${getColorClass(v.color)}"></span> ${colorLabel(v.color) || '—'} мякоть</div>
+    <div class="st-spec-grid">
+      ${specs.values.map(([label, value]) => `<div class="st-spec-item"><span class="st-spec-label">${label}</span><span class="st-spec-value">${value}</span></div>`).join('')}
+    </div>
+    ${specs.flags.length || specs.other ? `<div class="st-spec-note">${[specs.flags.join(' • '), specs.other].filter(Boolean).join(' • ')}</div>` : ''}
+  `;
+  modal.classList.add('open');
+}
+
+function toggleCompare(btn, id) {
+  const idx = compareIds.indexOf(id);
+  if (idx > -1) { compareIds.splice(idx, 1); btn.classList.remove('in-compare'); }
+  else { compareIds.push(id); btn.classList.add('in-compare'); }
+  updateComparePanel();
+}
+
+function removeCompare(id) {
+  compareIds = compareIds.filter(x => x !== id);
+  document.querySelectorAll(`.st-card[data-id="${id}"] .st-card-compare`).forEach(b => b.classList.remove('in-compare'));
+  updateComparePanel();
+}
+
+function clearCompare() {
+  compareIds = [];
+  document.querySelectorAll('.st-card-compare').forEach(b => b.classList.remove('in-compare'));
+  updateComparePanel();
+}
+
+function updateComparePanel() {
+  const panel = document.getElementById('stComparePanel');
+  const items = document.getElementById('stCompareItems');
+  const countEl = document.getElementById('stCompareCount');
+  if (countEl) countEl.textContent = compareIds.length;
+  if (compareIds.length === 0) { panel.classList.remove('open'); return; }
+  panel.classList.add('open');
+  items.innerHTML = compareIds.map(id => {
+    const v = varieties.find(x => x.id === id);
+    if (!v) return '';
+    return `<span class="st-compare-item"><span class="color-dot ${getColorClass(v.color)}"></span> ${v.name} <button class="remove" onclick="removeCompare(${id})">✕</button></span>`;
+  }).join('');
+}
+
+function bestIndices(values, mode, items) {
+  if (!mode) return [];
+  const scored = [];
+  if (mode === 'max') {
+    values.forEach((v, i) => scored.push([i, typeof v === 'number' ? v : null]));
+  } else if (mode === 'minDays') {
+    items.forEach((v, i) => { const d = v.termDays ? v.termDays.min : null; scored.push([i, d == null ? null : -d]); });
+  } else if (mode === 'bool') {
+    values.forEach((v, i) => scored.push([i, (v === true || (typeof v === 'string' && v !== '—' && v !== '')) ? 1 : 0]));
+  } else return [];
+  const valid = scored.filter(s => s[1] !== null).map(s => s[1]);
+  if (!valid.length) return [];
+  const best = Math.max(...valid);
+  if ((mode === 'max' || mode === 'bool') && best <= 0) return [];
+  if (valid.every(s => s === valid[0])) return [];
+  return scored.filter(s => s[1] === best).map(s => s[0]);
+}
+
+function showCompare() {
+  if (compareIds.length < 2) return;
+  const items = varieties.filter(v => compareIds.includes(v.id));
+  if (items.length < 2) return;
+  function boolRender(v) { return v ? '✔' : '—'; }
+  function hasAdvRaw(v) { return Array.isArray(v.advantages) && v.advantages.includes('Для сыроедения'); }
+  function hasAdvArch(v) { return Array.isArray(v.advantages) && v.advantages.includes('Архивный'); }
+  function getOtherTextCmp(v) {
+    if (v.catalogMeta && v.catalogMeta.other) return v.catalogMeta.other || '—';
+    if (!Array.isArray(v.advantages)) return '—';
+    const known = ['Ранний', 'Авторский', 'Патентованный', 'Для новичков', 'Для сыроедения', 'Архивный', 'Популярный', 'Новинка', 'Высокая урожайность', 'Декоративный', 'Столовый', 'Отлично хранится', 'Японская коллекция'];
+    const rest = v.advantages.filter(a => !known.includes(a));
+    return rest.length ? rest.join(', ') : '—';
+  }
+
+  const rows = [
+    { label: 'Сладость', values: items.map(v => v.sweetness || 0), mode: 'max', render: r => r + '/10' },
+    { label: 'Цвет мякоти', values: items.map(v => v.color), mode: null, render: x => colorLabel(x) },
+    { label: 'Срок созревания', values: items.map(v => v.term || '—'), mode: 'minDays', render: x => x },
+    { label: 'Тип', values: items.map(v => v.type && v.type !== 'Столовый' ? v.type : '—'), mode: null, render: x => x },
+    { label: 'Для новичков', values: items.map(v => Array.isArray(v.advantages) && v.advantages.includes('Для новичков')), mode: 'bool', render: boolRender },
+    { label: 'Патентованные', values: items.map(v => v.patent === true), mode: 'bool', render: boolRender },
+    { label: 'Для сыроедения', values: items.map(v => hasAdvRaw(v)), mode: 'bool', render: boolRender },
+    { label: 'Архивный', values: items.map(v => hasAdvArch(v)), mode: 'bool', render: boolRender },
+    { label: 'Другое', values: items.map(v => getOtherTextCmp(v)), mode: 'bool', render: x => x }
+  ].filter(r => r.values.some(v => v !== false && v !== '—' && v !== '' && v !== 0 && v != null));
+  const html = `<table class="st-compare-table">
+    <thead><tr><th>Характеристика</th>${items.map(v => '<th>' + v.name + '</th>').join('')}</tr></thead>
+    <tbody>${rows.map(r => {
+      const best = bestIndices(r.values, r.mode, items);
+      return '<tr><th>' + r.label + '</th>' + r.values.map((val, i) => '<td class="' + (best.includes(i) ? 'best' : '') + '">' + r.render(val) + '</td>').join('') + '</tr>';
+    }).join('')}</tbody>
+  </table>`;
+  document.getElementById('stCompareContent').innerHTML = html;
+  document.getElementById('stCompareModal').classList.add('open');
+}
+
+function toast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.className = 'st-toast';
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2200);
+}
+
+function shareCompare() {
+  if (compareIds.length < 1) return;
+  const url = location.origin + location.pathname + '?compare=' + compareIds.join(',');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => toast('🔗 Ссылка скопирована')).catch(() => prompt('Скопируйте ссылку:', url));
+  } else {
+    prompt('Скопируйте ссылку:', url);
+  }
+}
+
+function hasAdvantage(v, text) {
+  return Array.isArray(v.advantages) && v.advantages.some(a => a.toLowerCase().includes(text.toLowerCase()));
+}
+
+function renderTable(list) {
+  const container = document.getElementById('stGrid');
+  if (!container) return;
+  const count = document.getElementById('stCount');
+  const oldWrap = document.getElementById('stTableWrap');
+  if (oldWrap) oldWrap.remove();
+  if (!list.length) {
+    container.innerHTML = '<div class="st-empty"><div class="st-empty-icon">🔍</div><div>Ничего не найдено</div><div class="st-empty-hint">Попробуйте сбросить часть фильтров</div></div>';
+    if (count) count.textContent = '0 сортов';
+    return;
+  }
+  const wrap = document.createElement('div');
+  wrap.id = 'stTableWrap';
+  wrap.className = 'st-table-wrap';
+  let html = '<table class="st-table"><thead><tr>';
+  const columns = [
+    { key: 'num', label: '№' },
+    { key: 'name', label: 'Название' },
+    { key: 'color', label: 'Цвет мякоти' },
+    { key: 'term', label: 'Срок вегетации' },
+    { key: 'type', label: 'Тип' },
+    { key: 'sweetness', label: 'Сладость' },
+    { key: 'beginner', label: 'Новичок' },
+    { key: 'patent', label: 'Патент' },
+    { key: 'rawfood', label: 'Сыроед.' },
+    { key: 'archive', label: 'Архив' },
+    { key: 'other', label: 'Примечание' }
+  ];
+  columns.forEach(col => {
+    const isActive = catalogSortField === col.key;
+    html += `<th data-sort="${col.key}" class="${isActive ? 'active-sort' : ''}">${col.label}<span class="th-sort">${isActive ? (catalogSortDir === 'asc' ? '▲' : '▼') : '⇅'}</span></th>`;
+  });
+  html += '</tr></thead><tbody>';
+  list.forEach((v, i) => {
+    const pageUrl = v.img ? v.img.replace('.webp', '.html') : '';
+    const beginner = Boolean(v.catalogMeta && v.catalogMeta.beginner);
+    const patented = v.patent === true;
+    const rawfood = Boolean(v.catalogMeta && v.catalogMeta.raw);
+    const archive = Boolean(v.catalogMeta && v.catalogMeta.archive);
+    const other = getOtherText(v);
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td class="td-name"><a href="${pageUrl}" class="td-link">${v.name}</a></td>
+      <td><span class="color-dot ${getColorClass(v.color)}"></span>${v.color}</td>
+      <td>${v.term || '—'}</td>
+      <td>${v.type || 'Столовый'}</td>
+      <td class="td-center td-sweet">${v.sweetness || '—'}</td>
+      <td class="td-center">${beginner ? '<span class="td-badge yes">✔</span>' : '—'}</td>
+      <td class="td-center">${patented ? '<span class="td-badge patent">✔</span>' : '—'}</td>
+      <td class="td-center">${rawfood ? '<span class="td-badge yes">✔</span>' : '—'}</td>
+      <td class="td-center">${archive ? '<span class="td-badge">✔</span>' : '—'}</td>
+      <td class="td-other">${other || '—'}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+  container.parentNode.insertBefore(wrap, container.nextSibling);
+  if (count) count.textContent = list.length + ' сортов';
+
+  wrap.querySelectorAll('.st-table th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+      const field = th.dataset.sort;
+      const sortableFields = ['name', 'sweetness', 'color', 'term', 'type', 'num', 'beginner', 'patent', 'rawfood', 'archive', 'other'];
+      if (sortableFields.includes(field) && window._setSort) {
+        window._setSort(field === 'num' ? 'name' : field);
+      }
+    });
+  });
+}
+
+function renderStats() {
+  const el = document.getElementById('stStats');
+  if (!el) return;
+  const author = varieties.filter(v => v.type === 'Авторский').length;
+  const early = varieties.filter(v => /Ранний/.test(v.term || '')).length;
+  const decor = varieties.filter(v => v.category === 'decor').length;
+  const beginner = varieties.filter(v => Array.isArray(v.advantages) && v.advantages.includes('Для новичков')).length;
+  const stats = [
+    { num: varieties.length, label: 'сортов' },
+    { num: author, label: 'авторских' },
+    { num: early, label: 'ранних' },
+    { num: beginner, label: 'для новичков' },
+    { num: decor, label: 'декоративных' }
+  ];
+  el.innerHTML = stats.map(s => `<div class="st-stat"><div class="st-stat-num">${s.num}</div><div class="st-stat-label">${s.label}</div></div>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('stGrid');
+  if (!grid) return;
+
+  const searchInput = document.getElementById('stSearch');
+  const pills = document.querySelectorAll('.st-pill');
+  const collections = document.querySelectorAll('.st-collection');
+  const viewBtns = document.querySelectorAll('.st-view-btn');
+  const pillsWrap = document.querySelector('.st-pills-wrap');
+  const clearBtn = document.getElementById('stClearFilters');
+  const sortButtons = document.querySelectorAll('.st-sort-btn');
+
+  let activeCollection = 'all';
+  let activeTerms = [];
+  let activeTypes = [];
+  let activeAdvs = [];
+  let sortField = null;
+  let sortDir = 'asc';
+  let filteredList = [];
+
+  function setSort(field) {
+    if (sortField === field) {
+      sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+    } else {
+      sortField = field;
+      sortDir = 'asc';
+    }
+    syncSortUi();
+    filter();
+  }
+
+  function syncSortUi() {
+    catalogSortField = sortField;
+    catalogSortDir = sortDir;
+    sortButtons.forEach(btn => {
+      const field = btn.dataset.sort;
+      const active = field === sortField;
+      btn.classList.toggle('active', active);
+      if (field === 'name') btn.textContent = active && sortDir === 'desc' ? 'Название: Я-А' : 'Название: А-Я';
+      if (field === 'sweetness') btn.textContent = active && sortDir === 'asc' ? 'Сладость: меньше' : 'Сладость: больше';
+      if (field === 'term') btn.textContent = active && sortDir === 'desc' ? 'Созревание: позже' : 'Созревание: раньше';
+    });
+  }
+
+  function applySort(list) {
+    if (!sortField) return list;
+    const sorted = [...list];
+    sorted.sort((a, b) => {
+      let valA, valB;
+      if (sortField === 'sweetness') {
+        valA = a.sweetness || 0;
+        valB = b.sweetness || 0;
+      } else if (sortField === 'new') {
+        valA = hasAdvantage(a, 'Новинка') ? 1 : 0;
+        valB = hasAdvantage(b, 'Новинка') ? 1 : 0;
+      } else if (sortField === 'popular') {
+        valA = hasAdvantage(a, 'Популярный') ? 1 : 0;
+        valB = hasAdvantage(b, 'Популярный') ? 1 : 0;
+      } else if (sortField === 'name') {
+        valA = (a.name || '').toLowerCase();
+        valB = (b.name || '').toLowerCase();
+      } else if (sortField === 'term') {
+        valA = a.termDays ? a.termDays.min : 999;
+        valB = b.termDays ? b.termDays.min : 999;
+      } else if (sortField === 'color') {
+        valA = (a.color || '').toLowerCase();
+        valB = (b.color || '').toLowerCase();
+      } else if (sortField === 'type') {
+        valA = (a.type || '').toLowerCase();
+        valB = (b.type || '').toLowerCase();
+      } else if (sortField === 'beginner') {
+        valA = a.catalogMeta && a.catalogMeta.beginner ? 1 : 0;
+        valB = b.catalogMeta && b.catalogMeta.beginner ? 1 : 0;
+      } else if (sortField === 'patent') {
+        valA = a.patent === true ? 1 : 0;
+        valB = b.patent === true ? 1 : 0;
+      } else if (sortField === 'rawfood') {
+        valA = a.catalogMeta && a.catalogMeta.raw ? 1 : 0;
+        valB = b.catalogMeta && b.catalogMeta.raw ? 1 : 0;
+      } else if (sortField === 'archive') {
+        valA = a.catalogMeta && a.catalogMeta.archive ? 1 : 0;
+        valB = b.catalogMeta && b.catalogMeta.archive ? 1 : 0;
+      } else if (sortField === 'other') {
+        valA = (getOtherText(a) || '').toLowerCase();
+        valB = (getOtherText(b) || '').toLowerCase();
+      } else {
+        return 0;
+      }
+      if (typeof valA === 'string') {
+        if (valA < valB) return sortDir === 'asc' ? -1 : 1;
+        if (valA > valB) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+      }
+      if (valA < valB) return sortDir === 'asc' ? -1 : 1;
+      if (valA > valB) return sortDir === 'asc' ? 1 : -1;
+      return 0;
+    });
+    return sorted;
+  }
+
+  sortButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nextField = btn.dataset.sort;
+      if (sortField === nextField) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortField = nextField;
+        sortDir = btn.dataset.defaultDir || 'asc';
+      }
+      syncSortUi();
+      filter();
+    });
+  });
+
+  renderStats();
+
+  if (pillsWrap) {
+    window.addEventListener('scroll', () => {
+      pillsWrap.classList.toggle('scrolled', window.scrollY > 200);
+    });
+  }
+
+  let currentView = 'grid';
+
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentView = btn.dataset.view;
+      grid.classList.remove('table-view');
+      const tableWrap = document.getElementById('stTableWrap');
+      if (tableWrap) tableWrap.remove();
+      if (currentView === 'grid') {
+        renderVarieties(filteredList);
+      } else if (currentView === 'table') {
+        grid.classList.add('table-view');
+        grid.innerHTML = '';
+        renderTable(filteredList);
+      }
+      grid.style.animation = 'none';
+      grid.offsetHeight;
+      grid.style.animation = '';
+    });
+  });
+
+  function syncStateFromPills() {
+    activeTerms = Array.from(pills).filter(p => p.dataset.term && p.classList.contains('active')).map(p => p.dataset.term);
+    activeTypes = Array.from(pills).filter(p => p.dataset.type && p.classList.contains('active')).map(p => p.dataset.type);
+    activeAdvs = Array.from(pills).filter(p => p.dataset.adv && p.classList.contains('active')).map(p => p.dataset.adv);
+  }
+
+  function resetAllFilters() {
+    pills.forEach(p => p.classList.remove('active'));
+    const allPill = document.querySelector('.st-pill[data-filter="all"]');
+    if (allPill) allPill.classList.add('active');
+    activeTerms = []; activeTypes = []; activeAdvs = [];
+    sortField = null; sortDir = 'asc';
+    if (searchInput) searchInput.value = '';
+    syncSortUi();
+  }
+
+  function filter() {
+    const q = searchInput.value.toLowerCase().trim();
+    let items = varieties;
+
+    if (activeCollection !== 'all') {
+      const fn = COLLECTIONS[activeCollection];
+      if (fn) items = items.filter(fn);
+    }
+
+    const activeColors = Array.from(pills).filter(p => p.dataset.color && p.classList.contains('active')).map(p => p.dataset.color);
+    const activeCats = Array.from(pills).filter(p => p.dataset.filter && p.dataset.filter !== 'all' && p.classList.contains('active')).map(p => p.dataset.filter);
+
+    if (activeColors.length) items = items.filter(v => activeColors.includes(v.color));
+    if (activeCats.length) items = items.filter(v => activeCats.includes(v.category));
+    if (activeTerms.length) items = items.filter(v => { const t = v.term || ''; return activeTerms.some(term => t.includes(term)); });
+    if (activeTypes.length) items = items.filter(v => activeTypes.includes(v.type));
+    if (activeAdvs.length) items = items.filter(v => activeAdvs.some(a => Array.isArray(v.advantages) && v.advantages.includes(a)));
+    if (q) items = items.filter(v => v.name.toLowerCase().includes(q));
+
+    items = applySort(items);
+    filteredList = items;
+
+    if (currentView === 'table') {
+      renderTable(items);
+    } else {
+      renderVarieties(items);
+    }
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      if (pill === clearBtn || pill.id === 'stClearFilters') { resetAllFilters(); filter(); return; }
+      if (pill.dataset.filter === 'all') {
+        resetAllFilters();
+        pill.classList.add('active');
+        filter();
+        return;
+      }
+      pill.classList.toggle('active');
+      syncStateFromPills();
+      const allPill = document.querySelector('.st-pill[data-filter="all"]');
+      const anyActive = Array.from(pills).some(p => p !== allPill && p.id !== 'stClearFilters' && p.classList.contains('active'));
+      if (allPill) allPill.classList.toggle('active', !anyActive);
+      filter();
+    });
+  });
+
+  collections.forEach(coll => {
+    coll.addEventListener('click', () => {
+      collections.forEach(c => c.classList.remove('active'));
+      coll.classList.add('active');
+      activeCollection = coll.dataset.collection;
+      filter();
+    });
+  });
+
+  searchInput.addEventListener('input', filter);
+
+  // Expose for use by global renderTable
+  window._setSort = setSort;
+  window._filter = filter;
+  window._currentView = () => currentView;
+  window._getFilteredList = () => filteredList;
+
+  // Restore compare from ?compare=
+  const params = new URLSearchParams(location.search);
+  const cmp = params.get('compare');
+  if (cmp) {
+    compareIds = cmp.split(',').map(Number).filter(n => varieties.some(v => v.id === n));
+    updateComparePanel();
+  }
+
+  syncSortUi();
+  filter();
+});
+</script>
+</body>
+</html>

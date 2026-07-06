@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выращивание батата от А до Я: полное руководство | Batatchudo.com</title>
+  <meta name="description" content="Все секреты выращивания батата в одном руководстве! Пошаговая инструкция: от проращивания клубней и черенкования до сбора и хранения урожая. Советы экспертов для рекордного урожая в любом регионе России.">
+  <meta property="og:title" content="Выращивание батата от А до Я | Batatchudo.com">
+  <meta property="og:description" content="Полное руководство по выращиванию батата в России. От проращивания до хранения.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://batatchudo.com/vyrashchivanie-batata.html">
+  <link rel="canonical" href="https://batatchudo.com/vyrashchivanie-batata.html">
+  <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:type" content="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 50%, var(--green-500) 100%);
+      color: white;
+      padding: 140px 0 80px;
+      text-align: center;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .guide-hero-bg {
+      position: absolute; inset: 0;
+      background: url('img/grow-hero.webp') center/cover no-repeat;
+      opacity: 0.22;
+    }
+    .guide-hero > .container { position: relative; z-index: 1; }
+    .guide-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
+    .guide-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 720px; margin: 0 auto; }
+
+    /* ───── Прогресс-бар ───── */
+    .scroll-progress {
+      position: fixed; top: 72px; left: 0; width: 0%; height: 3px;
+      background: linear-gradient(90deg, var(--green-700), var(--green-500));
+      z-index: 999; transition: width .1s ease;
+    }
+
+    /* ───── Sidebar навигация ───── */
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      align-items: start;
+    }
+    .guide-sidebar {
+      position: sticky;
+      top: 88px;
+      align-self: start;
+    }
+    .guide-sidebar-inner {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 12px;
+      max-height: calc(100vh - 110px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--green-300) transparent;
+    }
+    .guide-sidebar-inner::-webkit-scrollbar { width: 6px; }
+    .guide-sidebar-inner::-webkit-scrollbar-thumb {
+      background: var(--green-300); border-radius: 3px;
+    }
+    .guide-sidebar-title {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 0 10px 8px;
+      margin: 0;
+    }
+    .guide-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .guide-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: all .15s ease;
+      border-left: 3px solid transparent;
+      line-height: 1.3;
+    }
+    .guide-nav a:hover {
+      background: var(--green-100);
+      color: var(--green-900);
+    }
+    .guide-nav a.active {
+      background: var(--green-100);
+      color: var(--green-700);
+      font-weight: 700;
+      border-left-color: var(--green-500);
+    }
+    .guide-nav a .nav-num {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--green-100);
+      color: var(--green-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .guide-nav a.active .nav-num {
+      background: var(--green-700);
+      color: white;
+    }
+
+    /* ───── Содержание (TOC) ───── */
+    .toc {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+    }
+    .toc h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: var(--green-900); }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 8px;
+    }
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .toc a:hover { background: var(--green-100); color: var(--green-700); }
+    .toc a .toc-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--green-100);
+      color: var(--green-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .guide-main { min-width: 0; }
+    .guide-main > .toc { margin-top: 0; }
+
+    .guide-section {
+      background: white;
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+    .guide-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green-900);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--green-100);
+    }
+    .guide-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green-700);
+      margin: 20px 0 12px;
+    }
+    .guide-section p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .guide-section p:last-child { margin-bottom: 0; }
+    .guide-section ul {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin: 12px 0 20px;
+      padding-left: 24px;
+    }
+    .guide-section ul li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+    .guide-section ul li::marker {
+      color: var(--green-500);
+    }
+    .guide-section a.section-link {
+      color: var(--green-700); font-weight: 600; text-decoration: none;
+      border-bottom: 1px dashed var(--green-500);
+    }
+    .guide-section a.section-link:hover { color: var(--green-900); border-bottom-style: solid; }
+
+    /* ───── Заглушки для фото ───── */
+    .guide-photo { width: 100%; border-radius: var(--radius); margin: 20px 0; }
+    .guide-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 20px 0; }
+    .guide-photo-grid .guide-photo { margin: 0; }
+    .photo-placeholder {
+      background: repeating-linear-gradient(45deg, #f0fdf4, #f0fdf4 12px, #ecfdf3 12px, #ecfdf3 24px);
+      border: 2px dashed #86c5a3;
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .photo-placeholder-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin: 20px 0;
+    }
+    .photo-placeholder-grid .photo-placeholder { margin: 0; padding: 28px 16px; }
+    .ph-icon { font-size: 2rem; margin-bottom: 8px; opacity: .6; }
+    .ph-label { color: var(--green-900); font-weight: 700; font-size: .95rem; margin-bottom: 6px; }
+    .ph-filename {
+      color: var(--green-700); font-size: .78rem; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      background: rgba(255,255,255,.6); padding: 4px 10px; border-radius: 6px;
+      display: inline-block;
+    }
+
+    .guide-section .highlight {
+      background: var(--green-100);
+      border-left: 4px solid var(--green-500);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 16px 0;
+    }
+    .guide-section .highlight p { color: var(--green-900); margin: 0; }
+
+    .guide-section .warning {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 16px 0;
+    }
+    .guide-section .warning p { color: #92400e; margin: 0; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .step-card {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      text-align: center;
+    }
+    .step-card .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green-700);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 0 auto 12px;
+    }
+    .step-card h4 { font-size: 1rem; font-weight: 700; color: var(--green-900); margin-bottom: 8px; }
+    .step-card p { font-size: 0.85rem; color: var(--text-light); margin: 0; }
+
+    /* ───── FAQ smooth ───── */
+    .guide-faq-item {
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.04);
+      overflow: hidden;
+    }
+    .guide-faq-question {
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #1a3c2e;
+      padding: 18px 24px;
+      user-select: none;
+    }
+    .guide-faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform .3s ease;
+      color: #52b788;
+    }
+    .guide-faq-item.open .guide-faq-question::after { transform: rotate(45deg); }
+    .guide-faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s ease, padding .45s ease;
+      padding: 0 24px;
+    }
+    .guide-faq-answer p {
+      color: #555;
+      line-height: 1.75;
+      font-size: .92rem;
+    }
+
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .advantage-card {
+      background: var(--green-100);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+    }
+    .advantage-card .adv-icon { font-size: 2rem; margin-bottom: 8px; }
+    .advantage-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--green-900); margin-bottom: 6px; }
+    .advantage-card p { font-size: 0.8rem; color: var(--green-700); margin: 0; }
+
+    @media (max-width: 1023px) {
+      .guide-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .guide-sidebar {
+        position: sticky;
+        top: 72px;
+        z-index: 50;
+        background: rgba(255,255,255,.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--green-100);
+        box-shadow: 0 6px 18px rgba(26,60,46,.06);
+      }
+      .guide-sidebar-inner {
+        background: transparent;
+        box-shadow: none;
+        padding: 8px 0;
+        max-height: none;
+        overflow: visible;
+      }
+      .guide-sidebar-title { display: none; }
+      .guide-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 4px;
+        padding: 0 16px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .guide-nav::-webkit-scrollbar { display: none; }
+      .guide-nav a {
+        flex-shrink: 0;
+        padding: 10px 12px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        font-size: .8rem;
+        white-space: nowrap;
+      }
+      .guide-nav a.active {
+        border-bottom-color: var(--green-500);
+        background: transparent;
+      }
+      .guide-nav a .nav-num { display: none; }
+    }
+    @media (max-width: 768px) {
+      .guide-hero h1 { font-size: 2rem; }
+      .guide-section { padding: 24px; }
+      .guide-section h2 { font-size: 1.3rem; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .photo-placeholder-grid,
+      .guide-photo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Полное руководство по выращиванию батата",
+  "description": "Все секреты выращивания батата в одном руководстве! Пошаговая инструкция: от проращивания клубней и черенкования до сбора и хранения урожая. Советы экспертов для рекордного урожая в любом регионе России.",
+  "image": "https://batatchudo.com/img/batat-assortiment-g1.webp",
+  "url": "https://batatchudo.com/vyrashchivanie-batata.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  }
+}
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html" class="active">Выращивание</a>
+      <a href="rasteniya.html">Растения</a>
+      <a href="price.html">Прайс</a>
+      <a href="recepty.html">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="guide-hero">
+  <div class="guide-hero-bg"></div>
+  <div class="container">
+    <h1>Полное руководство по выращиванию батата</h1>
+    <p>Батат — теплолюбивое тропическое растение, которое отлично растёт в России при соблюдении правильной технологии. Эта культура обладает длительным периодом вегетации и требует тепла, но при грамотном подходе даёт щедрый урожай даже в северных регионах.</p>
+  </div>
+</section>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<div class="guide-layout">
+
+  <aside class="guide-sidebar">
+    <div class="guide-sidebar-inner">
+      <h4 class="guide-sidebar-title">Содержание</h4>
+      <nav class="guide-nav" id="guideNav">
+        <a href="#osobennosti"><span class="nav-num">1</span>Особенности культуры</a>
+        <a href="#podgotovka"><span class="nav-num">2</span>Проращивание клубней</a>
+        <a href="#cherenki"><span class="nav-num">3</span>Укоренение черенков</a>
+        <a href="#posadka"><span class="nav-num">4</span>Посадка в грунт</a>
+        <a href="#uhod"><span class="nav-num">5</span>Уход за растениями</a>
+        <a href="#kopka"><span class="nav-num">6</span>Когда копать</a>
+        <a href="#kuring"><span class="nav-num">7</span>Кюринг</a>
+        <a href="#hranenie"><span class="nav-num">8</span>Хранение</a>
+        <a href="#vybor"><span class="nav-num">9</span>Выбор сорта</a>
+        <a href="#vkus"><span class="nav-num">10</span>Вкусовые особенности</a>
+        <a href="#polza"><span class="nav-num">11</span>Полезные свойства</a>
+        <a href="#oedema"><span class="nav-num">12</span>Оэдема на листьях</a>
+        <a href="#faq"><span class="nav-num">13</span>Частые вопросы</a>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="guide-main" style="padding-bottom: 80px;">
+
+    <div class="guide-section" id="osobennosti">
+      <h2>1. Особенности культуры</h2>
+      <p>Батат имеет длительный период вегетации — от 90 до 180 дней. Он крайне чувствителен к холоду: при температуре ниже +14°C рост замедляется, при +10°C почти прекращается, а клубни начинают «мёрзнуть» уже при +10°C и повреждаются при +5°C.</p>
+      <p>Батат отзывчив к теплу, рыхлой почве, мульчированию и регулярным поливам. В отличие от картофеля, батат размножают в основном ростками (черенками), полученными из клубней.</p>
+      <div class="highlight">
+        <p>В России батат выращивают рассадным способом, так как вегетационный период превышает те же показатели у картофеля.</p>
+      </div>
+    </div>
+
+    <div class="guide-section" id="podgotovka">
+      <h2>2. Подготовка посадочного материала</h2>
+      <p>Для получения посадочного материала используют клубни. В середине февраля или начале марта клубни помещают в ящики с песком, торфом или рыхлой почвой. Клубень заглубляют на две трети и слегка увлажняют. Почва может быть любой: питание черенкам не требуется, они питаются запасами клубня.</p>
+      <div class="highlight">
+        <p>Главное условие — высокая температура: не ниже +30°C. При такой температуре первые ростки появляются через 10–15 дней.</p>
+      </div>
+      <p>Когда ростки достигнут длины 15–20 см, их аккуратно отделяют от клубня или срезают ножом. Если плети отросли слишком длинными, их можно разрезать на несколько частей.</p>
+
+      <div class="guide-photo-grid">
+        <img class="guide-photo" src="img/grow-proращивание-1.webp" alt="Клубни в ящике с песком/торфом" loading="lazy" width="400" height="300">
+        <img class="guide-photo" src="img/grow-proращивание-2.webp" alt="Ростки 15–20 см, готовые к срезке" loading="lazy" width="400" height="300">
+      </div>
+
+      <h3>Когда начинать проращивание?</h3>
+      <p>Если вам не нужно много ростков и вы не хотите возиться всю зиму, то батат выкладывают на проращивание в период с конца февраля до конца марта. Можно и в апреле.</p>
+      <p>Чем позже выкладываете и вам надо много ростков, тем больше клубней вам надо заложить. Если вы начинающий, то не надо сразу много, достаточно 1–5 клубней. Посмотрите, поэкспериментируете и научитесь. Это очень интересно и увлекательно!</p>
+    </div>
+
+    <div class="guide-section" id="cherenki">
+      <h2>3. Укоренение черенков</h2>
+      <p>Черенки ставят в воду или сразу высаживают в стаканчики с почвой. Батат — живучая культура, корни появляются уже через 2–3 дня. Черенки прекрасно приживаются без каких-либо стимуляторов. С одного клубня можно получить 20–50 растений.</p>
+
+      <div class="guide-photo-grid">
+        <img class="guide-photo" src="img/grow-черенки-вода.webp" alt="Черенки в воде с корнями" loading="lazy" width="400" height="300">
+        <img class="guide-photo" src="img/grow-черенки-стаканчики.webp" alt="Укоренённые черенки в стаканчиках" loading="lazy" width="400" height="300">
+      </div>
+
+      <div class="warning">
+        <p>Перед высадкой в грунт рассаду необходимо закалить — постепенно приучить к прямому солнцу, чтобы листья не получили ожоги.</p>
+      </div>
+    </div>
+
+    <div class="guide-section" id="posadka">
+      <h2>4. Посадка батата в открытый грунт</h2>
+      <p>Батат высаживают, когда земля прогреется и ночные температуры превысят +14°C. Хороший ориентир — сроки высадки томатов: когда можно высаживать томаты, можно и батат.</p>
+      <p>Батат сажают рядами: 35–50 см между растениями и минимум 1 метр между рядами. Такие широкие междурядья нужны для длинных плетей, которыми батат стелется, как тыква. <strong>Окучивать батат нельзя.</strong></p>
+
+      <img class="guide-photo" src="img/grow-посадка-грядка.webp" alt="Грядка под батат: плёнка/мульча, разметка рядов" loading="lazy" width="400" height="300">
+
+      <div class="highlight">
+        <p>Главное условие успеха — высокая тёплая грядка. На юге грядки накрывают чёрной плёнкой, на севере — прозрачной, которая лучше прогревает почву.</p>
+      </div>
+      <p>Можно также использовать толстый слой мульчи из травы. В холодных регионах весной и осенью над растениями устанавливают временные укрытия или мини-теплицы.</p>
+      <p>Вопрос о поднятии плетей остаётся спорным, но чаще всего поднимать их не требуется: батат может использовать дополнительные точки укоренения для повышения влагообеспечения.</p>
+    </div>
+
+    <div class="guide-section" id="uhod">
+      <h2>5. Уход за растениями</h2>
+      <p>Батат не требует сложной обработки. Основной уход заключается в регулярном поливе, борьбе с сорняками и наблюдении за состоянием растений.</p>
+      <p>Батат хорошо переносит засуху, но для получения крупного урожая ему необходим обильный полив раз в 7–10 дней. При недостатке влаги растение расходует запасы клубня, ухудшая урожай. Батат не любит переувлажнения и застой воды. <strong>За 10 дней до выкапывания полив прекращают.</strong></p>
+      <p>Из вредителей батат наиболее часто повреждают слизни, проволочник, медведка, а также мыши и крысы — последние наносят наибольший ущерб, поедая клубни прямо под землёй. Следует позаботиться об их отсутствии.</p>
+      <p>Многие сорта батата цветут. Цветки — сиренево-белые, напоминают маленькие граммофоны. Цветение не связано с урожаем, но украшает растение.</p>
+
+      <img class="guide-photo" src="img/grow-цветение.webp" alt="Цветущий куст батата (сиренево-белые цветки)" loading="lazy" width="400" height="300">
+    </div>
+
+    <div class="guide-section" id="kopka">
+      <h2>6. Когда копать батат</h2>
+      <p>Батат — культура с длительным периодом роста, поэтому сроки уборки варьируются по регионам. Убирать батат начинают не по биологической зрелости, а по наступлению холодов — оставлять клубни в холодной земле опасно.</p>
+      <p>Осенью клубни активно набирают массу, поэтому не стоит спешить с уборкой, если ожидается тёплая погода. Но когда дневная температура опускается до +10°C, рост прекращается и дальнейшее ожидание бессмысленно.</p>
+
+      <img class="guide-photo" src="img/grow-копание.webp" alt="Выкопанные клубни батата на грядке" loading="lazy" width="400" height="300">
+
+      <div class="warning">
+        <p>Если ожидаются заморозки, батат нужно выкопать — ботва погибает даже от лёгкого мороза, лишая клубни защиты. После гибели ботвы клубни нельзя оставлять в земле более двух дней.</p>
+      </div>
+      <p>Подмёрзшие или даже просто переохлаждённые клубни плохо хранятся.</p>
+      <p>После выкопки обязательно пройдите следующие шаги: <a href="#kuring" class="section-link">→ кюринг</a>, затем <a href="#hranenie" class="section-link">→ хранение</a>.</p>
+    </div>
+
+    <div class="guide-section" id="kuring">
+      <h2>7. Кюринг — подготовка клубней к хранению</h2>
+      <p>Перед хранением батат должен пройти кюринг — «лечение». Это процесс подвяливания клубней в тёплых и влажных условиях: температура +30…+34°C, влажность 80–95%, длительность 3–7 дней.</p>
+      <p>В это время:</p>
+      <ul>
+        <li>Заживают механические повреждения</li>
+        <li>Кожура утолщается</li>
+        <li>Включаются защитные механизмы</li>
+        <li>Начинается процесс накопления сахаров, клубень становится сладким</li>
+      </ul>
+
+      <img class="guide-photo" src="img/grow-кюринг.webp" alt="Клубни в коробке с влажным полотенцем для кюринга" loading="lazy" width="400" height="300">
+
+      <div class="highlight">
+        <p>Кюринг можно проводить в комнате, коробке с влажным полотенцем возле батареи или любым доступным способом.</p>
+      </div>
+      <p>После кюринга переходите к <a href="#hranenie" class="section-link">→ хранению</a>.</p>
+    </div>
+
+    <div class="guide-section" id="hranenie">
+      <h2>8. Хранение батата</h2>
+      <p>После кюринга батат хранят при температуре +12…+18°C и влажности 50–80%. В таких условиях клубни могут храниться до двух лет. При более высоких температурах они прорастают. При +10°C батат теряет вкус, при +5°C погибает.</p>
+
+      <img class="guide-photo" src="img/grow-хранение.webp" alt="Батат в бумажной коробке на хранении" loading="lazy" width="400" height="300">
+
+      <div class="warning">
+        <p>Батат нельзя хранить в холодильнике — холод повреждает клетки клубня, он становится «мертвым», даже если внешне выглядит нормально. Нельзя хранить батат в герметичных пакетах: клубни дышат, и скопление углекислого газа их убивает.</p>
+      </div>
+      <p>Подходят бумажные пакеты и картонные коробки. Оптимальные условия: бумажная коробка под кроватью.</p>
+    </div>
+
+    <div class="guide-section" id="vybor">
+      <h2>9. Выбор сорта: что нужно знать</h2>
+
+      <h3>Почему невозможно определить сорт по клубню</h3>
+      <p>В мире существует более 7000 сортов батата. Внешний вид клубня не позволяет точно опознать сорт. В магазинах продают в основном оранжевомякотные сорта, но они часто не подходят для северных регионов из-за длинного срока вегетации.</p>
+      <p>Узнать сорт можно только по описанию от оригинального производителя или сравнив листья и лозу с описаниями сортов.</p>
+
+      <h3>Миф о холодостойких сортах</h3>
+      <p>Информация о «холодостойких сортах» — миф. Батат — тропическое растение, родиной его является Южная Америка — Перу и Колумбия. Экватор! О какой холодостойкости может идти речь?</p>
+      <p>Батат не растёт ниже +14°C. А если температура опустится до +10°C, то обмен веществ у батата приостанавливается. Поэтому определение «холодостойкий батат» не имеет права быть.</p>
+      <div class="highlight">
+        <p>На сегодняшний день нет холодостойких сортов. Есть ранние сорта батата и более поздние. Для северных регионов подходят ранние сорта (80–100 дней), и им нужно создавать тёплые условия выращивания.</p>
+      </div>
+      <p>Готовые адаптированные для России сорта — в нашем <a href="opisanie-sortov-batata.html" class="section-link">каталоге</a>.</p>
+    </div>
+
+    <div class="guide-section" id="vkus">
+      <h2>10. Вкусовые особенности сортов</h2>
+      <p>Вкус батата зависит от сорта, условий выращивания и почвы. Сладкие сорта чаще поздние и не всегда подходят для северных регионов. Универсального «картофельного вкуса» у батата нет — это отдельная культура, не похожая ни на картофель, ни на другие овощи.</p>
+      <p>Из батата можно готовить как блюда, так и десерты.</p>
+    </div>
+
+    <div class="guide-section" id="polza">
+      <h2>11. Полезные свойства батата</h2>
+      <p>Батат богат клетчаткой, витаминами и минералами. Подходит диабетикам, так как помогает регулировать уровень сахара. Крахмал батата имеет другую структуру, чем картофельный, и медленнее усваивается. Батат полезен для ЖКТ, обладает обволакивающим эффектом, а некоторые сорта можно есть сырыми.</p>
+      <div class="highlight">
+        <p>Для диабетиков важно есть батат в запечённом или варёном виде и тщательно пережёвывать — пюре повышает сахар быстрее.</p>
+      </div>
+    </div>
+
+    <div class="guide-section" id="oedema">
+      <h2>12. Оэдема на листьях батата</h2>
+      <p>Это оэдема (или эдема), в народе её называют водянкой. Это не болезнь и не вредители, а реакция растения на избыток влаги. Оэдема появляется, когда батат получает слишком много воды и не успевает её испарять, особенно при недостатке света, плохой вентиляции или если растение стоит на холодном подоконнике.</p>
+      <p>В результате в тканях скапливается жидкость, и на листьях образуются пупырчатые, бородавчатые наросты. Оэдема не опасна для растения, если перелив не носит постоянный характер. Поражённые листья уже не восстановятся, но новые будут расти здоровыми после нормализации условий.</p>
+
+      <img class="guide-photo" src="img/grow-оэдема.webp" alt="Лист батата с оэдемой (пупырчатые наросты)" loading="lazy" width="400" height="300">
+
+      <h3>Что нужно сделать:</h3>
+      <ul>
+        <li>Сократить полив</li>
+        <li>Дать почве хорошо просохнуть</li>
+        <li>Обеспечить дренаж</li>
+        <li>Добавить света и воздуха</li>
+        <li>Не держать растение в холоде</li>
+      </ul>
+    </div>
+
+    <div class="guide-section" id="faq">
+      <h2>13. Часто задаваемые вопросы</h2>
+      <div style="max-width:720px; margin:0 auto;">
+        <div class="guide-faq">
+          <div class="guide-faq-item">
+            <div class="guide-faq-question">Когда копать батат?</div>
+            <div class="guide-faq-answer"><p>Батат убирают до первых заморозков, когда дневная температура опускается до +10°C. Ботва погибает даже от лёгкого мороза. <a href="#kopka" class="section-link">→ подробнее в разделе 6</a></p></div>
+          </div>
+          <div class="guide-faq-item">
+            <div class="guide-faq-question">Как хранить батат?</div>
+            <div class="guide-faq-answer"><p>Сначала — обязательный кюринг (3–7 дней при +30…+34°C), затем хранение при +12…+18°C и влажности 50–80% в бумажной коробке. Нельзя хранить в холодильнике. <a href="#hranenie" class="section-link">→ подробнее в разделе 8</a></p></div>
+          </div>
+          <div class="guide-faq-item">
+            <div class="guide-faq-question">Холодостойкие сорта батата — правда или миф?</div>
+            <div class="guide-faq-answer"><p>Миф. Батат — тропическое растение, не растёт ниже +14°C. Для северных регионов выбирайте ранние сорта (80–100 дней). <a href="#vybor" class="section-link">→ подробнее в разделе 9</a></p></div>
+          </div>
+          <div class="guide-faq-item">
+            <div class="guide-faq-question">Когда закладывать клубни на проращивание?</div>
+            <div class="guide-faq-answer"><p>С конца февраля до конца марта. Для начинающих достаточно 1–5 клубней. <a href="#podgotovka" class="section-link">→ подробнее в разделе 2</a></p></div>
+          </div>
+          <div class="guide-faq-item">
+            <div class="guide-faq-question">Что за пупырчатые наросты на листьях батата?</div>
+            <div class="guide-faq-answer"><p>Это оэдема (водянка) — не болезнь, а реакция на избыток влаги. <a href="#oedema" class="section-link">→ подробнее в разделе 12</a></p></div>
+          </div>
+          <div class="guide-faq-item">
+            <div class="guide-faq-question">Можно ли вырастить батат в средней полосе?</div>
+            <div class="guide-faq-answer"><p>Да, через рассаду. Выбирайте ранние сорта, используйте укрытие и мульчу. <a href="#vybor" class="section-link">→ подробнее в разделе 9</a></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section" style="text-align:center; background: linear-gradient(135deg, var(--green-100), #fff);">
+      <h2 style="border:none;">Заключение</h2>
+      <p style="font-size:1.1rem;">Батат — перспективная, вкусная и полезная культура. Он благодарно отзывается на тепло, мульчу и поливы, а при правильной технологии даёт отличный урожай даже в условиях короткого лета. Выращивание батата — увлекательный процесс, который приносит не только урожай, но и удовольствие от наблюдения за необычным и красивым растением.</p>
+      <div style="margin-top:24px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="opisanie-sortov-batata.html" class="btn btn-primary">Смотреть каталог сортов</a>
+        <a href="kontakty.html" class="btn btn-secondary">Связаться с нами</a>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2>Почему наш батат лучший?</h2>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="adv-icon">🌿</div>
+          <h4>Экологически чистый</h4>
+          <p>Выращен на высоте 200 м над уровнем моря, без химических удобрений</p>
+        </div>
+        <div class="advantage-card">
+          <div class="adv-icon">💧</div>
+          <h4>Родниковая вода</h4>
+          <p>Наш батат питается чистым горным воздухом и родниковой водой</p>
+        </div>
+        <div class="advantage-card">
+          <div class="adv-icon">❤️</div>
+          <h4>Выращен с любовью</h4>
+          <p>Окружен безграничной заботой, легко прорастает и даёт дружные ростки</p>
+        </div>
+        <div class="advantage-card">
+          <div class="adv-icon">🍠</div>
+          <h4>Более 150 сортов</h4>
+          <p>Сбор сортов со всего мира, 10 лет опыта</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Batatchudo</h4>
+        <p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div>
+        <h4>Присоединяйся</h4>
+        <a href="https://vk.com/batatchudo" target="_blank">VK</a>
+        <a href="https://t.me/batatchudo" target="_blank">Telegram</a>
+        <a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a>
+        <a href="https://ok.ru/profile/469895106256" target="_blank">OK</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+79183913327">+7 (918) 391-33-27</a>
+        <a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a>
+        <p style="margin-top:8px; color:rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк, Россия</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span>
+      <span>Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Когда копать батат?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Батат убирают до первых заморозков, когда дневная температура опускается до +10°C. Ботва погибает даже от лёгкого мороза. После гибели ботвы клубни нельзя оставлять в земле более двух дней."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как хранить батат?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сначала — обязательный кюринг (3–7 дней при +30…+34°C и влажности 80–95%), затем хранение при +12…+18°C и влажности 50–80% в бумажной коробке или пакете. Нельзя хранить в холодильнике — холод повреждает клетки клубня."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Холодостойкие сорта батата — правда или миф?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Миф. Батат — тропическое растение из Южной Америки, не растёт ниже +14°C. Для северных регионов выбирайте ранние сорта (80–100 дней) и создавайте тёплые условия выращивания."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Когда закладывать клубни на проращивание?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "С конца февраля до конца марта. Можно и в апреле. Для начинающих достаточно 1–5 клубней. Главное условие проращивания — температура не ниже +30°C."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что за пупырчатые наросты на листьях батата?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Это оэдема (водянка) — не болезнь, а реакция растения на избыток влаги. Поражённые листья не восстановятся, но новые вырастут здоровыми после нормализации полива."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли вырастить батат в средней полосе?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, через рассаду. Выбирайте ранние сорта, используйте укрытие, мульчу и тёплую грядку. Батат благодарно отзывается на тепло и даёт урожай даже в условиях короткого лета."
+      }
+    }
+  ]
+}
+</script>
+
+<script src="js/app.js"></script>
+<script>
+(function() {
+  const nav = document.getElementById('guideNav');
+  const scrollProgress = document.getElementById('scrollProgress');
+  const sections = document.querySelectorAll('.guide-section[id]');
+  const navLinks = nav ? nav.querySelectorAll('a') : [];
+
+  // Desktop: только header (72px). Mobile: header + sticky nav.
+  function getOffset() {
+    if (window.innerWidth < 1024 && nav) return 72 + nav.offsetHeight + 8;
+    return 80;
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href').substring(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - getOffset(), behavior: 'smooth' });
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollProgress && docHeight > 0) {
+      scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%';
+    }
+    let current = '';
+    sections.forEach(s => {
+      if (scrollTop >= s.offsetTop - getOffset() - 20) current = s.id;
+    });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  });
+  })();
+
+  /* FAQ smooth open/close */
+  document.querySelectorAll('.guide-faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const answer = item.querySelector('.guide-faq-answer');
+      if (item.classList.contains('open')) {
+        answer.style.maxHeight = '0';
+        answer.style.padding = '0 24px';
+        item.classList.remove('open');
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 20 + 'px';
+        answer.style.padding = '0 24px 20px';
+      }
+    });
+  });
+</script>
+</body>
+</html>

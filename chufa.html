@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чуфа — земляной миндаль | Batatchudo.com</title>
+  <meta name="description" content="Чуфа или земляной миндаль — многолетнее растение семейства Осоковые со съедобными клубеньками. Сорта: African Long, Raisen aus Ghana, Black Tigers, Gigantos Valensia и другие. Выращивание, посадка, сбор, использование в кулинарии.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://batatchudo.com/chufa.html">
+  <meta property="og:image" content="https://batatchudo.com/img/chufa-g1.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:title" content="Чуфа — земляной миндаль | Batatchudo.com">
+  <meta property="og:description" content="Чуфа или земляной миндаль — многолетнее растение со съедобными клубеньками. 12 сортов в коллекции. Выращивание, посадка, сбор, использование в кулинарии.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/chufa.html">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    .chufa-page {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #f8faf6;
+      overflow-x: hidden;
+    }
+
+    /* ───── Hero ───── */
+    .chufa-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .chufa-hero-bg {
+      position: absolute; inset: 0;
+      background: url('img/chufa-g1.webp') center / cover no-repeat;
+      transform: scale(1.05);
+      transition: transform 8s ease;
+    }
+    .chufa-hero:hover .chufa-hero-bg { transform: scale(1); }
+    .chufa-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(12,24,20,.78) 0%, rgba(20,53,42,.52) 46%, rgba(20,53,42,.18) 100%);
+    }
+    .chufa-hero-content {
+      position: relative; z-index: 2;
+      width: 100%;
+      padding: 120px 0 60px;
+    }
+    .chufa-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .chufa-hero-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: all .3s ease;
+    }
+    .chufa-hero-back:hover { color: #fff; gap: 10px; }
+    .chufa-hero-back svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .chufa-hero-title {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .chufa-hero-title span {
+      font-size: clamp(1rem, 2vw, 1.6rem);
+      font-weight: 400;
+      opacity: .55;
+    }
+    .chufa-hero-desc {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      line-height: 1.8;
+      color: rgba(255,255,255,.85);
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+    .chufa-hero-badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 40px;
+    }
+    .chufa-hero-badge {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 500;
+    }
+
+    /* Hero stats */
+    .chufa-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .chufa-stat {
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 18px 16px;
+      text-align: center;
+      transition: all .3s ease;
+    }
+    .chufa-stat:hover {
+      background: rgba(255,255,255,.18);
+      transform: translateY(-3px);
+    }
+    .chufa-stat-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .chufa-stat-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.7);
+      margin-top: 4px;
+    }
+
+    .chufa-hero-photo { display: none; }
+
+    /* ───── Section shared ───── */
+    .chufa-section {
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .chufa-section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1a3c2e;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .chufa-section-sub {
+      text-align: center;
+      color: #666;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    /* ───── Glass card ───── */
+    .glass-card {
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.06);
+      transition: all .4s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.1);
+      background: rgba(255,255,255,.85);
+    }
+
+    /* ───── Benefits ───── */
+    .chufa-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .chufa-benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .chufa-benefit-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a3c2e;
+      margin-bottom: 8px;
+    }
+    .chufa-benefit-text {
+      font-size: .92rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ───── Varieties ───── */
+    .chufa-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .chufa-filter {
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 2px solid #d8f3dc;
+      background: transparent;
+      color: #2d6a4f;
+      font-weight: 600;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: all .3s ease;
+      font-family: inherit;
+    }
+    .chufa-filter:hover {
+      border-color: #52b788;
+      background: rgba(82,183,136,.08);
+    }
+    .chufa-filter.active {
+      background: #2d6a4f;
+      border-color: #2d6a4f;
+      color: #fff;
+    }
+
+    .chufa-varieties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .chufa-variety {
+      position: relative;
+      overflow: hidden;
+    }
+    .chufa-variety::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #52b788, #2d6a4f);
+      border-radius: 24px 24px 0 0;
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+    .chufa-variety:hover::before { opacity: 1; }
+    .chufa-variety.hidden { display: none; }
+
+    .chufa-variety-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a3c2e;
+      margin-bottom: 6px;
+    }
+    .chufa-variety-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .chufa-variety-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 600;
+      background: #d8f3dc;
+      color: #2d6a4f;
+    }
+    .chufa-variety-desc {
+      font-size: .9rem;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .chufa-variety-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .82rem;
+      color: #777;
+    }
+    .chufa-variety-meta strong { color: #1a3c2e; }
+
+    /* ───── Gallery uniform grid ───── */
+    .chufa-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .chufa-gallery-grid img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all .4s ease;
+      background: #e8f5e9;
+    }
+    .chufa-gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 16px 40px rgba(0,0,0,.12);
+    }
+
+    /* ───── Timeline ───── */
+    .chufa-timeline-wrap {
+      position: relative;
+      padding: 20px 0;
+    }
+    .chufa-timeline-wrap::before {
+      content: '';
+      position: absolute;
+      top: 44px; left: 24px; right: 24px;
+      height: 3px;
+      background: linear-gradient(90deg, #52b788, #2d6a4f);
+      border-radius: 3px;
+      z-index: 0;
+    }
+    .chufa-timeline-row {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+    .chufa-tl-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 22%;
+    }
+    .chufa-tl-item:first-child { align-items: flex-start; }
+    .chufa-tl-item:last-child { align-items: flex-end; }
+    .chufa-tl-num {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid #2d6a4f;
+      color: #2d6a4f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .chufa-tl-body {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .chufa-tl-item:first-child .chufa-tl-body { text-align: left; }
+    .chufa-tl-item:last-child .chufa-tl-body { text-align: right; }
+    .chufa-tl-title {
+      font-weight: 700;
+      color: #1a3c2e;
+      margin-bottom: 6px;
+      font-size: .95rem;
+    }
+    .chufa-tl-text {
+      font-size: .85rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ───── Growing section ───── */
+    .chufa-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .chufa-content-card {
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.06);
+      transition: all .4s ease;
+    }
+    .chufa-content-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,.1);
+    }
+    .chufa-content-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a3c2e;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d8f3dc;
+    }
+    .chufa-content-card p {
+      font-size: .92rem;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .chufa-content-card ul {
+      padding-left: 18px;
+      font-size: .9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .chufa-content-card ul li { margin-bottom: 6px; }
+    .chufa-content-card ul li strong { color: #1a3c2e; }
+
+    /* ───── Facts ───── */
+    .chufa-fact-list { list-style: none; padding: 0; }
+    .chufa-fact-list li {
+      padding: 16px 20px;
+      border-bottom: 1px solid #d8f3dc;
+      font-size: .95rem;
+      color: #555;
+      line-height: 1.7;
+      border-radius: 12px;
+      transition: all .3s ease;
+      cursor: default;
+    }
+    .chufa-fact-list li:hover {
+      background: rgba(45,106,79,.06);
+      padding-left: 28px;
+      color: #1a3c2e;
+      border-bottom-color: #52b788;
+    }
+    .chufa-fact-list li:last-child { border-bottom: none; }
+
+    /* ───── FAQ smooth ───── */
+    .chufa-faq-item {
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.04);
+      overflow: hidden;
+    }
+    .chufa-faq-question {
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #1a3c2e;
+      padding: 18px 24px;
+      user-select: none;
+    }
+    .chufa-faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform .3s ease;
+      color: #52b788;
+    }
+    .chufa-faq-item.open .chufa-faq-question::after { transform: rotate(45deg); }
+    .chufa-faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s ease, padding .45s ease;
+      padding: 0 24px;
+    }
+    .chufa-faq-answer p {
+      color: #555;
+      line-height: 1.75;
+      font-size: .92rem;
+      margin: 0;
+    }
+
+    /* ───── Decorative circles ───── */
+    .chufa-deco {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: .08;
+    }
+
+    /* ───── CTA ───── */
+    .chufa-cta {
+      background: linear-gradient(135deg, #1a3c2e, #2d6a4f, #40916c);
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .chufa-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.03);
+      top: -200px; right: -200px;
+    }
+    .chufa-cta::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.03);
+      bottom: -150px; left: -150px;
+    }
+    .chufa-cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; position: relative; z-index: 1; }
+    .chufa-cta p { opacity: .85; margin-bottom: 28px; font-size: 1.05rem; position: relative; z-index: 1; }
+
+    /* ───── Responsive ───── */
+    @media (max-width: 1024px) {
+      .chufa-hero-grid { grid-template-columns: 1fr; }
+      .chufa-stats { grid-template-columns: repeat(2, 1fr); }
+      .chufa-content-grid { grid-template-columns: 1fr; }
+      .chufa-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .chufa-hero { min-height: 70vh; }
+      .chufa-hero-content { padding: 100px 0 40px; }
+      .chufa-stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .chufa-stat { padding: 14px 12px; }
+      .chufa-section { padding: 56px 0; }
+      .chufa-timeline-row { flex-direction: column; gap: 24px; }
+      .chufa-timeline-wrap::before { display: none; }
+      .chufa-tl-item { width: 100%; align-items: flex-start !important; flex-direction: row; gap: 16px; }
+      .chufa-tl-body { margin-top: 0; text-align: left !important; }
+      .chufa-tl-num { flex-shrink: 0; }
+      .chufa-varieties-grid { grid-template-columns: 1fr; }
+      .chufa-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Чуфа (Cyperus esculentus)",
+  "description": "Чуфа или земляной миндаль — многолетнее растение семейства Осоковые со съедобными клубеньками. Сорта: African Long, Raisen aus Ghana, Black Tigers, Gigantos Valensia и другие. Выращивание, посадка, сбор, использование в кулинарии.",
+  "image": "https://batatchudo.com/img/chufa-g1.webp",
+  "url": "https://batatchudo.com/chufa.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://batatchudo.com/img/logo.png"
+    },
+    "url": "https://batatchudo.com/"
+  }
+}
+  </script>
+</head>
+<body class="chufa-page">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html" class="active">Растения</a>
+      <a href="price.html">Прайс</a>
+      <a href="recepty.html">Рецепты</a>
+      <a href="kontakty.html">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ────────────── HERO ────────────── -->
+<section class="chufa-hero">
+  <div class="chufa-hero-bg"></div>
+  <div class="chufa-hero-overlay"></div>
+  <div class="chufa-hero-content">
+    <div class="container">
+      <div class="chufa-hero-grid">
+        <div>
+          <a href="rasteniya.html" class="chufa-hero-back">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Назад к растениям
+          </a>
+          <h1 class="chufa-hero-title">Чуфа <span>(Cyperus esculentus)</span></h1>
+          <p class="chufa-hero-desc">Земляной миндаль — древняя культура со съедобными клубеньками. Неприхотлива, питательна, универсальна. В коллекции Batatchudo 12 сортов.</p>
+          <div class="chufa-hero-badges">
+            <span class="chufa-hero-badge">Многолетник</span>
+            <span class="chufa-hero-badge">Съедобные клубни</span>
+            <span class="chufa-hero-badge">Неприхотливая</span>
+          </div>
+          <div class="chufa-stats">
+            <div class="chufa-stat">
+              <div class="chufa-stat-value">30–60 см</div>
+              <div class="chufa-stat-label">Высота растения</div>
+            </div>
+            <div class="chufa-stat">
+              <div class="chufa-stat-value">30–40 кг/сотка</div>
+              <div class="chufa-stat-label">Урожайность</div>
+            </div>
+            <div class="chufa-stat">
+              <div class="chufa-stat-value">120–150 дней</div>
+              <div class="chufa-stat-label">Вегетация</div>
+            </div>
+            <div class="chufa-stat">
+              <div class="chufa-stat-value">2–3 года</div>
+              <div class="chufa-stat-label">Хранение</div>
+            </div>
+          </div>
+          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="#varieties" class="btn btn-primary" style="background:#fff;color:#1a3c2e;border:none;">Сорта</a>
+            <a href="#gallery" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Фото</a>
+            <a href="kontakty.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Связаться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── WHY ────────────── -->
+<section class="chufa-section" style="position:relative;">
+  <div class="chufa-deco" style="width:400px;height:400px;background:radial-gradient(circle,#52b788,transparent);top:-100px;right:-100px;"></div>
+  <div class="container">
+    <h2 class="chufa-section-title">Почему садоводы выбирают чуфу</h2>
+    <p class="chufa-section-sub">Неприхотливая культура с богатой историей, которая радует урожаем без лишних хлопот.</p>
+    <div class="chufa-benefits-grid">
+      <div class="glass-card">
+        <div class="chufa-benefit-icon">🥜</div>
+        <div class="chufa-benefit-title">Ореховый вкус</div>
+        <div class="chufa-benefit-text">Сладковатый, с ореховой ноткой, напоминает миндаль и арахис. В сыром виде — отличный снек, в переработанном — основа для орчаты.</div>
+      </div>
+      <div class="glass-card">
+        <div class="chufa-benefit-icon">💪</div>
+        <div class="chufa-benefit-title">Питательность</div>
+        <div class="chufa-benefit-text">Втрое калорийнее арахиса. Богата витаминами A, B, C, E, калием, магнием и фосфором. Ценный диетический продукт.</div>
+      </div>
+      <div class="glass-card">
+        <div class="chufa-benefit-icon">🌿</div>
+        <div class="chufa-benefit-title">Неприхотливость</div>
+        <div class="chufa-benefit-text">Растёт на любых почвах, засухоустойчива, требует минимум ухода. Идеальна для новичков и занятых садоводов.</div>
+      </div>
+      <div class="glass-card">
+        <div class="chufa-benefit-icon">📦</div>
+        <div class="chufa-benefit-title">Долгое хранение</div>
+        <div class="chufa-benefit-text">Высушенные клубеньки хранятся до 2–3 лет без потери вкуса, аромата и всхожести. Удобно для создания запасов.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── VARIETIES ────────────── -->
+<section class="chufa-section" id="varieties" style="background:linear-gradient(180deg,#f8faf6,#eef7f0);position:relative;">
+  <div class="chufa-deco" style="width:300px;height:300px;background:radial-gradient(circle,#40916c,transparent);bottom:-100px;left:-80px;"></div>
+  <div class="container">
+    <h2 class="chufa-section-title">12 сортов в коллекции</h2>
+    <p class="chufa-section-sub">Каждый сорт чуфы уникален — от формы и размера до вкуса и кулинарного применения.</p>
+    <div class="chufa-filters" id="chufaFilters">
+      <button class="chufa-filter active" data-filter="all">Все сорта</button>
+      <button class="chufa-filter" data-filter="sweet">Самые сладкие</button>
+      <button class="chufa-filter" data-filter="productive">Самые урожайные</button>
+      <button class="chufa-filter" data-filter="horchata">Для орчаты</button>
+      <button class="chufa-filter" data-filter="large">Крупноплодные</button>
+    </div>
+    <div class="chufa-varieties-grid" id="chufaVarieties"></div>
+  </div>
+</section>
+
+<!-- ────────────── GALLERY ────────────── -->
+<section class="chufa-section" id="gallery">
+  <div class="container">
+    <h2 class="chufa-section-title">Галерея</h2>
+    <p class="chufa-section-sub">Чуфа в разные сезоны: от всходов до сбора урожая.</p>
+    <div class="chufa-gallery-grid">
+      <img src="img/chufa-g1.webp" alt="Чуфа" loading="lazy" width="1200" height="800">
+      <img src="img/chufa-g2.webp" alt="Чуфа" loading="lazy" width="1080" height="1340">
+      <img src="img/chufa-g3.webp" alt="Чуфа" loading="lazy" width="675" height="1200">
+      <img src="img/chufa-g4.webp" alt="Чуфа" loading="lazy" width="1600" height="900">
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── TIMELINE ────────────── -->
+<section class="chufa-section" style="background:linear-gradient(180deg,#eef7f0,#f8faf6);">
+  <div class="container">
+    <h2 class="chufa-section-title">Календарь выращивания</h2>
+    <p class="chufa-section-sub">От посадки до сбора — основные этапы сезона чуфы.</p>
+    <div class="chufa-timeline-wrap">
+      <div class="chufa-timeline-row">
+        <div class="chufa-tl-item">
+          <div class="chufa-tl-num">1</div>
+          <div class="chufa-tl-body">
+            <div class="chufa-tl-title">Май — посадка</div>
+            <div class="chufa-tl-text">Высадка в прогретую землю (13–15 &deg;C). Клубеньки замачивают на 2–3 часа в тёплой воде, заглубляют на 3–5 см.</div>
+          </div>
+        </div>
+        <div class="chufa-tl-item">
+          <div class="chufa-tl-num">2</div>
+          <div class="chufa-tl-body">
+            <div class="chufa-tl-title">Лето — уход</div>
+            <div class="chufa-tl-text">Регулярный полив, прополка, лёгкое окучивание. Подкормка органикой раз в 2–3 недели. Чуфа светолюбива.</div>
+          </div>
+        </div>
+        <div class="chufa-tl-item">
+          <div class="chufa-tl-num">3</div>
+          <div class="chufa-tl-body">
+            <div class="chufa-tl-title">Сентябрь–октябрь</div>
+            <div class="chufa-tl-text">Пожелтение ботвы, накопление крахмала и масел. Укорочение светового дня стимулирует рост клубней.</div>
+          </div>
+        </div>
+        <div class="chufa-tl-item">
+          <div class="chufa-tl-num">4</div>
+          <div class="chufa-tl-body">
+            <div class="chufa-tl-title">Октябрь — сбор</div>
+            <div class="chufa-tl-text">Убирают как можно позже, когда пожелтеет ботва. Выкопка в сухую погоду, просушка. Хранение при 10–16 &deg;C.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── GROWING ────────────── -->
+<section class="chufa-section">
+  <div class="container">
+    <h2 class="chufa-section-title">Выращивание и использование</h2>
+    <p class="chufa-section-sub">Всё, что нужно знать о культуре: от истории до кулинарных секретов.</p>
+    <div class="chufa-content-grid">
+      <div class="chufa-content-card">
+        <h3>Описание культуры</h3>
+        <p><strong>Чуфа</strong>, или сыть съедобная (Cyperus esculentus) — многолетнее растение семейства Осоковые. В Египте её употребляли в пищу ещё 4 тысячи лет назад. В Россию попала в конце XVIII века под названием «зимовник».</p>
+        <p>Ареал — от Средиземноморья до умеренного климата. Растение неприхотливо, но светолюбиво. Высота куста 30–60 см, урожайность до 30–40 кг с сотки.</p>
+      </div>
+      <div class="chufa-content-card">
+        <h3>Посадка и уход</h3>
+        <p>Высаживают в середине мая, когда земля прогреется до 13–15 &deg;C. Перед посадкой замочите клубеньки на 2–3 часа в тёплой воде. Глубина заделки 3–5 см, расстояние между растениями 20–25 см.</p>
+        <p>Уход минимален: полив по мере подсыхания почвы, прополка, окучивание. Подкормка органикой раз в 2–3 недели.</p>
+      </div>
+      <div class="chufa-content-card">
+        <h3>Сбор и хранение</h3>
+        <p>Убирают в конце сентября – начале октября, когда ботва желтеет. Выкапывают в сухую погоду, отделяют клубеньки, просушивают. Хранят как картофель: сухое помещение при 10–16 &deg;C.</p>
+        <p>В правильных условиях клубеньки не теряют вкус и всхожесть до 2–3 лет.</p>
+      </div>
+      <div class="chufa-content-card">
+        <h3>Кулинария</h3>
+        <p>Из чуфы делают знаменитый испанский напиток <strong>орчату</strong> (horchata de chufa). Сладкие сорта (African Long, Raisen aus Ghana, Gigantos Valensia) едят сырыми как орешки.</p>
+        <p>Несладкие (Black Tigers, African Super) — в супах, рагу и салатах. Клубеньки можно перемалывать в муку для выпечки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── FACTS ────────────── -->
+<section class="chufa-section" style="background:linear-gradient(180deg,#f8faf6,#eef7f0);">
+  <div class="container" style="max-width:720px;">
+    <h2 class="chufa-section-title">Интересные факты</h2>
+    <ul class="chufa-fact-list">
+      <li>Чуфу употребляли в пищу ещё в Древнем Египте 4 тысячи лет назад</li>
+      <li>В Испании из чуфы делают напиток орчата (horchata de chufa) — официально признан в Валенсии</li>
+      <li>Клубеньки чуфы втрое калорийнее арахиса</li>
+      <li>В России в XVIII веке чуфу называли «зимовник»</li>
+      <li>Чуфа — не орех, а клубень многолетнего растения семейства Осоковые</li>
+      <li>Высушенные клубеньки хранятся до 2–3 лет без потери всхожести</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ────────────── FAQ ────────────── -->
+<section class="chufa-section">
+  <div class="container" style="max-width:720px;">
+    <h2 class="chufa-section-title">Частые вопросы</h2>
+    <div class="chufa-faq">
+      <div class="chufa-faq-item">
+        <div class="chufa-faq-question">Как правильно замочить клубеньки перед посадкой?</div>
+        <div class="chufa-faq-answer"><p>Замочите на 2–3 часа в тёплой дождевой или талой воде. Это ускорит прорастание. Не передерживайте дольше 6 часов — клубеньки могут закиснуть.</p></div>
+      </div>
+      <div class="chufa-faq-item">
+        <div class="chufa-faq-question">Можно ли выращивать чуфу в средней полосе?</div>
+        <div class="chufa-faq-answer"><p>Да, отлично растёт. Высаживайте в грунт в середине мая на солнечном участке. Почва подойдёт любая, кроме переувлажнённой.</p></div>
+      </div>
+      <div class="chufa-faq-item">
+        <div class="chufa-faq-question">Как отличить сорта чуфы между собой?</div>
+        <div class="chufa-faq-answer"><p>По форме, размеру и цвету: African Long — удлинённый, Large Black — почти чёрный, Jumbo — самый крупный. По вкусу сладкие (для орчаты) и несладкие (для супов и рагу).</p></div>
+      </div>
+      <div class="chufa-faq-item">
+        <div class="chufa-faq-question">Что такое орчата и из каких сортов её делают?</div>
+        <div class="chufa-faq-answer"><p>Орчата (horchata de chufa) — испанский напиток из вымоченных и перетёртых клубеньков чуфы с сахаром. Лучшие сорта: Gigantos Valensia, Raisen aus Ghana, African Long.</p></div>
+      </div>
+      <div class="chufa-faq-item">
+        <div class="chufa-faq-question">Как хранить чуфу?</div>
+        <div class="chufa-faq-answer"><p>Высушенные клубеньки хранятся в сухом помещении при 10–16 &deg;C до 2–3 лет без потери вкуса и всхожести.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── CTA ────────────── -->
+<section class="chufa-cta">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2>Хотите вырастить чуфу?</h2>
+    <p>Посадочный материал из коллекции Batatchudo и рекомендации по выращиванию.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="kontakty.html" class="btn btn-primary" style="background:#fff;color:#1a3c2e;">Связаться с нами</a>
+      <a href="rasteniya.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Все растения</a>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────── FOOTER ────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const varieties = [
+    { name: 'African Long', size: 'крупные, удлинённые (до 3×1 см)', color: 'коричневые', taste: 'сладкий', note: 'Самый любимый по отзывам бататоводов. Единственный удлинённый сорт в коллекции.', tags: ['sweet', 'large', 'horchata'] },
+    { name: 'Raisen aus Ghana', size: 'крупные, овальные', color: 'светло-коричневые', taste: 'сладковатый, приятный', note: 'Один из самых урожайных. Название — искажение нем. «Riesen aus Ghana» (гиганты из Ганы).', tags: ['sweet', 'productive', 'large', 'horchata'] },
+    { name: 'Gigantos Valensia', size: 'крупные, округлые', color: 'светло-коричневые', taste: 'сладкий, вкусный', note: 'Название отсылает к Валенсии — родине орчаты. Очень урожайный.', tags: ['sweet', 'productive', 'large', 'horchata'] },
+    { name: 'Jumbo Tigernut', size: 'очень крупные', color: 'светло-коричневые', taste: 'сладковатый', note: 'Максимальный размер клубня среди всех сортов.', tags: ['large'] },
+    { name: 'Big Round Tigernut', size: 'крупные, округлые', color: 'коричневые', taste: 'сладковатый', note: 'Классический крупноплодный округлый тип.', tags: ['large'] },
+    { name: 'Moroccan Round', size: 'некрупные, округлые', color: 'коричневые', taste: 'очень ароматный', note: 'Урожайный и засухоустойчивый. Подходит для сухих регионов.', tags: ['productive'] },
+    { name: 'Egyptian Round', size: 'средние, округлые', color: 'коричневые', taste: 'классический ореховый', note: 'Название отсылает к Египту — исторической родине культуры.', tags: [] },
+    { name: 'Round Lex Tigernut', size: 'округлые', color: 'коричневые', taste: 'напоминает арахис', note: 'Интересный вкусовой профиль, близкий к арахису.', tags: [] },
+    { name: 'Large Black Tigernut', size: 'округлые, чуть мельче крупных', color: 'почти чёрные', taste: 'вкусный', note: 'Самый тёмный сорт в коллекции. Эффектно смотрится в блюдах.', tags: [] },
+    { name: 'Black Tigers', size: 'средние, округлые', color: 'тёмные, полосатые', taste: 'несладкий, ореховый', note: 'Тигровая полосатая кожица. Хорош в супах и рагу, для орчаты не годится.', tags: [] },
+    { name: 'African Super', size: 'средние, округлые', color: 'коричневые', taste: 'несладкий', note: 'Столовый сорт, как и Black Tigers — для овощных блюд.', tags: [] },
+    { name: 'Чуфа Обычная', size: 'мелкие, разнокалиберные', color: 'коричневые', taste: 'базовый', note: 'Неселектированная чуфа, с которой обычно начинают.', tags: [] }
+  ];
+
+  const container = document.getElementById('chufaVarieties');
+  const filters = document.querySelectorAll('.chufa-filter');
+  const tagLabels = { sweet: 'Сладкий', productive: 'Урожайный', large: 'Крупноплодный', horchata: 'Для орчаты' };
+
+  function render(filter = 'all') {
+    container.innerHTML = varieties.map(v => {
+      const show = filter === 'all' || v.tags.includes(filter);
+      return `<div class="chufa-variety glass-card${show ? '' : ' hidden'}">
+        <div class="chufa-variety-name">${v.name}</div>
+        <div class="chufa-variety-tags">${v.tags.map(t => `<span class="chufa-variety-tag">${tagLabels[t] || t}</span>`).join('')}</div>
+        <div class="chufa-variety-desc">${v.note}</div>
+        <div class="chufa-variety-meta">
+          <span><strong>Форма:</strong> ${v.size}</span>
+          <span><strong>Цвет:</strong> ${v.color}</span>
+          <span><strong>Вкус:</strong> ${v.taste}</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+
+  render();
+
+  /* FAQ smooth open/close */
+  document.querySelectorAll('.chufa-faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const answer = item.querySelector('.chufa-faq-answer');
+      if (item.classList.contains('open')) {
+        answer.style.maxHeight = '0';
+        answer.style.padding = '0 24px';
+        item.classList.remove('open');
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 20 + 'px';
+        answer.style.padding = '0 24px 20px';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
