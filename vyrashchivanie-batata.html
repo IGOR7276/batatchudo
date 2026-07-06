@@ -56,6 +56,7 @@
       position: sticky;
       top: 88px;
       align-self: start;
+      min-width: 0;
     }
     .guide-sidebar-inner {
       background: white;
@@ -64,6 +65,7 @@
       padding: 20px 12px;
       max-height: calc(100vh - 110px);
       overflow-y: auto;
+      min-width: 0;
       scrollbar-width: thin;
       scrollbar-color: var(--green-300) transparent;
     }
@@ -360,18 +362,21 @@
         backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--green-100);
         box-shadow: 0 6px 18px rgba(26,60,46,.06);
+        max-width: 100vw;
+        overflow: hidden;
       }
       .guide-sidebar-inner {
         background: transparent;
         box-shadow: none;
         padding: 8px 0;
         max-height: none;
-        overflow: visible;
+        overflow: hidden;
       }
       .guide-sidebar-title { display: none; }
       .guide-nav {
         flex-direction: row;
         overflow-x: auto;
+        max-width: 100%;
         gap: 4px;
         padding: 0 16px;
         scrollbar-width: none;
