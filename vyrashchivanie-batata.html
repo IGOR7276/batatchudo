@@ -219,7 +219,7 @@
     .guide-section a.section-link:hover { color: var(--green-900); border-bottom-style: solid; }
 
     /* ───── Заглушки для фото ───── */
-    .guide-photo { width: 100%; border-radius: var(--radius); margin: 20px 0; }
+    .guide-photo { width: 100%; border-radius: var(--radius); margin: 20px 0; display: block; object-fit: cover; }
     .guide-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 20px 0; }
     .guide-photo-grid .guide-photo { margin: 0; }
     .photo-placeholder {
@@ -394,13 +394,37 @@
       .guide-nav a .nav-num { display: none; }
     }
     @media (max-width: 768px) {
-      .guide-hero h1 { font-size: 2rem; }
-      .guide-section { padding: 24px; }
-      .guide-section h2 { font-size: 1.3rem; }
+      .guide-hero { padding: 112px 0 48px; margin-bottom: 20px; }
+      .guide-hero h1 { font-size: clamp(1.7rem, 8vw, 2rem); line-height: 1.15; }
+      .guide-hero p { font-size: 1rem; line-height: 1.65; }
+      .guide-layout { padding: 0 16px; }
+      .guide-sidebar { top: 72px; margin: 0 -16px 16px; }
+      .scroll-progress { top: 72px; }
+      .guide-section { padding: 22px 18px; margin-bottom: 20px; border-radius: 14px; }
+      .guide-section h2 { font-size: 1.28rem; line-height: 1.25; }
+      .guide-section h3 { font-size: 1.08rem; line-height: 1.35; }
+      .guide-section p,
+      .guide-section ul { line-height: 1.7; }
+      .guide-section ul { padding-left: 20px; }
+      .guide-nav { padding: 0 16px; }
+      .guide-nav a { padding: 10px; }
+      .guide-photo { border-radius: 12px; }
       .toc-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
       .photo-placeholder-grid,
       .guide-photo-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .guide-layout { padding: 0 10px; }
+      .guide-sidebar { margin-left: -10px; margin-right: -10px; }
+      .guide-nav { padding: 0 10px; }
+      .guide-section { padding: 20px 14px; box-shadow: 0 3px 14px rgba(0,0,0,.06); }
+      .guide-section h2 { font-size: 1.2rem; }
+      .guide-section .highlight,
+      .guide-section .warning { padding: 14px 14px; }
+      .guide-faq-question { padding: 16px 14px; }
+      .guide-faq-answer { padding: 0 14px; }
+      .btn { width: 100%; justify-content: center; padding-left: 20px; padding-right: 20px; }
     }
   </style>
 <script type="application/ld+json">
