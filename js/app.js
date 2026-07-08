@@ -1,3 +1,22 @@
+/* ───── XSS-safe escaping helpers ───── */
+function escapeHTML(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escapeAttr(str) {
+  return escapeHTML(str);
+}
+
+function safeSlug(name) {
+  return String(name).replace(/[^a-zA-Z0-9\-_]/g, '').slice(0, 100);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
@@ -6,17 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
+    // Close menu on link click (mobile UX)
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 
   const header = document.querySelector('.header');
   if (header) {
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    }, { passive: true });
   }
 
   const modal = document.querySelector('.modal-overlay');
   if (modal) {
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
@@ -51,17 +79,33 @@ function renderCatalog(items, containerId = 'catalogGrid') {
   if (!container) return;
   container.innerHTML = items.map(v => {
     const imgPath = getImgPath(v);
-    const pageUrl = v.img ? v.img.replace('.webp', '.html') : '';
+    const safeImg = safeSlug(v.img || '');
+    const pageUrl = safeImg ? safeImg.replace('.webp', '.html') : '';
+    const colorCls = getColorClass(v.color);
+    const colorTag = v.color ? `<span class="tag ${colorCls}">${escapeHTML(v.color)}</span>` : '';
+    const typeTag = v.category === 'decor'
+      ? '<span class="tag decor-tag">Декоративный</span>'
+      : v.type === 'Авторский' ? '<span class="tag author-tag">Авторский</span>' : '';
+    const patentTag = v.patent ? '<span class="tag patent-tag">Патентированный</span>' : '';
+    const safeName = escapeHTML(v.name);
+    const initial = escapeHTML(v.name.charAt(0));
+    const imgTag = imgPath
+      ? `<img class="catalog-card-img" src="${escapeAttr(imgPath)}" alt="${safeName}" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      : '';
+    const fallbackDisplay = imgPath ? 'display:none;' : '';
+    const linkAttrs = pageUrl
+      ? `href="${escapeAttr(pageUrl)}"`
+      : `href="#" onclick="openModal(${parseInt(v.id, 10) || 0}); return false;"`;
     return `
-    <a href="${pageUrl}" class="catalog-card" ${!pageUrl ? `onclick="openModal(${v.id}); return false;"` : ''}>
-      ${imgPath ? `<img class="catalog-card-img" src="${imgPath}" alt="${v.name}" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
-      <div class="catalog-card-img-fallback" style="${imgPath ? 'display:none;' : ''}background:linear-gradient(135deg,#d8f3dc,#b7e4c7);align-items:center;justify-content:center;color:var(--green-500);font-size:2.5rem;font-weight:700;">${v.name.charAt(0)}</div>
+    <a ${linkAttrs} class="catalog-card">
+      ${imgTag}
+      <div class="catalog-card-img-fallback" style="${fallbackDisplay}background:linear-gradient(135deg,#d8f3dc,#b7e4c7);align-items:center;justify-content:center;color:var(--green-500);font-size:2.5rem;font-weight:700;">${initial}</div>
       <div class="catalog-card-body">
-        <h3>${v.name}</h3>
+        <h3>${safeName}</h3>
         <div class="meta">
-          <span class="tag ${getColorClass(v.color)}">${v.color}</span>
-          ${v.category === 'decor' ? '<span class="tag decor-tag">Декоративный</span>' : v.type === 'Авторский' ? '<span class="tag author-tag">Авторский</span>' : ''}
-          ${v.patent ? '<span class="tag patent-tag">Патентированный</span>' : ''}
+          ${colorTag}
+          ${typeTag}
+          ${patentTag}
         </div>
       </div>
     </a>`;
@@ -75,31 +119,33 @@ function openModal(id) {
   if (!overlay) return;
 
   const imgPath = getImgPath(v);
+  const safeName = escapeHTML(v.name);
+  const initial = escapeHTML(v.name.charAt(0));
 
   overlay.querySelector('.modal-content').innerHTML = `
-    <button class="modal-close" onclick="closeModal()">✕</button>
+    <button class="modal-close" onclick="closeModal()" aria-label="Закрыть">✕</button>
     <div class="modal-grid">
       <div>
-        ${imgPath ? `<img src="${imgPath}" alt="${v.name}" width="300" height="400" style="width:100%;border-radius:var(--radius-sm);aspect-ratio:3/4;object-fit:cover;background:var(--green-100);display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
-        <div style="${imgPath ? 'display:none;' : ''}background:linear-gradient(135deg,#d8f3dc,#b7e4c7);border-radius:var(--radius-sm);aspect-ratio:3/4;align-items:center;justify-content:center;font-size:6rem;font-weight:700;color:var(--green-500)">${v.name.charAt(0)}</div>
+        ${imgPath ? `<img src="${escapeAttr(imgPath)}" alt="${safeName}" width="300" height="400" style="width:100%;border-radius:var(--radius-sm);aspect-ratio:3/4;object-fit:cover;background:var(--green-100);display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
+        <div style="${imgPath ? 'display:none;' : ''}background:linear-gradient(135deg,#d8f3dc,#b7e4c7);border-radius:var(--radius-sm);aspect-ratio:3/4;align-items:center;justify-content:center;font-size:6rem;font-weight:700;color:var(--green-500)">${initial}</div>
       </div>
       <div>
-        <h2>${v.name}</h2>
+        <h2>${safeName}</h2>
         <div class="chars">
           <div class="char-item">
             <div class="label">Цвет мякоти</div>
-            <div class="value">${v.color}</div>
+            <div class="value">${escapeHTML(v.color || '')}</div>
           </div>
           <div class="char-item">
             <div class="label">Тип</div>
-            <div class="value">${v.type || 'Столовый'}</div>
+            <div class="value">${escapeHTML(v.type || 'Столовый')}</div>
           </div>
-          ${v.term && v.term !== '—' ? `<div class="char-item"><div class="label">Срок вегетации</div><div class="value">${v.term}</div></div>` : ''}
-          ${v.yield ? `<div class="char-item"><div class="label">Особенности</div><div class="value">${v.yield}</div></div>` : ''}
+          ${v.term && v.term !== '—' ? `<div class="char-item"><div class="label">Срок вегетации</div><div class="value">${escapeHTML(v.term)}</div></div>` : ''}
+          ${v.yield ? `<div class="char-item"><div class="label">Особенности</div><div class="value">${escapeHTML(v.yield)}</div></div>` : ''}
         </div>
-        ${v.desc ? `<div class="description">${v.desc}</div>` : ''}
-        ${v.rawTaste ? `<div class="description" style="margin-top:12px"><strong>В сыром виде:</strong> ${v.rawTaste}</div>` : ''}
-        ${v.bakedTaste ? `<div class="description" style="margin-top:8px"><strong>В запеченном виде:</strong> ${v.bakedTaste}</div>` : ''}
+        ${v.desc ? `<div class="description">${escapeHTML(v.desc)}</div>` : ''}
+        ${v.rawTaste ? `<div class="description" style="margin-top:12px"><strong>В сыром виде:</strong> ${escapeHTML(v.rawTaste)}</div>` : ''}
+        ${v.bakedTaste ? `<div class="description" style="margin-top:8px"><strong>В запеченном виде:</strong> ${escapeHTML(v.bakedTaste)}</div>` : ''}
       </div>
     </div>
   `;
