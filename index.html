@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -19,8 +19,17 @@
   <meta property="og:description" content="Батат купить с доставкой по России: саженцы и клубни 150+ сортов от селекционеров Луцан. Опт и розница.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://batatchudo.com/">
+  <meta property="og:site_name" content="Batatchudo">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image:alt" content="Батат: саженцы и клубни купить с доставкой — 150+ сортов | Batatchudo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Батат: саженцы и клубни купить с доставкой — 150+ сортов | Batatchudo">
+  <meta name="twitter:description" content="Батат купить с доставкой по России: саженцы и клубни 150+ сортов от селекционеров Луцан. Опт и розница.">
+  <meta name="twitter:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
   <link rel="canonical" href="https://batatchudo.com/">
   <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="640">
   <meta property="og:image:type" content="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +37,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -73,7 +82,7 @@
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script>
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -93,10 +102,10 @@
       <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
       <span>Batatchudo</span>
     </a>
-    <button class="nav-toggle" aria-label="Меню">
+    <button class="nav-toggle" aria-label="Меню" type="button" aria-expanded="false" aria-controls="site-navigation">
       <span></span><span></span><span></span>
     </button>
-    <nav class="nav">
+    <nav class="nav" id="site-navigation">
       <a href="index.html" class="active">Главная</a>
       <a href="opisanie-sortov-batata.html">Каталог</a>
       <a href="vyrashchivanie-batata.html">Выращивание</a>
@@ -110,7 +119,9 @@
 </header>
 
 <section class="home-hero">
-  <div class="home-hero-bg"></div>
+  <picture class="home-hero-bg" aria-hidden="true">
+    <img src="img/hiro-index.webp" alt="" sizes="100vw" fetchpriority="high" decoding="async">
+  </picture>
   <div class="home-hero-content">
     <div class="container">
       <div class="home-hero-grid">
@@ -129,7 +140,7 @@
           </div>
         </div>
         <div class="home-hero-collage">
-          <img src="img/collage-1.webp" alt="Коллекция батата" loading="lazy" width="1200" height="1600">
+          <img src="img/collage-1.webp" alt="Коллекция батата" width="1200" height="1600" decoding="async">
           <img src="img/collage-2.webp" alt="Коллекция батата" loading="lazy" width="1200" height="1600">
           <img src="img/collage-3.webp" alt="Коллекция батата" loading="lazy" width="1200" height="1600">
         </div>
@@ -141,10 +152,17 @@
 <section class="home-section">
   <div class="container">
     <div class="home-section-head">
-      <h2 class="home-section-title">Лучшие сорта батата</h2>
+      <h2 class="home-section-title">Сорта батата из коллекции</h2>
       <p class="home-section-sub">Отобранные сорта с высокой сладостью, ранним сроком и проверенной урожайностью. Все адаптированы для российского климата.</p>
     </div>
-    <div class="home-grid" id="homeVarieties"></div>
+    <div class="home-grid" id="homeVarieties">
+      <a class="home-fallback-link" href="napoleon.html">Наполеон</a>
+      <a class="home-fallback-link" href="medovoe-chudo.html">Медовое чудо</a>
+      <a class="home-fallback-link" href="bogatyr.html">Богатырь</a>
+      <a class="home-fallback-link" href="boregard.html">Борегард</a>
+      <a class="home-fallback-link" href="kovington.html">Ковингтон</a>
+      <a class="home-fallback-link" href="garnet.html">Гарнет</a>
+    </div>
     <div class="home-section-link">
       <a href="opisanie-sortov-batata.html" class="btn btn-primary">Весь каталог (150+ сортов)</a>
       <button type="button" class="btn btn-shuffle" onclick="shuffleHomeAll()">
@@ -161,7 +179,14 @@
       <h2 class="home-section-title">Редкие растения</h2>
       <p class="home-section-sub">Экзотические культуры, адаптированные для России: ямс, чайот, кивано, чуфа и другие. Результат многолетней интродукции.</p>
     </div>
-    <div class="home-plant-grid" id="homePlants"></div>
+    <div class="home-plant-grid" id="homePlants">
+      <a class="home-fallback-link" href="chayot.html">Чайот</a>
+      <a class="home-fallback-link" href="kivano.html">Кивано</a>
+      <a class="home-fallback-link" href="chufa.html">Чуфа</a>
+      <a class="home-fallback-link" href="yams.html">Ямс</a>
+      <a class="home-fallback-link" href="momordika.html">Момордика</a>
+      <a class="home-fallback-link" href="yakon.html">Якон</a>
+    </div>
     <div class="home-section-link">
       <a href="rasteniya.html" class="btn btn-outline" style="color:var(--green-700);border-color:var(--green-100);">Все растения (30+)</a>
       <button type="button" class="btn btn-shuffle" onclick="shuffleHomeAll()">
@@ -331,13 +356,13 @@
       </div>
       <div>
         <h4>Контакты</h4>
-        <a href="tel:+79183913327">+7 (918) 391-33-27</a>
+        <a href="tel:+79183913327">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a>
         <a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a>
         <p style="margin-top: 8px; color: rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк, Россия</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span>
+      <span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span><a href="privacy.html">Политика конфиденциальности</a>
       <span>Все права защищены</span>
     </div>
   </div>

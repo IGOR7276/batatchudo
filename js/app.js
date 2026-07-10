@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   if (toggle && nav) {
+    if (!nav.id) nav.id = 'site-navigation';
+    toggle.setAttribute('aria-controls', nav.id);
+    toggle.setAttribute('aria-expanded', String(nav.classList.contains('open')));
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(isOpen));
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modal) {
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-hidden', 'true');
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
@@ -95,13 +99,14 @@ function openModal(id) {
   if (!v) return;
   const overlay = document.getElementById('varietyModal');
   if (!overlay) return;
+  overlay.returnFocus = document.activeElement;
 
   const imgPath = getImgPath(v);
   const safeName = escapeHTML(v.name);
   const initial = escapeHTML(v.name.charAt(0));
 
   overlay.querySelector('.modal-content').innerHTML = `
-    <button class="modal-close" onclick="closeModal()" aria-label="Закрыть">✕</button>
+    <button class="modal-close" type="button" onclick="closeModal()" aria-label="Закрыть">✕</button>
     <div class="modal-grid">
       <div>
         ${imgPath ? `<img src="${escapeAttr(imgPath)}" alt="${safeName}" width="300" height="400" style="width:100%;border-radius:var(--radius-sm);aspect-ratio:3/4;object-fit:cover;background:var(--green-100);display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
@@ -128,14 +133,18 @@ function openModal(id) {
     </div>
   `;
   overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  overlay.querySelector('.modal-close')?.focus();
 }
 
 function closeModal() {
   const overlay = document.getElementById('varietyModal');
   if (overlay) {
     overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    overlay.returnFocus?.focus();
   }
 }
 
@@ -143,17 +152,31 @@ function closeModal() {
 (function() {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
-  lightbox.innerHTML = '<button class="lightbox-close">&times;</button><button class="lightbox-prev">&lsaquo;</button><img src="" alt=""><button class="lightbox-next">&rsaquo;</button><div class="lightbox-counter"></div>';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Просмотр фотографий');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть просмотр">&times;</button><button class="lightbox-prev" type="button" aria-label="Предыдущая фотография">&lsaquo;</button><img src="" alt=""><button class="lightbox-next" type="button" aria-label="Следующая фотография">&rsaquo;</button><div class="lightbox-counter" aria-live="polite"></div>';
   document.body.appendChild(lightbox);
   const img = lightbox.querySelector('img');
   const counter = lightbox.querySelector('.lightbox-counter');
   let images = [], current = 0;
+  let returnFocus = null;
+
+  function close() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    returnFocus?.focus();
+  }
 
   function open(idx) {
     current = idx;
     show();
     lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.lightbox-close').focus();
   }
 
   function show() {
@@ -162,10 +185,7 @@ function closeModal() {
     counter.textContent = (current + 1) + ' / ' + images.length;
   }
 
-  lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  lightbox.querySelector('.lightbox-close').addEventListener('click', close);
   lightbox.querySelector('.lightbox-prev').addEventListener('click', () => {
     current = (current - 1 + images.length) % images.length;
     show();
@@ -176,13 +196,18 @@ function closeModal() {
   });
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
+      close();
     }
   });
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'Escape') close();
+    if (e.key === 'Tab') {
+      const controls = Array.from(lightbox.querySelectorAll('button'));
+      const first = controls[0], last = controls[controls.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
     if (e.key === 'ArrowLeft') { current = (current - 1 + images.length) % images.length; show(); }
     if (e.key === 'ArrowRight') { current = (current + 1) % images.length; show(); }
   });
@@ -192,6 +217,7 @@ function closeModal() {
     if (!gal) return;
     const clicked = e.target.closest('img');
     if (!clicked) return;
+    returnFocus = clicked;
     images = Array.from(gal.querySelectorAll('img')).map(i => i.src);
     const idx = images.indexOf(clicked.src);
     if (idx !== -1) open(idx);

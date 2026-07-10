@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -19,8 +19,17 @@
   <meta property="og:description" content="Вырастите экзотику на своем участке! Редкие растения, адаптированные для России.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://batatchudo.com/rasteniya.html">
+  <meta property="og:site_name" content="Batatchudo">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image:alt" content="Каталог редких и экзотических растений">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Каталог редких и экзотических растений | Batatchudo.com">
+  <meta name="twitter:description" content="Вырастите экзотику на своем участке! Редкие растения, адаптированные для России.">
+  <meta name="twitter:image" content="https://batatchudo.com/img/yams-6.webp">
   <link rel="canonical" href="https://batatchudo.com/rasteniya.html">
   <meta property="og:image" content="https://batatchudo.com/img/yams-6.webp">
+  <meta property="og:image:width" content="715">
+  <meta property="og:image:height" content="720">
   <meta property="og:image:type" content="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -215,7 +224,7 @@
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script>
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -235,8 +244,8 @@
       <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
       <span>Batatchudo</span>
     </a>
-    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav">
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false" type="button" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-navigation">
       <a href="index.html">Главная</a>
       <a href="opisanie-sortov-batata.html">Каталог</a>
       <a href="vyrashchivanie-batata.html">Выращивание</a>
@@ -286,15 +295,15 @@
       </div>
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
         <div class="rt-pills" id="rtFilters">
-          <button class="rt-pill active" data-filter="all">Все</button>
-          <button class="rt-pill" data-filter="tuber">🥔 Клубневые</button>
-          <button class="rt-pill" data-filter="annual">🌿 Однолетние</button>
-          <button class="rt-pill" data-filter="perennial">🌳 Многолетние</button>
-          <button class="rt-pill" data-tag="edible">🍴 Съедобные</button>
-          <button class="rt-pill" data-tag="easy">🌱 Новичкам</button>
-          <button class="rt-pill" data-tag="south">☀ Теплолюбивые</button>
-          <button class="rt-pill" data-tag="greenhouse">🏠 Для теплицы</button>
-          <button class="rt-pill" data-tag="winter">❄ Зимостойкие</button>
+          <button type="button" class="rt-pill active" data-filter="all">Все</button>
+          <button type="button" class="rt-pill" data-filter="tuber">🥔 Клубневые</button>
+          <button type="button" class="rt-pill" data-filter="annual">🌿 Однолетние</button>
+          <button type="button" class="rt-pill" data-filter="perennial">🌳 Многолетние</button>
+          <button type="button" class="rt-pill" data-tag="edible">🍴 Съедобные</button>
+          <button type="button" class="rt-pill" data-tag="easy">🌱 Новичкам</button>
+          <button type="button" class="rt-pill" data-tag="south">☀ Теплолюбивые</button>
+          <button type="button" class="rt-pill" data-tag="greenhouse">🏠 Для теплицы</button>
+          <button type="button" class="rt-pill" data-tag="winter">❄ Зимостойкие</button>
         </div>
         <span class="rt-result-count" id="rtCount"></span>
       </div>
@@ -356,15 +365,15 @@
         <a href="kontakty.html">Контакты</a>
       </div>
       <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
-      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
+    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><a href="privacy.html">Политика конфиденциальности</a><span>Все права защищены</span></div>
   </div>
 </section>
 
 <div class="rt-modal-overlay" id="rtModal">
   <div class="rt-modal">
-    <button class="rt-modal-close" onclick="document.getElementById('rtModal').classList.remove('open')">&times;</button>
+    <button type="button" class="rt-modal-close" onclick="document.getElementById('rtModal').classList.remove('open')">&times;</button>
     <div id="rtModalContent"></div>
   </div>
 </div>

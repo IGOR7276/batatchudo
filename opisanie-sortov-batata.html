@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -19,8 +19,17 @@
   <meta property="og:description" content="Все сорта батата с описаниями и фото. Фильтры по цвету мякоти. Найдите свой идеальный сорт!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://batatchudo.com/opisanie-sortov-batata.html">
+  <meta property="og:site_name" content="Batatchudo">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image:alt" content="Каталог сортов батата: 150+ видов">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Каталог сортов батата: 150+ видов | Batatchudo.com">
+  <meta name="twitter:description" content="Все сорта батата с описаниями и фото. Фильтры по цвету мякоти. Найдите свой идеальный сорт!">
+  <meta name="twitter:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
   <link rel="canonical" href="https://batatchudo.com/opisanie-sortov-batata.html">
   <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="640">
   <meta property="og:image:type" content="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,7 +360,7 @@
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script>
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -371,8 +380,8 @@
       <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
       <span>Batatchudo</span>
     </a>
-    <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
-    <nav class="nav">
+    <button class="nav-toggle" aria-label="Меню" type="button" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-navigation">
       <a href="index.html">Главная</a>
       <a href="opisanie-sortov-batata.html" class="active">Каталог</a>
       <a href="vyrashchivanie-batata.html">Выращивание</a>
@@ -400,11 +409,11 @@
 <section class="st-collections">
   <div class="container">
     <div class="st-collections-row" id="stCollections">
-      <button class="st-collection active" data-collection="all">🔥 Все</button>
-      <button class="st-collection" data-collection="sweetest">🍯 Самые сладкие</button>
-      <button class="st-collection" data-collection="early">🚀 Самые ранние</button>
-      <button class="st-collection" data-collection="author">🏆 Авторские</button>
-      <button class="st-collection" data-collection="new">🆕 Новинки</button>
+      <button type="button" class="st-collection active" data-collection="all">🔥 Все</button>
+      <button type="button" class="st-collection" data-collection="sweetest">🍯 Самые сладкие</button>
+      <button type="button" class="st-collection" data-collection="early">🚀 Самые ранние</button>
+      <button type="button" class="st-collection" data-collection="author">🏆 Авторские</button>
+      <button type="button" class="st-collection" data-collection="new">🆕 Новинки</button>
     </div>
   </div>
 </section>
@@ -412,35 +421,35 @@
 <div class="st-pills-wrap" id="stPillsWrap">
   <div class="container">
     <div class="st-pills-row">
-      <button class="st-pill active" data-filter="all">Все</button>
-      <button class="st-pill" data-color="Оранжевый"><span class="color-dot orange"></span> Оранжевые</button>
-      <button class="st-pill" data-color="Фиолетовый"><span class="color-dot purple"></span> Фиолетовые</button>
-      <button class="st-pill" data-color="Белый"><span class="color-dot white"></span> Белые</button>
-      <button class="st-pill" data-color="Желтый"><span class="color-dot yellow"></span> Жёлтые</button>
-      <button class="st-pill" data-filter="decor">🎨 Декоративные</button>
+      <button type="button" class="st-pill active" data-filter="all">Все</button>
+      <button type="button" class="st-pill" data-color="Оранжевый"><span class="color-dot orange"></span> Оранжевые</button>
+      <button type="button" class="st-pill" data-color="Фиолетовый"><span class="color-dot purple"></span> Фиолетовые</button>
+      <button type="button" class="st-pill" data-color="Белый"><span class="color-dot white"></span> Белые</button>
+      <button type="button" class="st-pill" data-color="Желтый"><span class="color-dot yellow"></span> Жёлтые</button>
+      <button type="button" class="st-pill" data-filter="decor">🎨 Декоративные</button>
       <span class="st-count" id="stCount">0 сортов</span>
       <div class="st-view-toggle">
-        <button class="st-view-btn active" data-view="grid">▦</button>
-        <button class="st-view-btn" data-view="table">⊞</button>
+        <button type="button" class="st-view-btn active" data-view="grid">▦</button>
+        <button type="button" class="st-view-btn" data-view="table">⊞</button>
       </div>
     </div>
     <div class="st-pills-row">
       <div class="st-filter-group">
         <span class="st-filter-label">Срок:</span>
-        <button class="st-pill" data-term="Ранний">🚀 Ранние</button>
-        <button class="st-pill" data-term="Средний">📊 Средние</button>
-        <button class="st-pill" data-term="Поздний">⏰ Поздние</button>
+        <button type="button" class="st-pill" data-term="Ранний">🚀 Ранние</button>
+        <button type="button" class="st-pill" data-term="Средний">📊 Средние</button>
+        <button type="button" class="st-pill" data-term="Поздний">⏰ Поздние</button>
       </div>
       <div class="st-filter-group">
         <span class="st-filter-label">Тип:</span>
-        <button class="st-pill" data-type="Авторский">🏆 Авторские</button>
-        <button class="st-pill" data-type="Японская коллекция">🗾 Японские</button>
+        <button type="button" class="st-pill" data-type="Авторский">🏆 Авторские</button>
+        <button type="button" class="st-pill" data-type="Японская коллекция">🗾 Японские</button>
       </div>
       <div class="st-filter-group">
-        <button class="st-pill" data-adv="Для сыроедения">🥗 Для сыроедения</button>
-        <button class="st-pill" data-adv="Новинка">🆕 Новинки</button>
+        <button type="button" class="st-pill" data-adv="Для сыроедения">🥗 Для сыроедения</button>
+        <button type="button" class="st-pill" data-adv="Новинка">🆕 Новинки</button>
       </div>
-      <button class="st-pill st-clear" id="stClearFilters">✕ Сбросить</button>
+      <button type="button" class="st-pill st-clear" id="stClearFilters">✕ Сбросить</button>
     </div>
     <div class="st-pills-row">
       <div class="st-filter-group st-sort-group" id="stSortButtons" aria-label="Сортировка каталога">
@@ -454,24 +463,36 @@
 </div>
 
 <div class="container">
-  <div class="st-grid" id="stGrid"></div>
+  <div class="st-grid" id="stGrid">
+    <a class="st-fallback-link" href="napoleon.html">Наполеон</a>
+    <a class="st-fallback-link" href="medovoe-chudo.html">Медовое чудо</a>
+    <a class="st-fallback-link" href="bogatyr.html">Богатырь</a>
+    <a class="st-fallback-link" href="boregard.html">Борегард</a>
+    <a class="st-fallback-link" href="kovington.html">Ковингтон</a>
+    <a class="st-fallback-link" href="garnet.html">Гарнет</a>
+    <a class="st-fallback-link" href="beniharuka.html">Бенихарука</a>
+    <a class="st-fallback-link" href="burgundi.html">Бургунди</a>
+    <a class="st-fallback-link" href="kumara.html">Кумара</a>
+    <a class="st-fallback-link" href="yaponskiy.html">Японский</a>
+    <a class="st-fallback-link" href="opisanie-sortov-batata.html#sortTable">Полный список сортов</a>
+  </div>
 </div>
 
 <div class="st-compare-panel" id="stComparePanel">
   <div class="st-compare-panel-top">
     <span>⚖ Сравнение сортов (<span id="stCompareCount">0</span>)</span>
-    <button class="st-compare-clear" onclick="clearCompare()">Очистить</button>
+    <button type="button" class="st-compare-clear" onclick="clearCompare()">Очистить</button>
   </div>
   <div class="st-compare-items" id="stCompareItems"></div>
   <div class="st-compare-actions">
-    <button class="st-compare-btn" onclick="showCompare()">Сравнить</button>
-    <button class="st-compare-share" onclick="shareCompare()">🔗 Поделиться</button>
+    <button type="button" class="st-compare-btn" onclick="showCompare()">Сравнить</button>
+    <button type="button" class="st-compare-share" onclick="shareCompare()">🔗 Поделиться</button>
   </div>
 </div>
 
 <div class="st-compare-modal" id="stCompareModal">
   <div class="st-compare-inner">
-    <button class="st-compare-close" onclick="document.getElementById('stCompareModal').classList.remove('open')">&times;</button>
+    <button type="button" class="st-compare-close" onclick="document.getElementById('stCompareModal').classList.remove('open')">&times;</button>
     <h3>Сравнение сортов</h3>
     <p class="st-compare-hint">Зелёным выделены лучшие значения в каждой строке.</p>
     <div class="st-compare-table-wrap" id="stCompareContent"></div>
@@ -480,7 +501,7 @@
 
 <div class="st-spec-modal" id="stSpecModal">
   <div class="st-spec-inner">
-    <button class="st-spec-close" onclick="document.getElementById('stSpecModal').classList.remove('open')">&times;</button>
+    <button type="button" class="st-spec-close" onclick="document.getElementById('stSpecModal').classList.remove('open')">&times;</button>
     <div id="stSpecContent"></div>
   </div>
 </div>
@@ -504,9 +525,9 @@
         <a href="kontakty.html">Контакты</a>
       </div>
       <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
-      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
+    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><a href="privacy.html">Политика конфиденциальности</a><span>Все права защищены</span></div>
   </div>
 </footer>
 
@@ -718,7 +739,7 @@ function renderVarieties(list) {
         ${quickChips.length ? '<div class="st-card-quick">' + quickChips.map(text => '<span class="st-card-quick-chip">' + escapeHTML(text) + '</span>').join('') + '</div>' : ''}
       </div>
       <div class="st-card-footer">
-        <button class="st-card-compare ${isInCompare ? 'in-compare' : ''}" onclick="toggleCompare(this, ${vid})">В сравнение</button>
+        <button type="button" class="st-card-compare ${isInCompare ? 'in-compare' : ''}" onclick="toggleCompare(this, ${vid})">В сравнение</button>
         <a href="${escapeAttr(pageUrl)}" class="st-card-detail" ${!pageUrl ? `onclick="openModal(${vid}); return false;"` : ''}>Подробнее</a>
       </div>
     </div>`;
@@ -776,7 +797,7 @@ function updateComparePanel() {
   items.innerHTML = compareIds.map(id => {
     const v = varieties.find(x => x.id === id);
     if (!v) return '';
-    return `<span class="st-compare-item"><span class="color-dot ${escapeAttr(getColorClass(v.color))}"></span> ${escapeHTML(v.name)} <button class="remove" onclick="removeCompare(${parseInt(id,10)||0})">✕</button></span>`;
+    return `<span class="st-compare-item"><span class="color-dot ${escapeAttr(getColorClass(v.color))}"></span> ${escapeHTML(v.name)} <button type="button" class="remove" onclick="removeCompare(${parseInt(id,10)||0})">✕</button></span>`;
   }).join('');
 }
 

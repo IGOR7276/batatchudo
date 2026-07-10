@@ -1703,3 +1703,9 @@ body {
   .meta-divider { display: none; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
+/* Policy */
+.policy-content { max-width: 900px; }
+.policy-content h2 { margin: 32px 0 12px; color: var(--green-900); }
+.policy-content p { margin-bottom: 16px; line-height: 1.75; }
+.footer-address { margin-top: 8px; color: rgba(255, 255, 255, 0.6); }
+.st-fallback-link { display: flex; min-height: 88px; align-items: center; justify-content: center; padding: 18px; border: 1px solid var(--green-100); border-radius: var(--radius); color: var(--green-900); font-weight: 700; text-align: center; }

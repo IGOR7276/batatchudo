@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -21,11 +21,20 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="canonical" href="https://batatchudo.com/price.html">
   <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="640">
   <meta property="og:image:type" content="image/webp">
   <meta property="og:title" content="Прайс-лист на клубни батата и саженцы | Batatchudo.com">
   <meta property="og:description" content="Актуальные цены на клубни батата и саженцы экзотических растений. Доставка по всей России.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://batatchudo.com/price.html">
+  <meta property="og:site_name" content="Batatchudo">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image:alt" content="Прайс-лист на клубни батата и саженцы">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Прайс-лист на клубни батата и саженцы | Batatchudo.com">
+  <meta name="twitter:description" content="Актуальные цены на клубни батата и саженцы экзотических растений. Доставка по всей России.">
+  <meta name="twitter:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
   <style>
     .price-hero {
       background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 50%, var(--green-500) 100%);
@@ -241,7 +250,7 @@
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script>
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -261,8 +270,8 @@
       <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
       <span>Batatchudo</span>
     </a>
-    <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
-    <nav class="nav">
+    <button class="nav-toggle" aria-label="Меню" type="button" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-navigation">
       <a href="index.html">Главная</a>
       <a href="opisanie-sortov-batata.html">Каталог</a>
       <a href="vyrashchivanie-batata.html">Выращивание</a>
@@ -558,7 +567,7 @@
     <p>Свяжитесь с нами для заказа и консультации по выбору сортов</p>
     <div class="hero-buttons" style="justify-content:center;">
       <a href="kontakty.html" class="btn btn-primary" style="background:white;color:var(--green-700);">Связаться с нами</a>
-      <a href="tel:+79183913327" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white;">+7 (918) 391-33-27</a>
+      <a href="tel:+79183913327" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white;">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a>
     </div>
   </div>
 </section>
@@ -569,9 +578,9 @@
       <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
       <div><h4>Разделы</h4><a href="opisanie-sortov-batata.html">Сорта батата</a><a href="vyrashchivanie-batata.html">Выращивание</a><a href="rasteniya.html">Растения</a><a href="price.html">Прайс</a><a href="recepty.html">Рецепты</a><a href="o-nas.html">О нас</a><a href="kontakty.html">Контакты</a></div>
       <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
-      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк</p></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p class="footer-address">Туапсинский р-н, с. Индюк</p></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span></div>
+    <div class="footer-bottom"><span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span><a href="privacy.html">Политика конфиденциальности</a></div>
   </div>
 </footer>
 
@@ -582,18 +591,18 @@
   const sections = document.querySelectorAll('.price-section');
   const navLinks = document.querySelectorAll('.price-nav a');
   const priceNav = document.getElementById('priceNav');
-  
+
   // Handle nav link clicks
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = link.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
-      
+
       if (targetSection) {
         const navHeight = priceNav.offsetHeight + 72; // nav + header
         const targetPosition = targetSection.offsetTop - navHeight - 20;
-        
+
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth'
@@ -601,14 +610,14 @@
       }
     });
   });
-  
+
   window.addEventListener('scroll', () => {
     // Update progress bar
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (scrollTop / docHeight) * 100;
     scrollProgress.style.width = scrollPercent + '%';
-    
+
     // Update active nav link
     let current = '';
     const navHeight = priceNav.offsetHeight + 72;
@@ -618,7 +627,7 @@
         current = section.getAttribute('id');
       }
     });
-    
+
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === '#' + current) {
