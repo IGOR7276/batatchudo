@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -269,8 +269,8 @@
         </div>
         <div class="rt-hero-collage">
           <img src="img/yams-6.webp" alt="Ямс" loading="lazy" width="715" height="720">
-          <img src="img/chayot-g1.webp" alt="Чайот" loading="lazy" width="960" height="1280">
-          <img src="img/kivano-g1.webp" alt="Кивано" loading="lazy" width="704" height="700">
+          <img src="img/chayot-g1.webp" alt="Чайот — фото 1" loading="lazy" width="960" height="1280" srcset="img/chayot-g1-400w.webp 400w, img/chayot-g1-800w.webp 800w, img/chayot-g1.webp 960w" sizes="(max-width: 768px) 45vw, 320px">
+          <img src="img/kivano-g1.webp" alt="Кивано — фото 1" loading="lazy" width="704" height="700" srcset="img/kivano-g1-400w.webp 400w, img/kivano-g1.webp 704w" sizes="(max-width: 768px) 45vw, 320px">
         </div>
       </div>
     </div>
@@ -355,7 +355,7 @@
         <a href="o-nas.html">О нас</a>
         <a href="kontakty.html">Контакты</a>
       </div>
-      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
       <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
@@ -369,6 +369,7 @@
   </div>
 </div>
 
+<script src="js/img-variants.js"></script>
 <script src="js/app.js"></script>
 <script src="js/plants-data.js"></script>
 <script>
@@ -379,6 +380,10 @@ const diffLabels = { 1:'🟢 Легко', 2:'🟡 Средне', 3:'🔴 Сло�
 
 let plants = [];
 
+function safeSlugLocal(s) {
+  return String(s || '').replace(/[^a-zA-Z0-9\-_]/g, '').slice(0, 100);
+}
+
 function getImg(p) {
   return p.img ? 'img/' + p.img : '';
 }
@@ -388,27 +393,27 @@ function renderPlants(list) {
   const empty = document.getElementById('rtEmpty');
   container.innerHTML = list.map(p => {
     const imgPath = getImg(p);
-    const badgeHtml = p.badge ? `<div class="rt-card-badge ${p.badge}">${badgeLabels[p.badge]}</div>` : '';
-    const tagsHtml = p.tags.map(t => `<span class="rt-card-tag ${tagClasses[t]}">${tagLabels[t]}</span>`).join('');
-    const pageUrl = p.page ? p.slug + '.html' : '';
+    const badgeHtml = p.badge && badgeLabels[p.badge] ? `<div class="rt-card-badge ${escapeAttr(tagClasses[p.badge] || p.badge)}">${escapeHTML(badgeLabels[p.badge])}</div>` : '';
+    const tagsHtml = p.tags.filter(t => tagLabels[t]).map(t => `<span class="rt-card-tag ${escapeAttr(tagClasses[t] || '')}">${escapeHTML(tagLabels[t])}</span>`).join('');
+    const pageUrl = p.page ? safeSlugLocal(p.slug) + '.html' : '';
     const imgHtml = imgPath
-      ? `<img class="rt-card-img" src="${imgPath}" alt="${p.name}" width="400" height="300" loading="lazy" onerror="this.outerHTML='<div class=rt-card-fallback>${p.name.charAt(0)}</div>'">`
-      : `<div class="rt-card-fallback">${p.name.charAt(0)}</div>`;
+      ? `<img class="rt-card-img" ${cardImgAttrs(p.img)} alt="${escapeAttr(p.name)}" width="400" height="300" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=rt-card-fallback>${escapeHTML(p.name.charAt(0))}</div>'">`
+      : `<div class="rt-card-fallback">${escapeHTML(p.name.charAt(0))}</div>`;
     return `<div class="rt-card">
       ${badgeHtml}
       ${imgHtml}
       <div class="rt-card-body">
-        <div class="rt-card-name">${p.name}</div>
-        <div class="rt-card-desc">${p.desc}</div>
+        <div class="rt-card-name">${escapeHTML(p.name)}</div>
+        <div class="rt-card-desc">${escapeHTML(p.desc)}</div>
         <div class="rt-card-meta">
-          <span class="rt-card-meta-item"><strong>Сложность:</strong> ${diffLabels[p.diff] || '—'}</span>
-          ${p.height !== '—' ? `<span class="rt-card-meta-item"><strong>Высота:</strong> ${p.height}</span>` : ''}
-          ${p.term !== '—' ? `<span class="rt-card-meta-item"><strong>Срок:</strong> ${p.term}</span>` : ''}
+          <span class="rt-card-meta-item"><strong>Сложность:</strong> ${escapeHTML(diffLabels[p.diff] || '—')}</span>
+          ${p.height !== '—' ? `<span class="rt-card-meta-item"><strong>Высота:</strong> ${escapeHTML(p.height)}</span>` : ''}
+          ${p.term !== '—' ? `<span class="rt-card-meta-item"><strong>Срок:</strong> ${escapeHTML(p.term)}</span>` : ''}
         </div>
         <div class="rt-card-tags">${tagsHtml}</div>
       </div>
       <div class="rt-card-actions">
-        <a href="${pageUrl}" class="rt-card-action rt-card-action-detail" ${pageUrl ? '' : `onclick="openRtModal('${p.slug}'); return false;"`}>Подробнее →</a>
+        <a href="${escapeAttr(pageUrl)}" class="rt-card-action rt-card-action-detail" ${pageUrl ? '' : `onclick="openRtModal('${escapeAttr(safeSlugLocal(p.slug))}'); return false;"`}>Подробнее →</a>
       </div>
     </div>`;
   }).join('');
@@ -425,9 +430,9 @@ function openRtModal(slug) {
   const overlay = document.getElementById('rtModal');
   const imgPath = getImg(p);
   document.getElementById('rtModalContent').innerHTML = `
-    ${imgPath ? `<img src="${imgPath}" alt="${p.name}" width="300" height="400" style="width:100%;border-radius:12px;aspect-ratio:3/4;object-fit:cover;margin-bottom:16px;">` : `<div style="width:100%;border-radius:12px;aspect-ratio:3/4;background:linear-gradient(135deg,#d8f3dc,#b7e4c7);display:flex;align-items:center;justify-content:center;font-size:3rem;margin-bottom:16px;">${p.name.charAt(0)}</div>`}
-    <h2>${p.name}</h2>
-    <p>${p.desc}</p>
+    ${imgPath ? `<img src="${escapeAttr(imgPath)}" alt="${escapeAttr(p.name)}" width="300" height="400" style="width:100%;border-radius:12px;aspect-ratio:3/4;object-fit:cover;margin-bottom:16px;">` : `<div style="width:100%;border-radius:12px;aspect-ratio:3/4;background:linear-gradient(135deg,#d8f3dc,#b7e4c7);display:flex;align-items:center;justify-content:center;font-size:3rem;margin-bottom:16px;">${escapeHTML(p.name.charAt(0))}</div>`}
+    <h2>${escapeHTML(p.name)}</h2>
+    <p>${escapeHTML(p.desc)}</p>
     <p style="margin-top:12px;font-size:.85rem;color:#999;">Скоро добавим подробное описание.</p>`;
   overlay.classList.add('open');
 }
@@ -465,6 +470,55 @@ function initRasteniya() {
 
     if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
     renderPlants(items);
+    syncUrlFromState();
+  }
+
+  // ───── SEO: query-параметры фильтров ↔ URL ─────
+  const CANONICAL_BASE = 'https://batatchudo.com/rasteniya.html';
+
+  function syncUrlFromState() {
+    const active = getActivePill();
+    const params = new URLSearchParams();
+    if (active) {
+      const f = active.dataset.filter;
+      const t = active.dataset.tag;
+      if (f && f !== 'all') params.set('cat', f);
+      if (t && t !== 'all') params.set('tag', t);
+    }
+    const q = searchInput && searchInput.value.trim();
+    if (q) params.set('q', q);
+    const qs = params.toString();
+    const newUrl = qs ? location.pathname + '?' + qs : location.pathname;
+    history.replaceState(null, '', newUrl);
+    updateCanonical(qs);
+  }
+
+  function updateCanonical(qs) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = qs ? CANONICAL_BASE + '?' + qs : CANONICAL_BASE;
+    const og = document.querySelector('meta[property="og:url"]');
+    if (og) og.content = link.href;
+  }
+
+  function applyStateFromUrl() {
+    const params = new URLSearchParams(location.search);
+    const cat = params.get('cat');
+    const tag = params.get('tag');
+    const q = params.get('q');
+    if (!cat && !tag && !q) return;
+    let target = null;
+    if (cat) target = document.querySelector('#rtFilters .rt-pill[data-filter="' + cat + '"]');
+    else if (tag) target = document.querySelector('#rtFilters .rt-pill[data-tag="' + tag + '"]');
+    if (target) {
+      pills.forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+    }
+    if (q && searchInput) searchInput.value = q;
   }
 
   pills.forEach(pill => {
@@ -476,9 +530,15 @@ function initRasteniya() {
   });
 
   searchInput.addEventListener('input', filter);
-  filter();
 
   plants = Array.isArray(window.plantsCatalog) ? window.plantsCatalog : [];
+  if (!plants.length) {
+    grid.innerHTML = '<div class="rt-empty show" style="display:block"><div style="font-size:2rem">⚠️</div><div>Не удалось загрузить каталог растений</div><div style="font-size:.85rem;color:#999;margin-top:6px">Пожалуйста, обновите страницу или попробуйте позже.</div></div>';
+    const cnt = document.getElementById('rtCount');
+    if (cnt) cnt.textContent = '';
+    return;
+  }
+  applyStateFromUrl();
   filter();
 }
 

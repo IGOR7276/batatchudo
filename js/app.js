@@ -13,10 +13,6 @@ function escapeAttr(str) {
   return escapeHTML(str);
 }
 
-function safeSlug(name) {
-  return String(name).replace(/[^a-zA-Z0-9\-_]/g, '').slice(0, 100);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
@@ -74,42 +70,24 @@ function getImgPath(v) {
   return '';
 }
 
-function renderCatalog(items, containerId = 'catalogGrid') {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  container.innerHTML = items.map(v => {
-    const imgPath = getImgPath(v);
-    const safeImg = safeSlug(v.img || '');
-    const pageUrl = safeImg ? safeImg.replace('.webp', '.html') : '';
-    const colorCls = getColorClass(v.color);
-    const colorTag = v.color ? `<span class="tag ${colorCls}">${escapeHTML(v.color)}</span>` : '';
-    const typeTag = v.category === 'decor'
-      ? '<span class="tag decor-tag">Декоративный</span>'
-      : v.type === 'Авторский' ? '<span class="tag author-tag">Авторский</span>' : '';
-    const patentTag = v.patent ? '<span class="tag patent-tag">Патентированный</span>' : '';
-    const safeName = escapeHTML(v.name);
-    const initial = escapeHTML(v.name.charAt(0));
-    const imgTag = imgPath
-      ? `<img class="catalog-card-img" src="${escapeAttr(imgPath)}" alt="${safeName}" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-      : '';
-    const fallbackDisplay = imgPath ? 'display:none;' : '';
-    const linkAttrs = pageUrl
-      ? `href="${escapeAttr(pageUrl)}"`
-      : `href="#" onclick="openModal(${parseInt(v.id, 10) || 0}); return false;"`;
-    return `
-    <a ${linkAttrs} class="catalog-card">
-      ${imgTag}
-      <div class="catalog-card-img-fallback" style="${fallbackDisplay}background:linear-gradient(135deg,#d8f3dc,#b7e4c7);align-items:center;justify-content:center;color:var(--green-500);font-size:2.5rem;font-weight:700;">${initial}</div>
-      <div class="catalog-card-body">
-        <h3>${safeName}</h3>
-        <div class="meta">
-          ${colorTag}
-          ${typeTag}
-          ${patentTag}
-        </div>
-      </div>
-    </a>`;
-  }).join('');
+/* Build responsive srcset for a card thumbnail image file (e.g. "napoleon.webp").
+   Uses pre-generated -400w / -600w variants when available (window.IMG_VARIANTS). */
+function cardImgSrcset(imgFile) {
+  if (!imgFile) return '';
+  const base = imgFile.replace(/\.webp$/i, '');
+  const variants = Array.isArray(window.IMG_VARIANTS) ? window.IMG_VARIANTS : [];
+  if (variants.indexOf(base) === -1) return '';
+  return `img/${base}-400w.webp 400w, img/${base}-600w.webp 600w, img/${imgFile} 900w`;
+}
+
+/* Returns ready-to-inline attributes: src + (srcset + sizes) for a card image */
+function cardImgAttrs(imgFile, sizes) {
+  const src = 'img/' + imgFile;
+  const set = cardImgSrcset(imgFile);
+  const sizesAttr = sizes || '(max-width: 768px) 90vw, 300px';
+  return set
+    ? `src="${escapeAttr(src)}" srcset="${escapeAttr(set)}" sizes="${escapeAttr(sizesAttr)}"`
+    : `src="${escapeAttr(src)}"`;
 }
 
 function openModal(id) {
@@ -159,70 +137,6 @@ function closeModal() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
   }
-}
-
-function initCatalog() {
-  const categoryFilter = document.getElementById('categoryFilter');
-  const colorFilter = document.getElementById('colorFilter');
-  const searchInput = document.getElementById('searchInput');
-  const countEl = document.getElementById('varietyCount');
-
-  let currentCategory = '';
-  let currentColor = '';
-
-  // Pill click handlers
-  if (categoryFilter) {
-    categoryFilter.addEventListener('click', (e) => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      categoryFilter.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentCategory = pill.dataset.value;
-      filter();
-    });
-  }
-
-  if (colorFilter) {
-    colorFilter.addEventListener('click', (e) => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      colorFilter.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentColor = pill.dataset.value;
-      filter();
-    });
-  }
-
-  function filter() {
-    let items = [...varieties];
-    const search = searchInput?.value?.toLowerCase();
-
-    if (currentCategory) items = items.filter(v => v.category === currentCategory);
-    if (currentColor) items = items.filter(v => v.color === currentColor);
-    if (currentPatent) items = items.filter(v => v.patent);
-    if (search) items = items.filter(v => v.name.toLowerCase().includes(search));
-
-    renderCatalog(items);
-    if (countEl) countEl.textContent = items.length;
-  }
-
-  // Patent filter
-  const patentFilter = document.getElementById('patentFilter');
-  let currentPatent = false;
-
-  if (patentFilter) {
-    patentFilter.addEventListener('click', (e) => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      patentFilter.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentPatent = pill.dataset.value === 'patent';
-      filter();
-    });
-  }
-
-  searchInput?.addEventListener('input', filter);
-  filter();
 }
 
 /* Lightbox */

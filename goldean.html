@@ -57,6 +57,32 @@
   }
 }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://batatchudo.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Каталог сортов батата",
+      "item": "https://batatchudo.com/opisanie-sortov-batata.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Голден",
+      "item": "https://batatchudo.com/goldean.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
@@ -124,7 +150,7 @@
 <main class="container">
   <div class="variety-layout">
     <div class="variety-photo">
-      <img src="img/goldean.webp" alt="Голден" width="1200" height="1600">
+      <img src="img/goldean.webp" alt="Голден" width="1200" height="1600" decoding="async" fetchpriority="high" srcset="img/goldean-400w.webp 400w, img/goldean-600w.webp 600w, img/goldean.webp 1200w" sizes="(max-width: 768px) 92vw, 480px">
     </div>
     <div class="variety-details">
       <h2>Описание сорта</h2>
@@ -133,9 +159,9 @@
   </div>
   <h2 class="section-title text-center" style="margin-bottom:24px;">Галерея</h2>
   <div class="gallery-grid">
-    <img src="img/goldean-g1.webp" alt="goldean" loading="lazy" width="1080" height="1350">
-    <img src="img/goldean-g2.webp" alt="goldean" loading="lazy" width="960" height="1280">
-    <img src="img/goldean-g3.webp" alt="goldean" loading="lazy" width="1080" height="1350">
+    <img src="img/goldean-g1.webp" alt="goldean — фото 1" loading="lazy" width="1080" height="1350" srcset="img/goldean-g1-400w.webp 400w, img/goldean-g1-800w.webp 800w, img/goldean-g1.webp 1080w" sizes="(max-width: 768px) 45vw, 320px">
+    <img src="img/goldean-g2.webp" alt="goldean — фото 2" loading="lazy" width="960" height="1280" srcset="img/goldean-g2-400w.webp 400w, img/goldean-g2-800w.webp 800w, img/goldean-g2.webp 960w" sizes="(max-width: 768px) 45vw, 320px">
+    <img src="img/goldean-g3.webp" alt="goldean — фото 3" loading="lazy" width="1080" height="1350" srcset="img/goldean-g3-400w.webp 400w, img/goldean-g3-800w.webp 800w, img/goldean-g3.webp 1080w" sizes="(max-width: 768px) 45vw, 320px">
   </div>
 </main>
 <section class="cta-full">
@@ -153,7 +179,7 @@
     <div class="footer-grid">
       <div><h4>Batatchudo</h4><p>Центр развития батата Луцан.</p></div>
       <div><h4>Разделы</h4><a href="opisanie-sortov-batata.html">Каталог сортов</a><a href="vyrashchivanie-batata.html">Выращивание</a><a href="rasteniya.html">Растения</a><a href="o-nas.html">О нас</a><a href="kontakty.html">Контакты</a></div>
-      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
       <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк</p></div>
     </div>
     <div class="footer-bottom"><span>© 2026 batatchudo.com</span></div>

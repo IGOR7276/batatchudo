@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -503,7 +503,7 @@
         <a href="o-nas.html">О нас</a>
         <a href="kontakty.html">Контакты</a>
       </div>
-      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
       <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
@@ -512,6 +512,7 @@
 
 <script src="js/data.js"></script>
 <script src="js/catalog-meta.js"></script>
+<script src="js/img-variants.js"></script>
 <script src="js/app.js"></script>
 <script>
 const FAVORITES = ['Борегард','Победа 100','Белый НБС','Ковингтон','Бенихарука','Порто-Амарелло','Медовое Чудо','Карамельный','Сладкий №1'];
@@ -557,6 +558,7 @@ function buildMetaAdvantages(row) {
 }
 
 function mergeCatalogMeta() {
+  if (typeof varieties === 'undefined' || !Array.isArray(varieties)) return;
   const rows = Array.isArray(window.CATALOG_TABLE_ROWS) ? window.CATALOG_TABLE_ROWS : [];
   const metaMap = new Map(rows.map(row => [normalizeText(row[0]), row]));
   varieties.forEach(v => {
@@ -703,20 +705,21 @@ function renderVarieties(list) {
     if (Array.isArray(v.advantages) && v.advantages.includes('Архивный')) overlays.push('<span class="st-card-overlay-badge archive">Архивный</span>');
     const overlayHtml = overlays.length ? `<div class="st-card-overlay">${overlays.join('')}</div>` : '';
     const imgHtml = imgPath
-      ? `<div class="st-card-img-wrap">${overlayHtml}<img class="st-card-img" src="${imgPath}" alt="${v.name}" width="400" height="300" loading="lazy" onerror="this.outerHTML='<div class=st-card-fallback>${v.name.charAt(0)}</div>'"></div>`
-      : `<div class="st-card-img-wrap">${overlayHtml}<div class="st-card-fallback">${v.name.charAt(0)}</div></div>`;
+      ? `<div class="st-card-img-wrap">${overlayHtml}<img class="st-card-img" ${cardImgAttrs(v.img)} alt="${escapeAttr(v.name)}" width="400" height="333" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=st-card-fallback>${escapeHTML(v.name.charAt(0))}</div>'"></div>`
+      : `<div class="st-card-img-wrap">${overlayHtml}<div class="st-card-fallback">${escapeHTML(v.name.charAt(0))}</div></div>`;
     const quickChips = getQuickChips(v);
     const isInCompare = compareIds.includes(v.id);
-    return `<div class="st-card" data-id="${v.id}">
+    const vid = parseInt(v.id, 10) || 0;
+    return `<div class="st-card" data-id="${vid}">
       ${imgHtml}
       <div class="st-card-body">
-        <div class="st-card-name">${v.name}</div>
-        <div class="st-card-color"><span class="color-dot ${getColorClass(v.color)}"></span> ${colorLabel(v.color)} мякоть</div>
-        ${quickChips.length ? '<div class="st-card-quick">' + quickChips.map(text => '<span class="st-card-quick-chip">' + text + '</span>').join('') + '</div>' : ''}
+        <div class="st-card-name">${escapeHTML(v.name)}</div>
+        <div class="st-card-color"><span class="color-dot ${escapeAttr(getColorClass(v.color))}"></span> ${escapeHTML(colorLabel(v.color))} мякоть</div>
+        ${quickChips.length ? '<div class="st-card-quick">' + quickChips.map(text => '<span class="st-card-quick-chip">' + escapeHTML(text) + '</span>').join('') + '</div>' : ''}
       </div>
       <div class="st-card-footer">
-        <button class="st-card-compare ${isInCompare ? 'in-compare' : ''}" onclick="toggleCompare(this, ${v.id})">В сравнение</button>
-        <a href="${pageUrl}" class="st-card-detail" ${!pageUrl ? `onclick="openModal(${v.id}); return false;"` : ''}>Подробнее</a>
+        <button class="st-card-compare ${isInCompare ? 'in-compare' : ''}" onclick="toggleCompare(this, ${vid})">В сравнение</button>
+        <a href="${escapeAttr(pageUrl)}" class="st-card-detail" ${!pageUrl ? `onclick="openModal(${vid}); return false;"` : ''}>Подробнее</a>
       </div>
     </div>`;
   }).join('');
@@ -734,12 +737,12 @@ function showSpecs(id) {
   if (!v || !modal || !content) return;
   const specs = getSpecsData(v);
   content.innerHTML = `
-    <h3>${v.name}</h3>
-    <div class="st-spec-sub"><span class="color-dot ${getColorClass(v.color)}"></span> ${colorLabel(v.color) || '—'} мякоть</div>
+    <h3>${escapeHTML(v.name)}</h3>
+    <div class="st-spec-sub"><span class="color-dot ${escapeAttr(getColorClass(v.color))}"></span> ${escapeHTML(colorLabel(v.color) || '—')} мякоть</div>
     <div class="st-spec-grid">
-      ${specs.values.map(([label, value]) => `<div class="st-spec-item"><span class="st-spec-label">${label}</span><span class="st-spec-value">${value}</span></div>`).join('')}
+      ${specs.values.map(([label, value]) => `<div class="st-spec-item"><span class="st-spec-label">${escapeHTML(label)}</span><span class="st-spec-value">${escapeHTML(String(value))}</span></div>`).join('')}
     </div>
-    ${specs.flags.length || specs.other ? `<div class="st-spec-note">${[specs.flags.join(' • '), specs.other].filter(Boolean).join(' • ')}</div>` : ''}
+    ${specs.flags.length || specs.other ? `<div class="st-spec-note">${escapeHTML([specs.flags.join(' • '), specs.other].filter(Boolean).join(' • '))}</div>` : ''}
   `;
   modal.classList.add('open');
 }
@@ -773,7 +776,7 @@ function updateComparePanel() {
   items.innerHTML = compareIds.map(id => {
     const v = varieties.find(x => x.id === id);
     if (!v) return '';
-    return `<span class="st-compare-item"><span class="color-dot ${getColorClass(v.color)}"></span> ${v.name} <button class="remove" onclick="removeCompare(${id})">✕</button></span>`;
+    return `<span class="st-compare-item"><span class="color-dot ${escapeAttr(getColorClass(v.color))}"></span> ${escapeHTML(v.name)} <button class="remove" onclick="removeCompare(${parseInt(id,10)||0})">✕</button></span>`;
   }).join('');
 }
 
@@ -822,10 +825,10 @@ function showCompare() {
     { label: 'Другое', values: items.map(v => getOtherTextCmp(v)), mode: 'bool', render: x => x }
   ].filter(r => r.values.some(v => v !== false && v !== '—' && v !== '' && v !== 0 && v != null));
   const html = `<table class="st-compare-table">
-    <thead><tr><th>Характеристика</th>${items.map(v => '<th>' + v.name + '</th>').join('')}</tr></thead>
+    <thead><tr><th>Характеристика</th>${items.map(v => '<th>' + escapeHTML(v.name) + '</th>').join('')}</tr></thead>
     <tbody>${rows.map(r => {
       const best = bestIndices(r.values, r.mode, items);
-      return '<tr><th>' + r.label + '</th>' + r.values.map((val, i) => '<td class="' + (best.includes(i) ? 'best' : '') + '">' + r.render(val) + '</td>').join('') + '</tr>';
+      return '<tr><th>' + escapeHTML(r.label) + '</th>' + r.values.map((val, i) => '<td class="' + (best.includes(i) ? 'best' : '') + '">' + escapeHTML(String(r.render(val))) + '</td>').join('') + '</tr>';
     }).join('')}</tbody>
   </table>`;
   document.getElementById('stCompareContent').innerHTML = html;
@@ -896,16 +899,16 @@ function renderTable(list) {
     const other = getOtherText(v);
     html += `<tr>
       <td>${i + 1}</td>
-      <td class="td-name"><a href="${pageUrl}" class="td-link">${v.name}</a></td>
-      <td><span class="color-dot ${getColorClass(v.color)}"></span>${v.color}</td>
-      <td>${v.term || '—'}</td>
-      <td>${v.type || 'Столовый'}</td>
-      <td class="td-center td-sweet">${v.sweetness || '—'}</td>
+      <td class="td-name"><a href="${escapeAttr(pageUrl)}" class="td-link">${escapeHTML(v.name)}</a></td>
+      <td><span class="color-dot ${escapeAttr(getColorClass(v.color))}"></span>${escapeHTML(v.color)}</td>
+      <td>${escapeHTML(v.term || '—')}</td>
+      <td>${escapeHTML(v.type || 'Столовый')}</td>
+      <td class="td-center td-sweet">${escapeHTML(String(v.sweetness || '—'))}</td>
       <td class="td-center">${beginner ? '<span class="td-badge yes">✔</span>' : '—'}</td>
       <td class="td-center">${patented ? '<span class="td-badge patent">✔</span>' : '—'}</td>
       <td class="td-center">${rawfood ? '<span class="td-badge yes">✔</span>' : '—'}</td>
       <td class="td-center">${archive ? '<span class="td-badge">✔</span>' : '—'}</td>
-      <td class="td-other">${other || '—'}</td>
+      <td class="td-other">${escapeHTML(other || '—')}</td>
     </tr>`;
   });
   html += '</tbody></table>';
@@ -944,6 +947,14 @@ function renderStats() {
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('stGrid');
   if (!grid) return;
+
+  // Fallback: data.js failed to load
+  if (typeof varieties === 'undefined' || !Array.isArray(varieties) || !varieties.length) {
+    grid.innerHTML = '<div class="st-empty"><div class="st-empty-icon">⚠️</div><div>Не удалось загрузить каталог сортов</div><div class="st-empty-hint">Пожалуйста, обновите страницу или попробуйте позже.</div></div>';
+    const cnt = document.getElementById('stCount');
+    if (cnt) cnt.textContent = '';
+    return;
+  }
 
   const searchInput = document.getElementById('stSearch');
   const pills = document.querySelectorAll('.st-pill');
@@ -1097,6 +1108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const allPill = document.querySelector('.st-pill[data-filter="all"]');
     if (allPill) allPill.classList.add('active');
     activeTerms = []; activeTypes = []; activeAdvs = [];
+    activeCollection = 'all';
+    collections.forEach(c => c.classList.toggle('active', c.dataset.collection === 'all'));
     sortField = null; sortDir = 'asc';
     if (searchInput) searchInput.value = '';
     syncSortUi();
@@ -1129,6 +1142,88 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       renderVarieties(items);
     }
+
+    syncUrlFromState();
+  }
+
+  // ───── SEO: query-параметры фильтров ↔ URL ─────
+  const CANONICAL_BASE = 'https://batatchudo.com/opisanie-sortov-batata.html';
+  const COLOR_PARAM_MAP = { orange: 'Оранжевый', purple: 'Фиолетовый', white: 'Белый', yellow: 'Желтый' };
+  const COLOR_PARAM_REVERSE = { 'Оранжевый': 'orange', 'Фиолетовый': 'purple', 'Белый': 'white', 'Желтый': 'yellow' };
+  const TERM_PARAM_MAP = { early: 'Ранний', mid: 'Средний', late: 'Поздний' };
+  const TERM_PARAM_REVERSE = { 'Ранний': 'early', 'Средний': 'mid', 'Поздний': 'late' };
+  const TYPE_PARAM_MAP = { author: 'Авторский', japanese: 'Японская коллекция' };
+  const TYPE_PARAM_REVERSE = { 'Авторский': 'author', 'Японская коллекция': 'japanese' };
+  const ADV_PARAM_MAP = { raw: 'Для сыроедения', new: 'Новинка' };
+  const ADV_PARAM_REVERSE = { 'Для сыроедения': 'raw', 'Новинка': 'new' };
+
+  function collectActiveState() {
+    const colors = Array.from(pills).filter(p => p.dataset.color && p.classList.contains('active')).map(p => p.dataset.color);
+    const cats = Array.from(pills).filter(p => p.dataset.filter && p.dataset.filter !== 'all' && p.classList.contains('active')).map(p => p.dataset.filter);
+    return { colors, cats, terms: activeTerms, types: activeTypes, advs: activeAdvs };
+  }
+
+  function buildQueryString() {
+    const st = collectActiveState();
+    const params = new URLSearchParams();
+    st.colors.forEach(c => { if (COLOR_PARAM_REVERSE[c]) params.append('color', COLOR_PARAM_REVERSE[c]); });
+    st.terms.forEach(t => { if (TERM_PARAM_REVERSE[t]) params.append('term', TERM_PARAM_REVERSE[t]); });
+    st.types.forEach(t => { if (TYPE_PARAM_REVERSE[t]) params.append('type', TYPE_PARAM_REVERSE[t]); });
+    st.advs.forEach(a => { if (ADV_PARAM_REVERSE[a]) params.append('adv', ADV_PARAM_REVERSE[a]); });
+    if (st.cats.includes('decor')) params.append('cat', 'decor');
+    if (activeCollection && activeCollection !== 'all') params.append('collection', activeCollection);
+    const q = searchInput && searchInput.value.trim();
+    if (q) params.set('q', q);
+    return params.toString();
+  }
+
+  function syncUrlFromState() {
+    const qs = buildQueryString();
+    const newUrl = qs ? location.pathname + '?' + qs : location.pathname;
+    history.replaceState(null, '', newUrl);
+    updateCanonical(qs);
+  }
+
+  function updateCanonical(qs) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = qs ? CANONICAL_BASE + '?' + qs : CANONICAL_BASE;
+    let og = document.querySelector('meta[property="og:url"]');
+    if (og) og.content = link.href;
+  }
+
+  function applyStateFromUrl() {
+    const params = new URLSearchParams(location.search);
+    if (![...params.keys()].some(k => ['color','term','type','adv','cat','collection','q'].includes(k))) return false;
+
+    pills.forEach(p => p.classList.remove('active'));
+
+    const activate = (selector) => { const el = document.querySelector(selector); if (el) el.classList.add('active'); };
+
+    params.getAll('color').forEach(v => { const label = COLOR_PARAM_MAP[v]; if (label) activate('.st-pill[data-color="' + label + '"]'); });
+    params.getAll('term').forEach(v => { const label = TERM_PARAM_MAP[v]; if (label) activate('.st-pill[data-term="' + label + '"]'); });
+    params.getAll('type').forEach(v => { const label = TYPE_PARAM_MAP[v]; if (label) activate('.st-pill[data-type="' + label + '"]'); });
+    params.getAll('adv').forEach(v => { const label = ADV_PARAM_MAP[v]; if (label) activate('.st-pill[data-adv="' + label + '"]'); });
+    if (params.getAll('cat').includes('decor')) activate('.st-pill[data-filter="decor"]');
+
+    const coll = params.get('collection');
+    if (coll && COLLECTIONS[coll]) {
+      activeCollection = coll;
+      collections.forEach(c => c.classList.toggle('active', c.dataset.collection === coll));
+    }
+
+    const q = params.get('q');
+    if (q && searchInput) searchInput.value = q;
+
+    syncStateFromPills();
+    const allPill = document.querySelector('.st-pill[data-filter="all"]');
+    const anyActive = Array.from(pills).some(p => p !== allPill && p.id !== 'stClearFilters' && p.classList.contains('active'));
+    if (allPill) allPill.classList.toggle('active', !anyActive);
+    return true;
   }
 
   pills.forEach(pill => {
@@ -1173,6 +1268,9 @@ document.addEventListener('DOMContentLoaded', () => {
     compareIds = cmp.split(',').map(Number).filter(n => varieties.some(v => v.id === n));
     updateComparePanel();
   }
+
+  // Restore filters from URL query (?color=orange&term=early ...)
+  applyStateFromUrl();
 
   syncSortUi();
   filter();
