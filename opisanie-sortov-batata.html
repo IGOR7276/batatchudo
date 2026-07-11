@@ -69,10 +69,16 @@
 
     .st-stats { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
     .st-stat {
+      appearance: none; -webkit-appearance: none; font-family: inherit; cursor: pointer;
       background: rgba(255,255,255,.13); backdrop-filter: blur(12px); border-radius: 16px;
       padding: 10px 16px; min-width: 104px; text-align: center; border: 1px solid rgba(255,255,255,.16);
+      color: inherit; transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
     }
-    .st-stat-num { font-size: 1.25rem; font-weight: 800; color: #fff; line-height: 1; }
+    .st-stat:hover { background: rgba(255,255,255,.22); border-color: rgba(82,183,136,.6); transform: translateY(-2px); }
+    .st-stat.active { background: linear-gradient(135deg,#2d6a4f,#40916c); border-color: #52b788; color: #fff; box-shadow: 0 12px 30px rgba(45,106,79,.3); }
+    .st-stat.active .st-stat-label { color: rgba(255,255,255,.85); }
+    .st-stat-num { font-size: 1.25rem; font-weight: 800; color: #fff; line-height: 1; transition: color .2s; }
+    .st-stat.active .st-stat-num { color: #1a3c2e; }
     .st-stat-label { font-size: .68rem; color: rgba(255,255,255,.8); margin-top: 3px; }
 
     .st-collections { display: none; }
@@ -376,13 +382,13 @@
 
 <header class="header">
   <div class="container header-inner">
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
       <span>Batatchudo</span>
     </a>
     <button class="nav-toggle" aria-label="Меню" type="button" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
     <nav class="nav" id="site-navigation">
-      <a href="index.html">Главная</a>
+      <a href="/">Главная</a>
       <a href="opisanie-sortov-batata.html" class="active">Каталог</a>
       <a href="vyrashchivanie-batata.html">Выращивание</a>
       <a href="rasteniya.html">Растения</a>
@@ -448,6 +454,7 @@
       <div class="st-filter-group">
         <button type="button" class="st-pill" data-adv="Для сыроедения">🥗 Для сыроедения</button>
         <button type="button" class="st-pill" data-adv="Новинка">🆕 Новинки</button>
+        <button type="button" class="st-pill" data-adv="Для новичков" style="position:absolute;padding:0;margin:0;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" tabindex="-1" aria-hidden="true">Для новичков</button>
       </div>
       <button type="button" class="st-pill st-clear" id="stClearFilters">✕ Сбросить</button>
     </div>
@@ -956,13 +963,13 @@ function renderStats() {
   const decor = varieties.filter(v => v.category === 'decor').length;
   const beginner = varieties.filter(v => Array.isArray(v.advantages) && v.advantages.includes('Для новичков')).length;
   const stats = [
-    { num: varieties.length, label: 'сортов' },
-    { num: author, label: 'авторских' },
-    { num: early, label: 'ранних' },
-    { num: beginner, label: 'для новичков' },
-    { num: decor, label: 'декоративных' }
+    { key: 'all', num: varieties.length, label: 'сортов' },
+    { key: 'author', num: author, label: 'авторских' },
+    { key: 'early', num: early, label: 'ранних' },
+    { key: 'beginner', num: beginner, label: 'для новичков' },
+    { key: 'decor', num: decor, label: 'декоративных' }
   ];
-  el.innerHTML = stats.map(s => `<div class="st-stat"><div class="st-stat-num">${s.num}</div><div class="st-stat-label">${s.label}</div></div>`).join('');
+  el.innerHTML = stats.map(s => `<button type="button" class="st-stat" data-stat="${s.key}" aria-pressed="false"><div class="st-stat-num">${s.num}</div><div class="st-stat-label">${s.label}</div></button>`).join('');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1134,6 +1141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sortField = null; sortDir = 'asc';
     if (searchInput) searchInput.value = '';
     syncSortUi();
+    document.querySelectorAll('.st-stat').forEach(s => { s.classList.remove('active'); s.setAttribute('aria-pressed', 'false'); });
   }
 
   function filter() {
@@ -1175,8 +1183,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const TERM_PARAM_REVERSE = { 'Ранний': 'early', 'Средний': 'mid', 'Поздний': 'late' };
   const TYPE_PARAM_MAP = { author: 'Авторский', japanese: 'Японская коллекция' };
   const TYPE_PARAM_REVERSE = { 'Авторский': 'author', 'Японская коллекция': 'japanese' };
-  const ADV_PARAM_MAP = { raw: 'Для сыроедения', new: 'Новинка' };
-  const ADV_PARAM_REVERSE = { 'Для сыроедения': 'raw', 'Новинка': 'new' };
+  const ADV_PARAM_MAP = { raw: 'Для сыроедения', new: 'Новинка', beginner: 'Для новичков' };
+  const ADV_PARAM_REVERSE = { 'Для сыроедения': 'raw', 'Новинка': 'new', 'Для новичков': 'beginner' };
 
   function collectActiveState() {
     const colors = Array.from(pills).filter(p => p.dataset.color && p.classList.contains('active')).map(p => p.dataset.color);
@@ -1273,6 +1281,58 @@ document.addEventListener('DOMContentLoaded', () => {
       filter();
     });
   });
+
+  const STAT_PILL_MAP = {
+    author: '[data-type="Авторский"]',
+    early: '[data-term="Ранний"]',
+    beginner: '[data-adv="Для новичков"]',
+    decor: '[data-filter="decor"]'
+  };
+
+  const statsContainer = document.getElementById('stStats');
+  if (statsContainer) {
+    statsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.st-stat');
+      if (!btn) return;
+      const key = btn.dataset.stat;
+
+      if (key === 'all') {
+        resetAllFilters();
+        filter();
+        return;
+      }
+
+      const selector = STAT_PILL_MAP[key];
+      if (!selector) return;
+      const targetPill = document.querySelector('.st-pill' + selector);
+      if (!targetPill) return;
+
+      const isActive = targetPill.classList.contains('active');
+      const allPill = document.querySelector('.st-pill[data-filter="all"]');
+
+      Object.values(STAT_PILL_MAP).forEach(sel => {
+        const p = document.querySelector('.st-pill' + sel);
+        if (p) p.classList.remove('active');
+      });
+
+      if (!isActive) {
+        if (allPill) allPill.classList.remove('active');
+        targetPill.classList.add('active');
+      }
+
+      syncStateFromPills();
+      const anyActive = Array.from(pills).some(p => p !== allPill && p.id !== 'stClearFilters' && p.classList.contains('active'));
+      if (allPill) allPill.classList.toggle('active', !anyActive);
+
+      statsContainer.querySelectorAll('.st-stat').forEach(s => { s.classList.remove('active'); s.setAttribute('aria-pressed', 'false'); });
+      if (!isActive) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      }
+
+      filter();
+    });
+  }
 
   searchInput.addEventListener('input', filter);
 
