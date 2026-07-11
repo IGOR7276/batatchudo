@@ -1,6 +1,36 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
+<!-- Редирект со старых URL редактора reg.ru (напр. /Карат или /opisanie-sortov-batata/74-карат) на актуальную страницу сорта -->
+<script src="/js/data.js"></script>
+<script>
+(function () {
+  if (typeof varieties === 'undefined') return;
+  var path = decodeURIComponent(location.pathname);
+  var target = null;
+
+  // Паттерн 1: /opisanie-sortov-batata/74-карат — старый ID сохранился в data.js
+  var m = path.match(/^\/opisanie-sortov-batata\/(\d+)-/);
+  if (m) {
+    var id = parseInt(m[1], 10);
+    var byId = varieties.find(function (v) { return v.id === id; });
+    if (byId && byId.img) target = byId.img.replace(/\.[a-z]+$/i, '') + '.html';
+  }
+
+  // Паттерн 2: /Карат — плоский старый URL по названию сорта
+  if (!target) {
+    var slug = path.replace(/^\/+|\/+$/g, '');
+    if (slug && slug.indexOf('/') === -1) {
+      var byName = varieties.find(function (v) {
+        return v.name && v.name.toLowerCase() === slug.toLowerCase();
+      });
+      if (byName && byName.img) target = byName.img.replace(/\.[a-z]+$/i, '') + '.html';
+    }
+  }
+
+  if (target) location.replace('/' + target);
+})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QG2VFCC04"></script>
 <script>
@@ -13,13 +43,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Страница не найдена — Batatchudo.com</title>
   <meta name="description" content="Похоже, эта страница недействительна. Вернитесь в каталог сортов батата или посмотрите редкие растения.">
-  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://batatchudo.com/404.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <style>
     body { display: flex; flex-direction: column; min-height: 100vh; }
     main { flex: 1; }
@@ -88,7 +117,7 @@
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
-<script>
+<script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -101,22 +130,22 @@
 
 <header class="header">
   <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+    <a href="/index.html" class="logo">
+      <img src="/img/logo.png" alt="Batatchudo" width="440" height="440">
       <span>Batatchudo</span>
     </a>
-    <button class="nav-toggle" aria-label="Меню" type="button" aria-expanded="false" aria-controls="site-navigation">
+    <button class="nav-toggle" aria-label="Меню">
       <span></span><span></span><span></span>
     </button>
-    <nav class="nav" id="site-navigation">
-      <a href="index.html">Главная</a>
-      <a href="opisanie-sortov-batata.html">Каталог</a>
-      <a href="vyrashchivanie-batata.html">Выращивание</a>
-      <a href="rasteniya.html">Растения</a>
-      <a href="price.html">Прайс</a>
-      <a href="recepty.html">Рецепты</a>
-      <a href="kontakty.html">Контакты</a>
-      <a href="o-nas.html">О нас</a>
+    <nav class="nav">
+      <a href="/index.html">Главная</a>
+      <a href="/opisanie-sortov-batata.html">Каталог</a>
+      <a href="/vyrashchivanie-batata.html">Выращивание</a>
+      <a href="/rasteniya.html">Растения</a>
+      <a href="/price.html">Прайс</a>
+      <a href="/recepty.html">Рецепты</a>
+      <a href="/kontakty.html">Контакты</a>
+      <a href="/o-nas.html">О нас</a>
     </nav>
   </div>
 </header>
@@ -127,9 +156,9 @@
     <h1>4<span>0</span>4</h1>
     <p class="sub">Похоже, эта страница недействительна.<br>Вернитесь в каталог или посмотрите редкие растения.</p>
     <div class="links">
-      <a href="opisanie-sortov-batata.html" class="primary">Каталог сортов</a>
-      <a href="rasteniya.html" class="secondary">Растения</a>
-      <a href="index.html" class="secondary">На главную</a>
+      <a href="/opisanie-sortov-batata.html" class="primary">Каталог сортов</a>
+      <a href="/rasteniya.html" class="secondary">Растения</a>
+      <a href="/index.html" class="secondary">На главную</a>
     </div>
   </div>
 </main>
@@ -140,21 +169,21 @@
       <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
       <div>
         <h4>Разделы</h4>
-        <a href="opisanie-sortov-batata.html">Сорта батата</a>
-        <a href="vyrashchivanie-batata.html">Выращивание</a>
-        <a href="rasteniya.html">Растения</a>
-        <a href="price.html">Прайс</a>
-        <a href="recepty.html">Рецепты</a>
-        <a href="o-nas.html">О нас</a>
-        <a href="kontakty.html">Контакты</a>
+        <a href="/opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="/vyrashchivanie-batata.html">Выращивание</a>
+        <a href="/rasteniya.html">Растения</a>
+        <a href="/price.html">Прайс</a>
+        <a href="/recepty.html">Рецепты</a>
+        <a href="/o-nas.html">О нас</a>
+        <a href="/kontakty.html">Контакты</a>
       </div>
-      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
-      <div><h4>Контакты</h4><a href="tel:+79183913327">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p class="footer-address">Туапсинский р-н, с. Индюк, Россия</p></div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank">VK</a><a href="https://t.me/batatchudo" target="_blank">Telegram</a><a href="https://www.youtube.com/@batatchudo" target="_blank">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank">OK</a></div>
+      <div><h4>Контакты</h4><a href="tel:+79183913327">+7 (918) 391-33-27</a><a href="mailto:batatchudo@yandex.ru">batatchudo@yandex.ru</a><p style="margin-top:8px;color:rgba(255,255,255,0.6);">Туапсинский р-н, с. Индюк, Россия</p></div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><a href="privacy.html">Политика конфиденциальности</a><span>Все права защищены</span></div>
+    <div class="footer-bottom"><span>&copy; 2026 batatchudo.com. Центр развития Батата Луцан.</span><span>Все права защищены</span></div>
   </div>
 </footer>
 
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
