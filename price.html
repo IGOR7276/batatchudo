@@ -87,6 +87,73 @@
       background: var(--green-700);
       color: white;
     }
+    .price-search {
+      flex: 0 0 240px;
+      max-width: 320px;
+      margin: 0;
+      padding: 9px 16px;
+      border: 1px solid var(--green-100);
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      color: var(--green-900);
+    }
+    .price-search:focus {
+      outline: none;
+      border-color: var(--green-500);
+    }
+    .price-nav-body {
+      display: block;
+      overflow: hidden;
+      max-height: 500px;
+      opacity: 1;
+      transition: max-height .3s ease, opacity .2s ease;
+    }
+    .price-nav:not(.open) .price-nav-body {
+      max-height: 0;
+      opacity: 0;
+    }
+    .price-nav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
+    .price-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
+    .price-nav-toggle {
+      display: none;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--green-900);
+    }
+    .price-nav-chevron {
+      transition: transform 0.2s ease;
+    }
+    .price-nav:not(.open) .price-nav-chevron {
+      transform: rotate(180deg);
+    }
+    .price-section[hidden],
+    .price-no-results[hidden] {
+      display: none;
+    }
+    .price-no-results {
+      text-align: center;
+      color: var(--text-light);
+      padding: 40px 0;
+      font-size: 0.95rem;
+    }
 
     .scroll-progress {
       position: fixed;
@@ -215,11 +282,45 @@
 
     @media (max-width: 768px) {
       .price-hero h1 { font-size: 2rem; }
-    .price-nav {
-        gap: 6px; 
-        padding: 12px 16px;
+      .price-nav {
+        left: 0;
+        right: 0;
+        width: 100%;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 8px 12px;
         top: 72px;
+        transition: padding 0.3s ease, box-shadow 0.3s ease;
       }
+      .price-nav:not(.open) {
+        padding: 8px 12px;
+        border-bottom: none;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      }
+      .price-nav-toggle { display: inline-flex; }
+      .price-nav:not(.open) .price-nav-toggle {
+        background: var(--green-100);
+        border-radius: 8px;
+      }
+      .price-nav-body {
+        flex: 1 1 100%;
+        overflow: hidden;
+        max-height: 500px;
+        opacity: 1;
+        transition: max-height .3s ease, opacity .2s ease;
+      }
+      .price-nav:not(.open) .price-nav-body {
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .price-nav-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .price-search { flex: 1 1 auto; width: auto; max-width: none; margin: 0; padding-right: 16px; }
+      .price-nav-links { flex: 0 0 auto; }
       .price-nav a { 
         padding: 8px 16px; 
         font-size: 0.8rem; 
@@ -293,13 +394,23 @@
 </section>
 
 <div class="scroll-progress" id="scrollProgress"></div>
-<nav class="price-nav" id="priceNav">
-  <a href="#batat">Батат</a>
-  <a href="#avtorskie">Авторские</a>
-  <a href="#decor">Декоративные</a>
-  <a href="#semena">Семена</a>
-  <a href="#sazhentsy">Саженцы</a>
-  <a href="#chufa">Чуфа</a>
+<nav class="price-nav open" id="priceNav">
+  <input type="search" id="priceSearch" class="price-search" placeholder="Поиск по названию…" aria-label="Поиск по прайсу" autocomplete="off">
+  <button type="button" class="price-nav-toggle" id="priceNavToggle" aria-label="Свернуть" aria-expanded="true" aria-controls="priceNav">
+    <svg class="price-nav-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+  </button>
+  <div class="price-nav-body">
+    <div class="price-nav-inner">
+      <div class="price-nav-links">
+        <a href="#batat">Батат</a>
+        <a href="#avtorskie">Авторские</a>
+        <a href="#decor">Декоративные</a>
+        <a href="#semena">Семена</a>
+        <a href="#sazhentsy">Саженцы</a>
+        <a href="#chufa">Чуфа</a>
+      </div>
+    </div>
+  </div>
 </nav>
 
 <div class="container" style="padding-top: 40px;">
@@ -317,6 +428,8 @@
 </div>
 
 <main class="container" style="padding-bottom: 0;">
+
+  <p class="price-no-results" id="priceNoResults" hidden>Ничего не найдено. Попробуйте другой запрос.</p>
 
   <section class="price-section" id="batat">
     <div class="price-section-header">
@@ -607,6 +720,12 @@
           top: targetPosition,
           behavior: 'smooth'
         });
+
+        if (window.innerWidth <= 768) {
+          priceNav.classList.remove('open');
+          priceNavToggle.setAttribute('aria-expanded', 'false');
+          priceNavToggle.setAttribute('aria-label', 'Развернуть');
+        }
       }
     });
   });
@@ -635,6 +754,65 @@
       }
     });
   });
+
+  // Поиск по прайсу
+  const priceSearch = document.getElementById('priceSearch');
+  const noResults = document.getElementById('priceNoResults');
+
+  sections.forEach(section => {
+    const badge = section.querySelector('.count');
+    if (badge) badge.dataset.original = badge.textContent;
+  });
+
+  function filterPrice() {
+    const query = priceSearch.value.trim().toLowerCase();
+    let totalVisible = 0;
+
+    sections.forEach(section => {
+      const rows = section.querySelectorAll('tbody tr');
+      let visibleInSection = 0;
+
+      rows.forEach(row => {
+        const nameCell = row.querySelector('.item-name');
+        const name = nameCell ? nameCell.textContent.toLowerCase() : '';
+        const match = !query || name.includes(query);
+        row.hidden = !match;
+        if (match) { visibleInSection++; totalVisible++; }
+      });
+
+      section.hidden = visibleInSection === 0;
+
+      const badge = section.querySelector('.count');
+      if (badge) {
+        badge.textContent = query ? `${visibleInSection} из ${rows.length}` : badge.dataset.original;
+      }
+    });
+
+    noResults.hidden = !(query && totalVisible === 0);
+  }
+
+  priceSearch.addEventListener('input', filterPrice);
+  priceSearch.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      priceSearch.value = '';
+      filterPrice();
+      priceSearch.blur();
+    }
+  });
+
+  // Сворачивание блока поиска и навигации (мобильная версия)
+  const priceNavToggle = document.getElementById('priceNavToggle');
+  priceNavToggle.addEventListener('click', () => {
+    const open = priceNav.classList.toggle('open');
+    priceNavToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    priceNavToggle.setAttribute('aria-label', open ? 'Свернуть' : 'Развернуть');
+  });
+
+  if (window.innerWidth <= 768) {
+    priceNav.classList.remove('open');
+    priceNavToggle.setAttribute('aria-expanded', 'false');
+    priceNavToggle.setAttribute('aria-label', 'Развернуть');
+  }
 </script>
 </body>
 </html>
