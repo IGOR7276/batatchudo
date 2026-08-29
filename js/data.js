@@ -409,7 +409,7 @@ const varieties = [
   },
   {
     id: 31,
-    name: "Венесуэльский Фиолет.",
+    name: "Венесуэльский Фиолетовый",
     color: "Фиолетовый",
     category: "food",
     type: "Столовый",
@@ -844,7 +844,7 @@ const varieties = [
   },
   {
     id: 56,
-    name: "Манчжурский улучш.",
+    name: "Манчжурский улучшенный",
     color: "Желтый",
     category: "food",
     type: "Столовый",
