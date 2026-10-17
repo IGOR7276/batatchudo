@@ -71,6 +71,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://batatchudo.com/Ayote.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://batatchudo.com/bali.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
