@@ -28,8 +28,11 @@ for (const file of await walk(root)) {
 
   for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const value = match[1].split(/[?#]/)[0];
-    if (!value || value.includes('${') || /^(?:https?:|mailto:|tel:|data:|javascript:|\/\/)/i.test(value)) continue;
-    try { await access(path.resolve(path.dirname(file), value)); } catch { errors.push(`${relative}: missing ${value}`); }
+    if (!value || value.includes('${') || /^(?:https?:|mailto:|tel:|data:|javascript:|#|\/\/)/i.test(value)) continue;
+    const resolved = value.startsWith('/')
+      ? path.resolve(root, value.slice(1))
+      : path.resolve(path.dirname(file), value);
+    try { await access(resolved); } catch { errors.push(`${relative}: missing ${value}`); }
   }
 
   if (/property=["']og:image["']/i.test(html) && !/property=["']og:image:width["']/i.test(html)) {
