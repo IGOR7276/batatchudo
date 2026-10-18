@@ -278,6 +278,27 @@
       .st-card-detail { margin-left: 0; }
       .st-compare-panel { bottom: 10px; width: calc(100% - 20px); padding: 12px; border-radius: 18px; }
       .st-count { display: none; }
+      .st-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 18px 0 56px; }
+      .st-card { border-radius: 18px; }
+      .st-card::before { border-radius: 18px; }
+      .st-card-overlay { top: 7px; left: 7px; gap: 3px; }
+      .st-card-overlay-badge { font-size: .55rem; padding: 3px 7px; }
+      .st-card-body { padding: 10px 10px 4px; }
+      .st-card-name { font-size: .9rem; }
+      .st-card-color { font-size: .67rem; margin-bottom: 6px; }
+      .st-card-badges { gap: 4px; margin-bottom: 6px; }
+      .st-card-badge { font-size: .55rem; padding: 2px 6px; }
+      .st-card-quick { gap: 4px; margin: 6px 0 8px; }
+      .st-card-quick-chip { font-size: .6rem; padding: 3px 7px; }
+      .st-card-spec-toggle { font-size: .64rem; padding: 3px 8px; border-width: 1px; }
+      .st-card-footer { gap: 6px; padding: 8px 10px 10px; }
+      .st-card-compare, .st-card-detail { font-size: .64rem; padding: 6px 8px; }
+    }
+
+    @media (max-width: 420px) {
+      .st-grid { gap: 8px; }
+      .st-card-name { font-size: .82rem; }
+      .st-card-quick-chip { font-size: .56rem; }
     }
 
     .st-pill-sort.active .sort-arrow { display: inline-block; }

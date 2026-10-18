@@ -199,8 +199,27 @@
       .rt-hero-collage { display: none; }
       .rt-toolbar { position: static; }
       .rt-pills { flex-wrap: wrap; padding-bottom: 4px; }
-      .rt-grid { grid-template-columns: 1fr; }
+      .rt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 18px 0 48px; }
+      .rt-card { border-radius: 16px; }
+      .rt-card-img, .rt-card-fallback { aspect-ratio: 3/2; }
+      .rt-card-badge { top: 8px; left: 8px; padding: 3px 9px; font-size: .58rem; }
+      .rt-card-body { padding: 10px 10px 10px; }
+      .rt-card-name { font-size: .9rem; margin-bottom: 4px; }
+      .rt-card-desc { font-size: .74rem; line-height: 1.5; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+      .rt-card-meta { gap: 6px; margin-bottom: 8px; }
+      .rt-card-meta-item { font-size: .66rem; }
+      .rt-card-tags { gap: 4px; margin-bottom: 8px; }
+      .rt-card-tag { font-size: .58rem; padding: 2px 8px; }
+      .rt-card-actions { padding: 8px 10px; gap: 6px; }
+      .rt-card-action { font-size: .68rem; padding: 5px 10px; }
       .rt-cta-features { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 420px) {
+      .rt-grid { gap: 8px; }
+      .rt-card-name { font-size: .82rem; }
+      .rt-card-desc { font-size: .68rem; }
+      .rt-card-meta-item { font-size: .6rem; }
     }
   </style>
 <script type="application/ld+json">

@@ -239,7 +239,38 @@
       .collections-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
       .collection-chip { flex-shrink: 0; }
       .trust-grid, .patent-grid { grid-template-columns: 1fr 1fr; }
-      .recognition-card img { max-height: none; }
+      .recognition-stack { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .recognition-card img { max-height: 200px; }
+      .home-plant-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .home-plant-card { border-radius: 18px; }
+      .home-plant-card .st-card-img, .home-plant-card .st-card-fallback { aspect-ratio: 3/2; }
+      .home-plant-badge { top: 7px; left: 7px; padding: 3px 7px; font-size: .55rem; }
+      .home-plant-card .st-card-body { padding: 10px 10px 4px; }
+      .home-plant-card .st-card-name { font-size: .9rem; }
+      .home-plant-card .st-card-color { font-size: .67rem; margin-bottom: 6px; }
+      .home-plant-tags { gap: 4px; margin-bottom: 6px; }
+      .home-plant-tag { font-size: .55rem; padding: 2px 6px; }
+      .home-plant-card .st-card-footer { gap: 6px; padding: 8px 10px 10px; }
+      .home-plant-card .st-card-detail { font-size: .64rem; padding: 6px 8px; }
+      .home-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .home-grid .st-card { border-radius: 18px; }
+      .home-grid .st-card-img, .home-grid .st-card-fallback { aspect-ratio: 3/2; }
+      .home-grid .st-card-overlay { top: 7px; left: 7px; gap: 3px; }
+      .home-grid .st-card-overlay-badge { font-size: .55rem; padding: 3px 7px; }
+      .home-grid .st-card-body { padding: 10px 10px 4px; }
+      .home-grid .st-card-name { font-size: .9rem; }
+      .home-grid .st-card-color { font-size: .67rem; margin-bottom: 6px; }
+      .home-grid .st-card-quick { gap: 4px; margin: 6px 0 8px; }
+      .home-grid .st-card-quick-chip { font-size: .6rem; padding: 3px 7px; }
+      .home-grid .st-card-footer { gap: 6px; padding: 8px 10px 10px; }
+      .home-grid .st-card-detail { font-size: .64rem; padding: 6px 8px; }
+    }
+    @media (max-width: 420px) {
+      .home-plant-grid { gap: 8px; }
+      .home-plant-card .st-card-name { font-size: .82rem; }
+      .home-grid { gap: 8px; }
+      .home-grid .st-card-name { font-size: .82rem; }
+      .recognition-card img { max-height: 170px; }
     }
     @media (max-width: 480px) {
       .home-hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
