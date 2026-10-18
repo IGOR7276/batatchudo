@@ -26,10 +26,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Close menu on link click (mobile UX)
     nav.querySelectorAll('a').forEach(link => {
+      if (link.classList.contains('nav-drop')) return;
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       });
+    });
+  }
+
+  // "Полезное" dropdown
+  const dropdown = document.querySelector('.nav-dropdown');
+  const drop = dropdown && dropdown.querySelector('.nav-drop');
+  if (dropdown && drop) {
+    const setOpen = (open) => {
+      dropdown.classList.toggle('open', open);
+      drop.setAttribute('aria-expanded', String(open));
+    };
+    drop.addEventListener('click', (e) => {
+      e.preventDefault();
+      setOpen(!dropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
     });
   }
 

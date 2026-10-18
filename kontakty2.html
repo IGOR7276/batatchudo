@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QG2VFCC04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5QG2VFCC04');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Batatchudo.com</title>
+  <meta name="description" content="Свяжитесь с питомником Batatchudo в WhatsApp, Telegram, по телефону или почте, чтобы заказать саженцы батата или получить консультацию.">
+  <meta property="og:title" content="Контакты — Batatchudo.com">
+  <meta property="og:description" content="Свяжитесь с нами в WhatsApp или Telegram для заказа саженцев батата или консультации.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batatchudo.com/kontakty.html">
+  <meta property="og:site_name" content="Batatchudo">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image:alt" content="Контакты">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Контакты — Batatchudo.com">
+  <meta name="twitter:description" content="Свяжитесь с нами для заказа саженцев батата или консультации.">
+  <meta name="twitter:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <link rel="canonical" href="https://batatchudo.com/kontakty.html">
+  <meta property="og:image" content="https://batatchudo.com/img/batat-assortiment-g1.webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:type" content="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Бейджи в шапке с красивыми круглыми иконками */
+    .contact-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px 6px 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background .25s ease, transform .2s ease, border-color .25s ease;
+    }
+    a.contact-hero-badge:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }
+    .contact-badge-icon,
+    .contact-card-icon,
+    .social-card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-badge-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    }
+    .contact-badge-icon.phone {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+    .contact-badge-icon.mail {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+    }
+    .contact-badge-icon.pin {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+    .contact-badge-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Кнопки мессенджеров в Hero и CTA */
+    .hero-messenger-btns {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-messenger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-decoration: none;
+      color: #fff;
+      border: none;
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      cursor: pointer;
+    }
+    .btn-messenger svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .btn-messenger:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+    .btn-wa {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.32);
+    }
+    .btn-wa:hover {
+      box-shadow: 0 14px 28px rgba(37, 211, 102, 0.45);
+    }
+    .btn-tg {
+      background: linear-gradient(135deg, #2AABEE, #229ED9);
+      box-shadow: 0 10px 24px rgba(42, 171, 238, 0.32);
+    }
+    .btn-tg:hover {
+      box-shadow: 0 14px 28px rgba(42, 171, 238, 0.45);
+    }
+
+    /* Выделенные карточки быстрой связи (WhatsApp и Telegram) */
+    .direct-messengers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .messenger-feature-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 28px;
+      border-radius: 24px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid rgba(64, 145, 108, 0.16);
+      box-shadow: 0 12px 32px rgba(26, 60, 46, 0.06);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .messenger-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(26, 60, 46, 0.12);
+    }
+    .messenger-feature-card.wa-card:hover {
+      border-color: rgba(37, 211, 102, 0.5);
+    }
+    .messenger-feature-card.tg-card:hover {
+      border-color: rgba(42, 171, 238, 0.5);
+    }
+    .messenger-feature-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .messenger-feature-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .messenger-feature-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+    .messenger-feature-icon.wa {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+    }
+    .messenger-feature-icon.tg {
+      background: linear-gradient(135deg, #2AABEE, #229ED9);
+      box-shadow: 0 10px 24px rgba(42, 171, 238, 0.28);
+    }
+    .messenger-feature-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 4px;
+    }
+    .wa-card .messenger-feature-badge {
+      background: #e8f9ee;
+      color: #128C7E;
+    }
+    .tg-card .messenger-feature-badge {
+      background: #e6f4fb;
+      color: #0b7fc6;
+    }
+    .messenger-feature-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green-900);
+    }
+    .messenger-feature-handle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #4b5563;
+      margin-top: 2px;
+    }
+    .messenger-feature-desc {
+      font-size: 0.94rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+    .messenger-feature-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-top: 4px;
+      transition: gap .2s ease;
+    }
+    .wa-card .messenger-feature-action { color: #128C7E; }
+    .tg-card .messenger-feature-action { color: #0b7fc6; }
+    .messenger-feature-card:hover .messenger-feature-action {
+      gap: 12px;
+    }
+
+    /* Обновлённые карточки Телефона, Почты и Адреса */
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(26, 60, 46, 0.1);
+    }
+    .contact-card-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      color: #fff;
+      transition: transform .25s ease;
+    }
+    .contact-card:hover .contact-card-icon {
+      transform: scale(1.06) rotate(-3deg);
+    }
+    .contact-card-icon.phone {
+      background: linear-gradient(135deg, #10b981, #047857);
+      box-shadow: 0 10px 22px rgba(16, 185, 129, 0.28);
+    }
+    .contact-card-icon.mail {
+      background: linear-gradient(135deg, #6366f1, #4338ca);
+      box-shadow: 0 10px 22px rgba(99, 102, 241, 0.28);
+    }
+    .contact-card-icon.pin {
+      background: linear-gradient(135deg, #f97316, #dc2626);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.28);
+    }
+    .contact-card-icon svg {
+      width: 27px;
+      height: 27px;
+    }
+    .social-card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    .contact-card-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 3px 9px;
+      border-radius: 99px;
+      margin-bottom: 3px;
+    }
+    .contact-card-tag.phone { background: #ecfdf5; color: #047857; }
+    .contact-card-tag.mail { background: #eef2ff; color: #4338ca; }
+    .contact-card-tag.pin { background: #fff7ed; color: #c2410c; }
+
+    .contact-card-value {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--green-900);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s ease;
+    }
+    a.contact-card-value:hover {
+      color: var(--green-700);
+    }
+    .contact-card-note {
+      font-size: .88rem;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    /* Секция условий заказа */
+    .order-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 99px;
+      background: #e8f5e9;
+      color: var(--green-700);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    /* Соцсети */
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .social-card::after {
+      content: '→';
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      font-size: 1.1rem;
+      color: rgba(26,60,46,.28);
+      transition: transform .25s ease, color .25s ease;
+    }
+    .social-card:hover::after {
+      transform: translateX(4px);
+      color: rgba(26,60,46,.55);
+    }
+    .social-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .social-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,.12);
+    }
+    .social-card-icon.vk { background: linear-gradient(135deg, #2787f5, #1366d6); }
+    .social-card-icon.tg { background: linear-gradient(135deg, #34a8eb, #0b7fc6); }
+    .social-card-icon.yt { background: linear-gradient(135deg, #ff4040, #d90f0f); }
+    .social-card-icon.ok { background: linear-gradient(135deg, #ff9f2f, #ee8208); }
+    .social-card-icon.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+    .social-card-icon.rt { background: linear-gradient(135deg, #151515, #3d3d3d); }
+    .social-card-icon.dz { background: linear-gradient(135deg, #111111, #333333); }
+    .social-card-icon.av { background: linear-gradient(135deg, #7c3aed, #2563eb); }
+    .social-card-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-900);
+    }
+    .social-card-handle {
+      font-size: .82rem;
+      color: #667085;
+      margin-top: 2px;
+    }
+    .social-card-text {
+      font-size: .92rem;
+      color: #4b5563;
+      line-height: 1.65;
+      max-width: 28ch;
+    }
+
+    /* Мини-иконки в футере */
+    .footer-contact-link {
+      display: flex !important;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-contact-link svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Контакты — Batatchudo",
+  "url": "https://batatchudo.com/kontakty.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Batatchudo",
+    "logo": {"@type": "ImageObject", "url": "https://batatchudo.com/img/logo.png"},
+    "url": "https://batatchudo.com/"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": "Центр развития батата Луцан",
+    "telephone": "+7-918-391-33-27",
+    "email": "batatchudo@yandex.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RU",
+      "addressRegion": "Краснодарский край",
+      "addressLocality": "Туапсинский р-н, с. Индюк"
+    },
+    "sameAs": [
+      "https://wa.me/79183913327",
+      "https://t.me/nataliyen",
+      "https://vk.com/batatchudo",
+      "https://t.me/batatchudo",
+      "https://www.youtube.com/@batatchudo",
+      "https://ok.ru/profile/469895106256"
+    ]
+  }
+}
+  </script>
+</head>
+<body class="pl-page">
+<!-- Yandex.Metrika counter -->
+<script>
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110459025', 'ym');
+
+    ym(110459025, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110459025" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <img src="img/logo.png" alt="Batatchudo" width="440" height="440">
+      <span>Batatchudo</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню" type="button" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-navigation">
+      <a href="/">Главная</a>
+      <a href="opisanie-sortov-batata.html">Каталог</a>
+      <a href="vyrashchivanie-batata.html">Выращивание</a>
+      <a href="rasteniya.html">Растения</a>
+      <a href="price.html">Прайс</a>
+      <div class="nav-dropdown">
+        <a href="poleznoe.html" class="nav-drop" aria-haspopup="true" aria-expanded="false">Полезное<span class="nav-caret" aria-hidden="true"></span></a>
+        <div class="nav-dropdown-menu">
+          <a href="poleznoe.html">Обзор</a>
+          <a href="recepty.html">Рецепты</a>
+          <a href="articles.html">Статьи</a>
+        </div>
+      </div>
+      <a href="kontakty.html" class="active">Контакты</a>
+      <a href="o-nas.html">О нас</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pl-hero">
+  <div class="pl-hero-bg" style="background: url('img/batat-assortiment-g1.webp') center / cover no-repeat;"></div>
+  <div class="pl-hero-overlay"></div>
+  <div class="pl-hero-content">
+    <div class="container">
+      <div class="pl-hero-grid">
+        <div>
+          <a href="/" class="pl-hero-back">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            На главную
+          </a>
+          <h1 class="pl-hero-title">Контакты</h1>
+          <p class="pl-hero-desc">Мы всегда рады ответить на ваши вопросы о батате и помочь с выбором сортов для вашего участка. Напишите нам напрямую в мессенджер — мы с удовольствием поможем вам начать выращивать батат.</p>
+          <div class="pl-hero-badges">
+            <a href="tel:+79183913327" class="pl-hero-badge contact-hero-badge" title="Позвонить">
+              <span class="contact-badge-icon phone">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
+              </span>
+              +7&nbsp;(918)&nbsp;391&#8209;33&#8209;27
+            </a>
+            <a href="mailto:batatchudo@yandex.ru" class="pl-hero-badge contact-hero-badge" title="Написать на почту">
+              <span class="contact-badge-icon mail">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-6.54 4.09a1.99 1.99 0 0 1-2.12 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44Z"/></svg>
+              </span>
+              batatchudo@yandex.ru
+            </a>
+            <span class="pl-hero-badge contact-hero-badge">
+              <span class="contact-badge-icon pin">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 7.05 11.4 7.35 11.66a1 1 0 0 0 1.3 0C12.95 21.4 20 15.25 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+              </span>
+              Туапсинский р-н, с. Индюк
+            </span>
+          </div>
+          <div class="hero-messenger-btns">
+            <a href="https://wa.me/79183913327?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20%D0%B1%D0%B0%D1%82%D0%B0%D1%82%D0%B0." target="_blank" rel="noopener noreferrer" class="btn-messenger btn-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.49 1.34 5.01L2 22l5.12-1.34c1.47.8 3.14 1.23 4.91 1.23h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89Zm5.82 14.12c-.24.68-1.4 1.3-1.95 1.38-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.04-2.48.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.12.08.72-.16 1.4Z"/></svg>
+              Написать в WhatsApp
+            </a>
+            <a href="https://t.me/nataliyen" target="_blank" rel="noopener noreferrer" class="btn-messenger btn-tg">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47ZM8.01 12.66l9.29-5.86c.46-.28.88-.13.53.18l-7.65 6.9-.3 3.2-1.87-4.42Z"/></svg>
+              Написать в Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pl-section">
+  <div class="container">
+    <h2 class="pl-section-title">Как связаться</h2>
+    <p class="pl-section-sub">Самый быстрый способ получить консультацию и оформить заказ — написать нам в личные сообщения мессенджеров.</p>
+
+    <!-- Прямая связь в мессенджерах -->
+    <div class="direct-messengers-grid">
+      <a href="https://wa.me/79183913327?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20%D0%B1%D0%B0%D1%82%D0%B0%D1%82%D0%B0." target="_blank" rel="noopener noreferrer" class="messenger-feature-card wa-card">
+        <div class="messenger-feature-top">
+          <div class="messenger-feature-icon wa">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.49 1.34 5.01L2 22l5.12-1.34c1.47.8 3.14 1.23 4.91 1.23h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89Zm5.82 14.12c-.24.68-1.4 1.3-1.95 1.38-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.04-2.48.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.12.08.72-.16 1.4Z"/></svg>
+          </div>
+          <div>
+            <span class="messenger-feature-badge">Быстрый ответ</span>
+            <div class="messenger-feature-title">WhatsApp</div>
+            <div class="messenger-feature-handle">+7 (918) 391-33-27</div>
+          </div>
+        </div>
+        <div class="messenger-feature-desc">Напишите нам в WhatsApp для быстрой консультации по сортам, наличию клубней и рассады, а также для оформления заказа.</div>
+        <div class="messenger-feature-action">Перейти в чат WhatsApp <span>→</span></div>
+      </a>
+
+      <a href="https://t.me/nataliyen" target="_blank" rel="noopener noreferrer" class="messenger-feature-card tg-card">
+        <div class="messenger-feature-top">
+          <div class="messenger-feature-icon tg">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47ZM8.01 12.66l9.29-5.86c.46-.28.88-.13.53.18l-7.65 6.9-.3 3.2-1.87-4.42Z"/></svg>
+          </div>
+          <div>
+            <span class="messenger-feature-badge">Личные сообщения</span>
+            <div class="messenger-feature-title">Telegram</div>
+            <div class="messenger-feature-handle">@nataliyen</div>
+          </div>
+        </div>
+        <div class="messenger-feature-desc">Прямая связь в Telegram: ответим на вопросы по агротехнике, пришлём актуальный прайс и поможем сформировать заказ.</div>
+        <div class="messenger-feature-action">Написать в Telegram <span>→</span></div>
+      </a>
+    </div>
+
+    <!-- Телефон, Почта и Адрес с обновлёнными иконками -->
+    <div class="pl-benefits-grid">
+      <div class="glass-card contact-card">
+        <div class="contact-card-top">
+          <div class="contact-card-icon phone">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-card-tag phone">Звонки</span>
+            <div class="pl-benefit-title" style="margin:0;">Телефон</div>
+          </div>
+        </div>
+        <a href="tel:+79183913327" class="contact-card-value">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a>
+        <div class="contact-card-note">Принимаем звонки и консультируем ежедневно с 9:00 до 20:00.</div>
+      </div>
+
+      <div class="glass-card contact-card">
+        <div class="contact-card-top">
+          <div class="contact-card-icon mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="3"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-card-tag mail">Для писем</span>
+            <div class="pl-benefit-title" style="margin:0;">Электронная почта</div>
+          </div>
+        </div>
+        <a href="mailto:batatchudo@yandex.ru" class="contact-card-value">batatchudo@yandex.ru</a>
+        <div class="contact-card-note">Письма, подробные вопросы и заявки на почте просматриваем в течение дня.</div>
+      </div>
+
+      <div class="glass-card contact-card">
+        <div class="contact-card-top">
+          <div class="contact-card-icon pin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-card-tag pin">Питомник</span>
+            <div class="pl-benefit-title" style="margin:0;">Наш адрес</div>
+          </div>
+        </div>
+        <div class="contact-card-value">Туапсинский район</div>
+        <div class="contact-card-note">Краснодарский край, село Индюк, Россия</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pl-section" style="background:linear-gradient(180deg,#f8faf6,#eef7f0);">
+  <div class="pl-deco" style="width:300px;height:300px;background:radial-gradient(circle,#40916c,transparent);bottom:-100px;right:-80px;"></div>
+  <div class="container">
+    <h2 class="pl-section-title">Как заказать посадочный материал</h2>
+    <p class="pl-section-sub">Мы отправляем клубни батата и черенки экзотических растений по всей России.</p>
+    <div class="pl-content-grid">
+      <div class="pl-content-card">
+        <span class="order-badge">Памятка покупателю</span>
+        <h3>📋 Условия заказа</h3>
+        <ul>
+          <li>Продаём семена от 1 упаковки, саженцы от 1 шт</li>
+          <li>В сообщении в WhatsApp или Telegram укажите: наименование культуры, количество и адрес доставки</li>
+          <li>Услуги по доставке оплачиваются за счёт получателя</li>
+        </ul>
+      </div>
+      <div class="pl-content-card">
+        <span class="order-badge">Весна — Лето</span>
+        <h3>🌱 Отправка ростков</h3>
+        <p>Начинается <strong>с 20 апреля</strong> при установлении устойчивой дневной температуры от +15°C.</p>
+      </div>
+      <div class="pl-content-card">
+        <span class="order-badge">Осень — Весна</span>
+        <h3>🍠 Продажа клубней</h3>
+        <p>Осуществляется <strong>с 20 сентября до 1 апреля</strong> при ночных температурах не ниже -2...-5°C.</p>
+      </div>
+      <div class="pl-content-card">
+        <span class="order-badge">Сезон посадки</span>
+        <h3>🌿 Отправка саженцев</h3>
+        <p>Вегетирующие саженцы отправляем в тёплый сезон — <strong>с 20 апреля по 1 сентября</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pl-section">
+  <div class="container">
+    <h2 class="pl-section-title">Мы в соцсетях</h2>
+    <p class="pl-section-sub">Подписывайтесь на наши каналы и сообщества — делимся опытом, фото урожаев и новостями коллекции.</p>
+    <div class="pl-benefits-grid">
+      <a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon vk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.79 17.61h1.45s.44-.05.67-.27c.21-.21.2-.6.2-.6s-.03-1.84.83-2.11c.84-.26 1.92 1.78 3.06 2.57.86.6 1.52.47 1.52.47l3.05-.04s1.6-.1.84-1.35c-.06-.1-.44-.92-2.27-2.62-1.92-1.79-1.66-1.5.65-4.58 1.41-1.87 1.97-3.02 1.79-3.51-.17-.46-1.2-.34-1.2-.34l-3.43.02s-.26-.04-.46.08c-.19.11-.31.37-.31.37s-.54 1.44-1.26 2.67c-1.51 2.59-2.11 2.73-2.36 2.56-.58-.38-.43-1.54-.43-2.36 0-2.57.39-3.64-.76-3.92-.38-.09-.67-.15-1.66-.16-1.27-.01-2.34 0-2.95.3-.41.2-.73.64-.53.67.25.03.81.15 1.11.56.38.52.37 1.68.37 1.68s.22 3.02-.51 3.39c-.5.25-1.18-.27-2.65-2.61-.75-1.19-1.31-2.5-1.31-2.5s-.11-.25-.3-.38a1.35 1.35 0 0 0-.56-.2l-3.26.02s-.49.01-.67.23c-.16.2-.01.61-.01.61s2.55 5.96 5.43 8.96c2.64 2.75 5.64 2.57 5.64 2.57Z"/></svg></div>
+          <div>
+            <div class="social-card-name">ВКонтакте</div>
+            <div class="social-card-handle">vk.com/batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Новости коллекции, фотографии, обсуждения и обратная связь с сообществом.</div>
+      </a>
+      <a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon tg"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47ZM8.01 12.66l9.29-5.86c.46-.28.88-.13.53.18l-7.65 6.9-.3 3.2-1.87-4.42Z"/></svg></div>
+          <div>
+            <div class="social-card-name">Telegram-канал</div>
+            <div class="social-card-handle">t.me/batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Короткие обновления, полезные заметки по выращиванию и быстрые анонсы.</div>
+      </a>
+      <a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon yt"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.11-2.12C19.52 3.5 12 3.5 12 3.5s-7.52 0-9.39.58A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.11 2.12c1.87.58 9.39.58 9.39.58s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.58V8.42L15.82 12 9.6 15.58Z"/></svg></div>
+          <div>
+            <div class="social-card-name">YouTube</div>
+            <div class="social-card-handle">youtube.com/@batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Видео о сортах, вегетации, уходе, урожае и реальном опыте выращивания.</div>
+      </a>
+      <a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon ok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 11.1A4.55 4.55 0 1 0 12 2a4.55 4.55 0 0 0 0 9.1Zm0-6.5A1.95 1.95 0 1 1 12 8.5a1.95 1.95 0 0 1 0-3.9Zm3.49 8.5a1.3 1.3 0 0 0-1.79-.42A3.46 3.46 0 0 1 12 13.2c-.62 0-1.22-.18-1.7-.52a1.3 1.3 0 1 0-1.5 2.12c.57.41 1.2.7 1.87.87l-1.74 1.74a1.3 1.3 0 1 0 1.84 1.84L12 17.84l1.23 1.23a1.3 1.3 0 0 0 1.84-1.84l-1.74-1.74c.67-.17 1.3-.46 1.87-.87.58-.4.76-1.21.29-1.72Z"/></svg></div>
+          <div>
+            <div class="social-card-name">Одноклассники</div>
+            <div class="social-card-handle">ok.ru/batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Дополнительная площадка для общения, публикаций и фотографий растений.</div>
+      </a>
+      <a href="https://instagram.com/batatchudo" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon ig"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.35 3.35 0 0 0 12 8.65Z"/></svg></div>
+          <div>
+            <div class="social-card-name">Instagram</div>
+            <div class="social-card-handle">instagram.com/batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Фотографии растений, сорта в сезоне и визуальные заметки по коллекции.</div>
+      </a>
+      <a href="https://rutube.ru/channel/53855676" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon rt"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 5h8.2c3.7 0 5.8 1.65 5.8 4.7 0 2.02-.95 3.35-2.7 4.02L19 19h-4.34l-3.2-4.56H8V19H4V5Zm4 3v3.36h4.1c1.3 0 2.02-.58 2.02-1.67 0-1.1-.72-1.69-2.02-1.69H8Z"/></svg></div>
+          <div>
+            <div class="social-card-name">Rutube</div>
+            <div class="social-card-handle">rutube.ru/channel/53855676</div>
+          </div>
+        </div>
+        <div class="social-card-text">Видео на российской платформе: обзоры сортов, урожаи и практические материалы.</div>
+      </a>
+      <a href="https://dzen.ru/id/5ad6f8be256d5cc40e428b83" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon dz"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.37 0 4.02.15 5.14.42 1.35.33 2.1 1.08 2.44 2.43.27 1.12.42 2.77.42 5.15 0 2.38-.15 4.03-.42 5.15-.34 1.35-1.09 2.1-2.44 2.43-1.12.27-2.77.42-5.14.42-2.37 0-4.02-.15-5.14-.42-1.35-.33-2.1-1.08-2.44-2.43C4.15 14.03 4 12.38 4 10c0-2.38.15-4.03.42-5.15.34-1.35 1.09-2.1 2.44-2.43C7.98 2.15 9.63 2 12 2Zm-2.93 2.35c-.89.05-1.53.14-1.96.24-.77.19-1.1.52-1.29 1.28-.1.43-.19 1.08-.24 1.97h2.15c.78 0 1.34-.06 1.66-.18.45-.17.63-.51.63-1.18V4.35h-.95Zm4.91 0v2.13c0 .67.18 1.01.63 1.18.32.12.88.18 1.66.18h2.15c-.05-.89-.14-1.54-.24-1.97-.19-.76-.52-1.09-1.29-1.28-.43-.1-1.07-.19-1.96-.24h-.95ZM10.02 13.5c0-.67-.18-1.01-.63-1.18-.32-.12-.88-.18-1.66-.18H5.58c.05.89.14 1.54.24 1.97.19.76.52 1.09 1.29 1.28.43.1 1.07.19 1.96.24h.95V13.5Zm8.4-1.36h-2.15c-.78 0-1.34.06-1.66.18-.45.17-.63.51-.63 1.18v2.13h.95c.89-.05 1.53-.14 1.96-.24.77-.19 1.1-.52 1.29-1.28.1-.43.19-1.08.24-1.97Z"/></svg></div>
+          <div>
+            <div class="social-card-name">Дзен</div>
+            <div class="social-card-handle">dzen.ru/batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Статьи, наблюдения по выращиванию и длинные форматы с пояснениями по сортам.</div>
+      </a>
+      <a href="https://www.avito.ru/brands/0eb0aea5b5ea2f52696e95a1a6640f26" target="_blank" rel="noopener noreferrer" class="glass-card social-card">
+        <div class="social-card-top">
+          <div class="social-card-icon av"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.7 7.2a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4Zm8.6 0A2.7 2.7 0 1 1 16.3 12.6 2.7 2.7 0 0 1 16.3 7.2ZM12 11.2a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4Zm-4.8 5.1a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8Zm9.6 0a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8Z"/></svg></div>
+          <div>
+            <div class="social-card-name">Avito</div>
+            <div class="social-card-handle">Бренд Batatchudo</div>
+          </div>
+        </div>
+        <div class="social-card-text">Площадка объявлений и дополнительная точка доверия для связи и просмотра предложений.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pl-cta">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2>Остались вопросы?</h2>
+    <p>Напишите нам в удобный мессенджер — мы с удовольствием проконсультируем вас и поможем с заказом.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/79183913327?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20%D0%B1%D0%B0%D1%82%D0%B0%D1%82%D0%B0." target="_blank" rel="noopener noreferrer" class="btn-messenger btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.49 1.34 5.01L2 22l5.12-1.34c1.47.8 3.14 1.23 4.91 1.23h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89Zm5.82 14.12c-.24.68-1.4 1.3-1.95 1.38-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.04-2.48.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.12.08.72-.16 1.4Z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a href="https://t.me/nataliyen" target="_blank" rel="noopener noreferrer" class="btn-messenger btn-tg">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47ZM8.01 12.66l9.29-5.86c.46-.28.88-.13.53.18l-7.65 6.9-.3 3.2-1.87-4.42Z"/></svg>
+        Написать в Telegram
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Batatchudo</h4><p>Центр развития батата Луцан. Селекция, адаптированные сорта для России, экзотические растения.</p></div>
+      <div>
+        <h4>Разделы</h4>
+        <a href="opisanie-sortov-batata.html">Сорта батата</a>
+        <a href="vyrashchivanie-batata.html">Выращивание</a>
+        <a href="rasteniya.html">Растения</a>
+        <a href="price.html">Прайс</a>
+        <a href="recepty.html">Рецепты</a>
+        <a href="articles.html">Статьи</a>
+        <a href="o-nas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+      </div>
+      <div><h4>Присоединяйся</h4><a href="https://vk.com/batatchudo" target="_blank" rel="noopener noreferrer">VK</a><a href="https://t.me/batatchudo" target="_blank" rel="noopener noreferrer">Telegram-канал</a><a href="https://www.youtube.com/@batatchudo" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://ok.ru/profile/469895106256" target="_blank" rel="noopener noreferrer">OK</a></div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+79183913327" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg>
+          +7&nbsp;(918)&nbsp;391&#8209;33&#8209;27
+        </a>
+        <a href="https://wa.me/79183913327" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.49 1.34 5.01L2 22l5.12-1.34c1.47.8 3.14 1.23 4.91 1.23h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89Z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://t.me/nataliyen" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47Z"/></svg>
+          Telegram: @nataliyen
+        </a>
+        <a href="mailto:batatchudo@yandex.ru" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-6.54 4.09a1.99 1.99 0 0 1-2.12 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44Z"/></svg>
+          batatchudo@yandex.ru
+        </a>
+        <p class="footer-address footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 7.05 11.4 7.35 11.66a1 1 0 0 0 1.3 0C12.95 21.4 20 15.25 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          Туапсинский р-н, с. Индюк, Россия
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 batatchudo.com. Центр развития Батата Луцан.</span><a href="privacy.html">Политика конфиденциальности</a><span>Все права защищены</span></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

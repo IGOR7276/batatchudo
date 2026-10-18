@@ -23,7 +23,27 @@ for (const file of await walk(root)) {
   if (/<button\b(?![^>]*\btype=)/i.test(html)) errors.push(`${relative}: button without type`);
 
   for (const match of html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
-    try { JSON.parse(match[1]); } catch (error) { errors.push(`${relative}: invalid JSON-LD (${error.message})`); }
+    let data;
+    try { data = JSON.parse(match[1]); } catch (error) { errors.push(`${relative}: invalid JSON-LD (${error.message})`); continue; }
+    const nodes = data['@graph'] ? data['@graph'] : [data];
+    for (const node of nodes) {
+      if (node['@type'] !== 'Product') continue;
+      const categories = Array.isArray(node.category) ? node.category : [node.category];
+      if (!categories.some((c) => c && c['@type'] === 'CategoryCode')) {
+        errors.push(`${relative}: Product has no Google product category (CategoryCode)`);
+      }
+      if (!node.offers) continue;
+      const offers = Array.isArray(node.offers) ? node.offers : [node.offers];
+      for (const offer of offers) {
+        if (offer.price == null || offer.price === '') {
+          errors.push(`${relative}: Product offer without price`);
+          continue;
+        }
+        if (!offer.shippingDetails) errors.push(`${relative}: offer without shippingDetails`);
+        if (!offer.hasMerchantReturnPolicy) errors.push(`${relative}: offer without hasMerchantReturnPolicy`);
+        if (!offer.itemCondition) errors.push(`${relative}: offer without itemCondition`);
+      }
+    }
   }
 
   for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
