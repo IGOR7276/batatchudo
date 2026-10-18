@@ -41,6 +41,14 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      padding: 6px 14px 6px 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background .25s ease, transform .2s ease, border-color .25s ease;
+    }
+    a.contact-hero-badge:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
     }
     .contact-badge-icon,
     .contact-card-icon,
@@ -51,43 +59,157 @@
       flex-shrink: 0;
     }
     .contact-badge-icon {
-      width: 20px;
-      height: 20px;
-      color: rgba(255,255,255,.92);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
     }
+    .contact-badge-icon.phone { background: linear-gradient(135deg, #10b981, #059669); }
+    .contact-badge-icon.mail { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+    .contact-badge-icon.pin { background: linear-gradient(135deg, #f97316, #ea580c); }
+    .contact-badge-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Кнопки мессенджеров в Hero и CTA */
+    .hero-messenger-btns {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-messenger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-decoration: none;
+      color: #fff;
+      border: none;
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      cursor: pointer;
+    }
+    .btn-messenger svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .btn-messenger:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+    .btn-wa {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.32);
+    }
+    .btn-wa:hover {
+      box-shadow: 0 14px 28px rgba(37, 211, 102, 0.45);
+    }
+    .btn-tg {
+      background: linear-gradient(135deg, #2AABEE, #229ED9);
+      box-shadow: 0 10px 24px rgba(42, 171, 238, 0.32);
+    }
+    .btn-tg:hover {
+      box-shadow: 0 14px 28px rgba(42, 171, 238, 0.45);
+    }
+
+    /* Обновлённые карточки Телефона, Почты и Адреса */
     .contact-card {
       display: flex;
       flex-direction: column;
       gap: 14px;
       height: 100%;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(26, 60, 46, 0.1);
+    }
+    .contact-card-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
     .contact-card-icon {
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #eef7f0, #d8f3dc);
-      color: var(--green-700);
-      box-shadow: inset 0 0 0 1px rgba(64,145,108,.12);
+      color: #fff;
+      transition: transform .25s ease;
     }
-    .contact-card-icon svg,
-    .social-card-icon svg,
-    .contact-badge-icon svg {
+    .contact-card:hover .contact-card-icon {
+      transform: scale(1.06) rotate(-3deg);
+    }
+    .contact-card-icon.phone {
+      background: linear-gradient(135deg, #10b981, #047857);
+      box-shadow: 0 10px 22px rgba(16, 185, 129, 0.28);
+    }
+    .contact-card-icon.mail {
+      background: linear-gradient(135deg, #6366f1, #4338ca);
+      box-shadow: 0 10px 22px rgba(99, 102, 241, 0.28);
+    }
+    .contact-card-icon.pin {
+      background: linear-gradient(135deg, #f97316, #dc2626);
+      box-shadow: 0 10px 22px rgba(249, 115, 22, 0.28);
+    }
+    .contact-card-icon svg {
+      width: 27px;
+      height: 27px;
+    }
+    .social-card-icon svg {
       width: 24px;
       height: 24px;
     }
-    .contact-card-value {
-      font-size: 1rem;
+    .contact-card-tag {
+      display: inline-block;
+      font-size: 0.74rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 3px 9px;
+      border-radius: 99px;
+      margin-bottom: 3px;
+    }
+    .contact-card-tag.phone { background: #ecfdf5; color: #047857; }
+    .contact-card-tag.mail { background: #eef2ff; color: #4338ca; }
+    .contact-card-tag.pin { background: #fff7ed; color: #c2410c; }
+    .contact-card-value {
+      font-size: 1.08rem;
+      font-weight: 800;
       color: var(--green-900);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s ease;
     }
-    .contact-card-value:hover {
+    a.contact-card-value:hover {
       color: var(--green-700);
     }
     .contact-card-note {
       font-size: .88rem;
       color: #667085;
       line-height: 1.6;
+    }
+
+    /* Секция условий заказа */
+    .order-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 99px;
+      background: #e8f5e9;
+      color: var(--green-700);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
     .social-card {
       display: flex;
@@ -232,13 +354,28 @@
           <h1 class="pl-hero-title">Контакты</h1>
           <p class="pl-hero-desc">Мы всегда рады ответить на ваши вопросы о батате и помочь с выбором сортов для вашего участка. Не стесняйтесь обращаться — мы с удовольствием поможем вам начать выращивать батат.</p>
           <div class="pl-hero-badges">
-            <span class="pl-hero-badge contact-hero-badge"><span class="contact-badge-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.45-1.29a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z"/></svg></span>+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</span>
-            <span class="pl-hero-badge contact-hero-badge"><span class="contact-badge-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16v12H4z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m4 7 8 6 8-6"/></svg></span>batatchudo@yandex.ru</span>
-            <span class="pl-hero-badge contact-hero-badge"><span class="contact-badge-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5" stroke-width="1.8"/></svg></span>Туапсинский р-н, с. Индюк</span>
+            <a href="tel:+79183913327" class="pl-hero-badge contact-hero-badge" title="Позвонить">
+              <span class="contact-badge-icon phone"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/></svg></span>
+              +7&nbsp;(918)&nbsp;391&#8209;33&#8209;27
+            </a>
+            <a href="mailto:batatchudo@yandex.ru" class="pl-hero-badge contact-hero-badge" title="Написать на почту">
+              <span class="contact-badge-icon mail"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-6.54 4.09a1.99 1.99 0 0 1-2.12 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44Z"/></svg></span>
+              batatchudo@yandex.ru
+            </a>
+            <span class="pl-hero-badge contact-hero-badge">
+              <span class="contact-badge-icon pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 7.05 11.4 7.35 11.66a1 1 0 0 0 1.3 0C12.95 21.4 20 15.25 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg></span>
+              Туапсинский р-н, с. Индюк
+            </span>
           </div>
-          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="tel:+79183913327" class="btn btn-primary" style="background:#fff;color:#1a3c2e;border:none;">Позвонить</a>
-            <a href="mailto:batatchudo@yandex.ru" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Написать</a>
+          <div class="hero-messenger-btns">
+            <a href="https://wa.me/79183913327" target="_blank" rel="noopener noreferrer" class="btn-messenger btn-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.49 1.34 5.01L2 22l5.12-1.34c1.47.8 3.14 1.23 4.91 1.23h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89Zm5.82 14.12c-.24.68-1.4 1.3-1.95 1.38-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.04-2.48.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.12.08.72-.16 1.4Z"/></svg>
+              Написать в WhatsApp
+            </a>
+            <a href="https://t.me/nataliyen" target="_blank" rel="noopener noreferrer" class="btn-messenger btn-tg">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47ZM8.01 12.66l9.29-5.86c.46-.28.88-.13.53.18l-7.65 6.9-.3 3.2-1.87-4.42Z"/></svg>
+              Написать в Telegram
+            </a>
           </div>
         </div>
       </div>
@@ -252,22 +389,51 @@
     <p class="pl-section-sub">Выберите удобный способ — мы на связи каждый день.</p>
     <div class="pl-benefits-grid">
       <div class="glass-card contact-card">
-        <div class="contact-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.45-1.29a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="pl-benefit-title">Телефон</div>
+        <div class="contact-card-top">
+          <div class="contact-card-icon phone">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-card-tag phone">Звонки</span>
+            <div class="pl-benefit-title" style="margin:0;">Телефон</div>
+          </div>
+        </div>
         <a href="tel:+79183913327" class="contact-card-value">+7&nbsp;(918)&nbsp;391&#8209;33&#8209;27</a>
         <div class="contact-card-note">Звонки принимаем ежедневно с 9:00 до 20:00.</div>
       </div>
       <div class="glass-card contact-card">
-        <div class="contact-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16v12H4z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m4 7 8 6 8-6"/></svg></div>
-        <div class="pl-benefit-title">Email</div>
+        <div class="contact-card-top">
+          <div class="contact-card-icon mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="3"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-card-tag mail">Для писем</span>
+            <div class="pl-benefit-title" style="margin:0;">Электронная почта</div>
+          </div>
+        </div>
         <a href="mailto:batatchudo@yandex.ru" class="contact-card-value">batatchudo@yandex.ru</a>
         <div class="contact-card-note">Письма и заявки просматриваем в течение дня.</div>
       </div>
       <div class="glass-card contact-card">
-        <div class="contact-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5" stroke-width="1.8"/></svg></div>
-        <div class="pl-benefit-title">Адрес</div>
+        <div class="contact-card-top">
+          <div class="contact-card-icon pin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-card-tag pin">Питомник</span>
+            <div class="pl-benefit-title" style="margin:0;">Наш адрес</div>
+          </div>
+        </div>
         <div class="contact-card-value">Туапсинский район</div>
-        <div class="contact-card-note">село Индюк, Россия</div>
+        <div class="contact-card-note">Краснодарский край, село Индюк, Россия</div>
       </div>
     </div>
   </div>
@@ -280,24 +446,28 @@
     <p class="pl-section-sub">Мы отправляем клубни батата и черенки экзотических растений по всей России.</p>
     <div class="pl-content-grid">
       <div class="pl-content-card">
-        <h3>Условия заказа</h3>
+        <span class="order-badge">Памятка покупателю</span>
+        <h3>📋 Условия заказа</h3>
         <ul>
           <li>Продаём семена от 1 упаковки, саженцы от 1 шт</li>
-          <li>В заказе укажите: наименование культуры, количество, адрес доставки</li>
-          <li>Услуги по доставке за счёт получателя</li>
+          <li>В сообщении в WhatsApp или Telegram укажите: наименование культуры, количество и адрес доставки</li>
+          <li>Услуги по доставке оплачиваются за счёт получателя</li>
         </ul>
       </div>
       <div class="pl-content-card">
+        <span class="order-badge">Весна — Лето</span>
         <h3>🌱 Отправка ростков</h3>
-        <p>С 20 апреля при устойчивой температуре +15°C.</p>
+        <p>Начинается <strong>с 20 апреля</strong> при установлении устойчивой дневной температуры от +15°C.</p>
       </div>
       <div class="pl-content-card">
+        <span class="order-badge">Осень — Весна</span>
         <h3>🍠 Продажа клубней</h3>
-        <p>С 20 сентября до 1 апреля при ночных температурах не ниже -2...-5°C.</p>
+        <p>Осуществляется <strong>с 20 сентября до 1 апреля</strong> при ночных температурах не ниже -2...-5°C.</p>
       </div>
       <div class="pl-content-card">
+        <span class="order-badge">Сезон посадки</span>
         <h3>🌿 Отправка саженцев</h3>
-        <p>С 20 апреля по 1 сентября.</p>
+        <p>Вегетирующие саженцы отправляем в тёплый сезон — <strong>с 20 апреля по 1 сентября</strong>.</p>
       </div>
     </div>
   </div>
@@ -397,8 +567,14 @@
     <h2>Остались вопросы?</h2>
     <p>Не стесняйтесь обращаться — мы с удовольствием поможем вам начать выращивать батат.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="tel:+79183913327" class="btn btn-primary" style="background:#fff;color:#1a3c2e;">Позвонить</a>
-      <a href="mailto:batatchudo@yandex.ru" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;">Написать</a>
+      <a href="https://wa.me/79183913327" target="_blank" rel="noopener noreferrer" class="btn-messenger btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.49 1.34 5.01L2 22l5.12-1.34c1.47.8 3.14 1.23 4.91 1.23h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89Zm5.82 14.12c-.24.68-1.4 1.3-1.95 1.38-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.04-2.48.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.12.08.72-.16 1.4Z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a href="https://t.me/nataliyen" target="_blank" rel="noopener noreferrer" class="btn-messenger btn-tg">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66c.28-1.11-.4-1.54-1.29-1.22L2.88 10.3c-1.08.42-1.06 1.02-.2 1.28l4.56 1.42 1.76 5.36c.21.58.11.81.72.81.47 0 .67-.22.93-.49.16-.17 1.12-1.09 2.09-2.02l4.35 3.21c.8.44 1.38.21 1.58-.74l3.27-15.47ZM8.01 12.66l9.29-5.86c.46-.28.88-.13.53.18l-7.65 6.9-.3 3.2-1.87-4.42Z"/></svg>
+        Написать в Telegram
+      </a>
     </div>
   </div>
 </section>
