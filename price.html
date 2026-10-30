@@ -265,6 +265,29 @@
     }
     .price-table .item-name a:hover { color: var(--green-700); }
     .price-table .price-available { color: var(--green-700); }
+    .price-table .price-sale {
+      color: var(--green-700);
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .price-table .price-sale del {
+      color: var(--text-light);
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    .price-table .price-sale .sale-badge {
+      background: var(--green-100);
+      color: var(--green-900);
+      font-size: 0.7rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
     .price-table .price-unavailable {
       color: var(--text-light);
       font-weight: 400;
@@ -326,6 +349,8 @@
         font-size: 0.8rem; 
       }
       .price-table tbody td { padding: 12px 10px; font-size: 0.85rem; }
+      .price-table .price-sale { gap: 6px; }
+      .price-table .price-sale .sale-badge { font-size: 0.62rem; padding: 3px 5px; }
       .price-section-header h2 { font-size: 1.2rem; }
       .container[style*="padding-top"] { padding-top: 40px !important; }
     }
@@ -510,10 +535,10 @@
         <tr><td class="item-name"><a href="porto-amarello.html">Порто-Амарелло</a></td><td class="price-available">650 руб</td></tr>
         <tr><td class="item-name"><a href="portu-baterraba.html">Порту-Баттераба (Бурячковый)</a></td><td class="price-available">500 руб</td></tr>
         <tr><td class="item-name"><a href="ralf.html">Ральф</a></td><td class="price-available">1000 руб</td></tr>
-        <tr><td class="item-name"><a href="rubin-karoliny.html">Рубин Каролины</a></td><td class="price-available">650 руб</td></tr>
+        <tr><td class="item-name"><a href="rubin-karoliny.html">Рубин Каролины</a></td><td class="price-unavailable">Нет в наличии</td></tr>
         <tr><td class="item-name">Рубиновый</td><td class="price-available">750 руб</td></tr>
         <tr><td class="item-name"><a href="sanrayz.html">Санрайз</a></td><td class="price-available">750 руб</td></tr>
-        <tr><td class="item-name"><a href="sakura.html">Сакура</a></td><td class="price-available">2500 руб</td></tr>
+        <tr><td class="item-name"><a href="sakura.html">Сакура</a></td><td class="price-sale"><span class="sale-badge">Скидка</span><span>999 руб</span><del>2500 руб</del></td></tr>
         <tr><td class="item-name"><a href="sladkiy-1.html">Сладкий №1</a></td><td class="price-available">650 руб</td></tr>
         <tr><td class="item-name"><a href="slivochnyy-shandunskiy.html">Сливочный Шаньдунский</a></td><td class="price-available">950 руб</td></tr>
         <tr><td class="item-name"><a href="spartak.html">Спартак</a></td><td class="price-available">950 руб</td></tr>
