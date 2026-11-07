@@ -50,11 +50,11 @@ for (const m of priceHtml.matchAll(sectionRe)) {
 }
 const sectionFor = (i) => [...sections].reverse().find((s) => s.index < i)?.id || 'unknown';
 
-const rowRe = /<tr><td class="item-name">(?:<a href="([^"]+)"[^>]*>([^<]*)<\/a>|([^<]*))<\/td><td(?: class="([^"]*)")?>([^<]*)<\/td><\/tr>/g;
+const rowRe = /<tr><td class="item-name">(?:<a href="([^"]+)"[^>]*>([^<]*)<\/a>|([^<]*))<\/td><td(?: class="([^"]*)")?>([\s\S]*?)<\/td><\/tr>/g;
 const priceRows = [];
 for (const m of priceHtml.matchAll(rowRe)) {
   const [, href, nameInLink, namePlain, priceClass = '', priceTextRaw = ''] = m;
-  const priceText = priceTextRaw.trim();
+  let priceText = priceTextRaw.trim();
   let available = null;
   let price = null;
   let status = null;
@@ -66,6 +66,14 @@ for (const m of priceHtml.matchAll(rowRe)) {
     const num = priceText.match(/\d+/);
     price = num ? Number(num[0]) : null;
     status = 'available';
+  } else if (priceClass === 'price-sale') {
+    // Sale rows: <span class="sale-badge">Скидка</span><span>999 руб</span><del>2500 руб</del>
+    const current = priceTextRaw.match(/<span[^>]*>([^<]*\d[^<]*)<\/span>/);
+    priceText = (current ? current[1] : priceTextRaw.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    available = true;
+    const num = priceText.match(/\d+/);
+    price = num ? Number(num[0]) : null;
+    status = 'sale';
   }
   priceRows.push({
     section: sectionFor(m.index),

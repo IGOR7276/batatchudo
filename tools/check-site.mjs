@@ -61,13 +61,13 @@ for (const file of await walk(root)) {
 }
 
 const priceHtml = await readFile(path.join(root, 'price.html'), 'utf8');
-for (const row of priceHtml.matchAll(/<tr><td class="item-name"><a href="([^"]+)">[^<]+<\/a><\/td><td class="(price-(?:available|unavailable))">([^<]+)<\/td><\/tr>/g)) {
+for (const row of priceHtml.matchAll(/<tr><td class="item-name"><a href="([^"]+)">[^<]+<\/a><\/td><td class="(price-(?:available|unavailable|sale))">([\s\S]*?)<\/td><\/tr>/g)) {
   const [, page, status, priceText] = row;
   const html = await readFile(path.join(root, page), 'utf8');
   const scripts = [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
   const product = scripts.map((match) => JSON.parse(match[1])).find((data) => data['@type'] === 'Product');
   if (!product?.offers) continue;
-  const expectedAvailability = status === 'price-available' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock';
+  const expectedAvailability = status === 'price-unavailable' ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock';
   if (product.offers.availability !== expectedAvailability) errors.push(`${page}: availability differs from price.html`);
   const expectedPrice = priceText.match(/\d+/)?.[0];
   if (expectedPrice && String(product.offers.price) !== expectedPrice) errors.push(`${page}: price differs from price.html`);
