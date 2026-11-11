@@ -7,48 +7,12 @@
   "slugRule": "slug = image basename (img.replace(\".webp\", \".html\"))",
   "note": "price/available come from price.html and are authoritative.",
   "counts": {
-    "priceRows": 160,
-    "matchedToVariety": 81,
+    "priceRows": 159,
+    "matchedToVariety": 80,
     "unmatchedPriceRows": 79,
     "conflicts": 0
   },
   "products": [
-    {
-      "slug": "kuban",
-      "name": "Кубань",
-      "namePrice": "Кубань",
-      "section": "novelty",
-      "price": 3750,
-      "priceText": "3750 руб",
-      "priceFrom": false,
-      "available": true,
-      "status": "available",
-      "matched": true,
-      "img": "kuban.webp",
-      "color": "Оранжевый",
-      "type": "Авторский",
-      "term": "Ранний (80-90)",
-      "termDays": {
-        "min": 80,
-        "max": 90
-      },
-      "category": "food",
-      "sweetness": 6,
-      "productivity": "Средняя",
-      "storage": "Средняя",
-      "tasteProfile": "Умеренно сладкий, мягкий вкус",
-      "desc": null,
-      "rawTaste": null,
-      "bakedTaste": null,
-      "yield": null,
-      "advantages": [
-        "Ранний",
-        "Авторский",
-        "Для сыроедения",
-        "Новинка"
-      ],
-      "patent": false
-    },
     {
       "slug": null,
       "name": "Гигантикус",
